@@ -1,3 +1,5 @@
+
+
 var map;
 
 // Set the center as Firebase HQ
@@ -12,7 +14,7 @@ var radiusInKm = 1;
 // Get a reference to the Firebase public transit open data set
 var sheltersFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/")
 
-console.log(sheltersFirebaseRef.child('pdxshelters/testShelter/beds'))
+console.log(sheltersFirebaseRef.child('pdxshelters'))
 
 sheltersFirebaseRef.on("child_changed", function(snapshot) {
   var changedShelter = snapshot.val();
@@ -25,8 +27,31 @@ sheltersFirebaseRef.on("child_added", function(snapshot) {
 })
 
 
-// Create a new GeoFire instance, pulling data from the public transit data
-var geoFire = new GeoFire(sheltersFirebaseRef.child("_geofire"));
+//Create a new GeoFire instance
+var geoFire = new GeoFire(sheltersFirebaseRef);
+
+// geoFire.set("coords", [45.521450, -122.653635]).then(function(){
+//   console.log("key has been added");
+// }, function(error) {
+//   console.log("Error: " + error);
+// })
+sheltersFirebaseRef.forEach(function(childSnapshot){
+  console.log(childSnapshot)
+  // geoFire.get(childSnapshot["coords"]).then(function(location) {
+  //   if (location === null) {
+  //     console.log("Provided key is not in GeoFire");
+  //   }
+  //   else {
+  //     console.log("Provided key has a location of " + location);
+  //     var onKeyEnteredRegistration = geoQuery.on("key_entered", function(key, location, distance){
+  //       console.log(key +" " + location+ " " + distance)
+  //     })
+  //   }
+  // }, function(error) {
+  //   console.log("Error: " + error);
+  // });
+});
+var geoRef = geoFire.ref();
 
 /*************/
 /*  GEOQUERY */
@@ -39,6 +64,14 @@ var geoQuery = geoFire.query({
   center: center,
   radius: radiusInKm
 });
+
+var onReadyRegistration = geoQuery.on("ready", function() {
+  console.log("geoquery has loaded and fired all queries")
+})
+
+var onKeyEnteredRegistration = geoQuery.on("key_entered", function(key, location, distance){
+  console.log(key +" " + location+ " " + distance)
+})
 
 
 
@@ -88,8 +121,8 @@ function initializeMap() {
 /* Adds a marker for the inputted shelter to the map */
 function createShelterMarker(shelter) {
   var marker = new google.maps.Marker({
-
-    
+    icon: "https://chart.googleapis.com/chart?chst=d_bubble_icon_text_small&chld=" + vehicle.vtype + "|bbT|" + vehicle.routeTag + "|" + vehicleColor + "|eee",
+    position: new google.maps.LatLng(shelter.lat, shelter.lon),
     optimized: true,
     map: map
   });
@@ -97,37 +130,37 @@ function createShelterMarker(shelter) {
   return marker;
 }
 
-/* Returns a blue color code for outbound vehicles or a red color code for inbound vehicles */
-function getVehicleColor(vehicle) {
-  return ((vehicle.dirTag && vehicle.dirTag.indexOf("OB") > -1) ? "50B1FF" : "FF6450");
-}
-
-/* Returns true if the two inputted coordinates are approximately equivalent */
-function coordinatesAreEquivalent(coord1, coord2) {
-  return (Math.abs(coord1 - coord2) < 0.000001);
-}
+// /* Returns a blue color code for outbound vehicles or a red color code for inbound vehicles */
+// function getVehicleColor(vehicle) {
+//   return ((vehicle.dirTag && vehicle.dirTag.indexOf("OB") > -1) ? "50B1FF" : "FF6450");
+// }
+//
+// /* Returns true if the two inputted coordinates are approximately equivalent */
+// function coordinatesAreEquivalent(coord1, coord2) {
+//   return (Math.abs(coord1 - coord2) < 0.000001);
+// }
 
 /* Animates the Marker class (based on https://stackoverflow.com/a/10906464) */
-google.maps.Marker.prototype.animatedMoveTo = function(newLocation) {
-  var toLat = newLocation[0];
-  var toLng = newLocation[1];
-
-  var fromLat = this.getPosition().lat();
-  var fromLng = this.getPosition().lng();
-
-  if (!coordinatesAreEquivalent(fromLat, toLat) || !coordinatesAreEquivalent(fromLng, toLng)) {
-    var percent = 0;
-    var latDistance = toLat - fromLat;
-    var lngDistance = toLng - fromLng;
-    var interval = window.setInterval(function () {
-      percent += 0.01;
-      var curLat = fromLat + (percent * latDistance);
-      var curLng = fromLng + (percent * lngDistance);
-      var pos = new google.maps.LatLng(curLat, curLng);
-      this.setPosition(pos);
-      if (percent >= 1) {
-        window.clearInterval(interval);
-      }
-    }.bind(this), 50);
-  }
-};
+// google.maps.Marker.prototype.animatedMoveTo = function(newLocation) {
+//   var toLat = newLocation[0];
+//   var toLng = newLocation[1];
+//
+//   var fromLat = this.getPosition().lat();
+//   var fromLng = this.getPosition().lng();
+//
+//   if (!coordinatesAreEquivalent(fromLat, toLat) || !coordinatesAreEquivalent(fromLng, toLng)) {
+//     var percent = 0;
+//     var latDistance = toLat - fromLat;
+//     var lngDistance = toLng - fromLng;
+//     var interval = window.setInterval(function () {
+//       percent += 0.01;
+//       var curLat = fromLat + (percent * latDistance);
+//       var curLng = fromLng + (percent * lngDistance);
+//       var pos = new google.maps.LatLng(curLat, curLng);
+//       this.setPosition(pos);
+//       if (percent >= 1) {
+//         window.clearInterval(interval);
+//       }
+//     }.bind(this), 50);
+//   }
+// };
