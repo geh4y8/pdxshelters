@@ -2,9 +2,9 @@ $(document).ready(function(){
 
   var ref = new Firebase("https://pdxshelters.firebaseio.com/")
 
-  var shelterLoginBtn = $('#shelterLoginBtn')
+  var googleOauth = $('#shelterLoginBtn')
 
-  $('#shelterLoginBtn').click(function(){
+  $('#googleOauth').click(function(){
     ref.authWithOAuthPopup("google", function(error, authData) {
       if (error) {
         if (error.code === "TRANSPORT_UNAVAILABLE") {
