@@ -65,6 +65,7 @@ var geoQuery = geoFire.query({
   radius: radiusInKm
 });
 
+<<<<<<< HEAD
 var onReadyRegistration = geoQuery.on("ready", function() {
   console.log("geoquery has loaded and fired all queries")
 })
@@ -74,6 +75,20 @@ var onKeyEnteredRegistration = geoQuery.on("key_entered", function(key, location
 })
 
 
+
+
+/***************/
+/*  GEOLOCATE  */
+/***************/
+// Get the location of the user, re-intialize map to that location
+navigator.geolocation.getCurrentPosition(getUserPosition, function(error){console.log("Error with user location:", error.message)})
+
+function getUserPosition(position){
+    center = [position.coords.latitude, position.coords.longitude];
+    locations["PDXSheltersHQ"] = center
+    console.log("Found user location : ", center)
+    initializeMap()
+}
 
 
 /*****************/
