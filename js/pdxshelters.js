@@ -88,8 +88,8 @@ function initializeMap() {
 /* Adds a marker for the inputted shelter to the map */
 function createShelterMarker(shelter) {
   var marker = new google.maps.Marker({
-    icon: "https://chart.googleapis.com/chart?chst=d_bubble_icon_text_small&chld=" + vehicle.vtype + "|bbT|" + vehicle.routeTag + "|" + vehicleColor + "|eee",
-    position: new google.maps.LatLng(vehicle.lat, vehicle.lon),
+
+    
     optimized: true,
     map: map
   });
