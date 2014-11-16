@@ -22,5 +22,6 @@ $(document).ready(function(){
         console.log('Authenticated successfully', authData)
       }
     });
+    $('#googleOauth').html("logged in").addClass("disabled").removeClass('btn-danger');
   });
 })
