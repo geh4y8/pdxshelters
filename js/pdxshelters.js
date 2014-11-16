@@ -31,20 +31,20 @@ sheltersFirebaseRef.on("child_changed", function(snapshot) {
 
 sheltersFirebaseRef.on("child_added", function(snapshot) {
   var newShelter = snapshot.val();
-  console.log("There is a new Shelter in town! It is called " + newShelter.name + " and it is located at " + newShelter.location + " and they have " + newShelter.beds + " beds!")
+  console.log("There is a new Shelter in town! It is called " + newShelter.name + " and it is located at " + newShelter.location + " and they have " + newShelter.beds + " beds!");
 })
 
 
 //Create a new GeoFire instance
-var geoFire = new GeoFire(sheltersFirebaseRef)
+var geoFire = new GeoFire(sheltersFirebaseRef);
 var shelterMarkerObjects = {};
 var eventMarkerObjects = {};
 
 function shelterIconName(shelter){
   if(shelter.beds > 10){
-    var iconName = "/img/no10+.png"
+    var iconName = "/img/red10+.png"
   }else{
-    iconName = "/img/"+"no"+shelter.beds + ".png"
+    iconName = "/img/"+"red"+shelter.beds + ".png"
   }
   return iconName
 }
@@ -93,7 +93,6 @@ function loadEventMarker(evnt){
 
 function shelterDetails(shelter){
   //console.log(shelter)
-  console.log(shelter.facilities.pets)
   var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name'>"+ shelter.name + "</div><div id='phone'>" + shelter.phone + "</div>" + "<div id='hours'> Open: " + shelter.hours.open + "   Close: " + shelter.hours.close + "</div>" + "<a href=" + shelter.url + ">"+ shelter.url+ "</a><br/>"
 
   if(shelter.facilities.shower == true){
@@ -114,7 +113,6 @@ function shelterDetails(shelter){
 function eventDetails(evnt){
   var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name'>"+ evnt.name + "</div><div id='desc'>" + evnt.description + "</div><div id='location'>" + evnt.location + "</div></div id='event-date'>" + evnt.date + "</div><div id='event-time'>" + evnt.time
   if (evnt.url){
-    console.log('event url', evnt.url)
     contentString+= '<br/><a href=' + evnt.url + ">" + evnt.url + "</a>"
   }
 
