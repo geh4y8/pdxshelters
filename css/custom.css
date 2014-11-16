@@ -104,5 +104,11 @@
     margin-left: 0;
 }
 .ronoffswitch-checkbox:checked + .ronoffswitch-label .ronoffswitch-switch {
-    right: 0px;
+    right: 0px; 
+}
+
+#shelter-login-button{
+   bottom:0;
+   position:absolute;
+
 }
