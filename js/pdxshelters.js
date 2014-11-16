@@ -17,21 +17,16 @@ var eventsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/events"
 
 //console.log(sheltersFirebaseRef.child('pdxshelters'))
 
+
 sheltersFirebaseRef.on("child_changed", function(snapshot) {
   var changedShelter = snapshot.val();
   console.log("The updated shelter has " + changedShelter.beds + " beds");
   console.log(changedShelter.name)
-  var marker = markerObject[changedShelter.name];
-  // for(var key in markerObject){
-  //   markerObject[key] = null
+  var marker = shelterMarkerObjects[changedShelter.name];
+  // for(var key in shelterMarkerObjects){
+  //   shelterMarkerObjects[key] = null
   // }
-  if(changedShelter.beds > 10){
-    marker.setIcon("/img/no10+.png")
-  }else if(changedShelter.beds === 0){
-
-  }else{
-    marker.setIcon("/img/"+"no"+changedShelter.beds + ".png")
-  }
+  marker.setIcon(shelterIconName(changedShelter))
 })
 
 sheltersFirebaseRef.on("child_added", function(snapshot) {
@@ -42,26 +37,29 @@ sheltersFirebaseRef.on("child_added", function(snapshot) {
 
 //Create a new GeoFire instance
 var geoFire = new GeoFire(sheltersFirebaseRef)
-var markerObject = {};
+var shelterMarkerObjects = {};
+var eventMarkerObjects = {};
+
+function shelterIconName(shelter){
+  if(shelter.beds > 10){
+    var iconName = "/img/no10+.png"
+  }else{
+    iconName = "/img/"+"no"+shelter.beds + ".png"
+  }
+  return iconName
+}
 
 function loadShelterMarker(shelter){
   // To add the marker to the map, use the 'map' property
   var coords = shelter.coords.l
   var shelterLatLong = new google.maps.LatLng(coords[0], coords[1]);
-  if(shelter.beds > 10){
-    var iconName = "/img/no10+.png"
-  }else if(shelter.beds === 0){
-
-  }else{
-    iconName = "/img/"+"no"+shelter.beds + ".png"
-  }
   var marker = new google.maps.Marker({
       position: shelterLatLong,
       map: map,
-      icon: iconName
+      icon: shelterIconName(shelter)
   });
 
-  markerObject[shelter.name] = marker
+  shelterMarkerObjects[shelter.name] = marker
 
   var contentString = shelterDetails(shelter);
   var infowindow = new google.maps.InfoWindow({
@@ -79,6 +77,8 @@ function loadEventMarker(evnt){
       position: eventLatLong,
       map: map,
   });
+
+  eventMarkerObjects[evnt.name] = marker
 
   var contentString = eventDetails(evnt);
   var infowindow = new google.maps.InfoWindow({
@@ -352,6 +352,48 @@ function createShelterMarker(shelter) {
   });
 
   return marker;
+}
+
+var showShelters = 1
+var showEvents = 1
+
+function toggleShelters(){
+  console.log("HAHAHAHA IT WORKS!")
+  showShelters = !showShelters
+  if (showShelters){
+    sheltersFirebaseRef.on('value', function(dataSnapshot){
+      dataSnapshot.forEach(function(child){
+        shelter = child.val()
+        var marker = shelterMarkerObjects[shelter.name];
+        marker.setVisible(true)
+      })}) 
+  }else{
+    sheltersFirebaseRef.on('value', function(dataSnapshot){
+      dataSnapshot.forEach(function(child){
+        shelter = child.val()
+        var marker = shelterMarkerObjects[shelter.name];
+        marker.setVisible(false)
+      })})
+  }
+}
+
+function toggleEvents(){
+  showEvents = !showEvents
+  if (showEvents){
+    eventsFirebaseRef.on('value', function(dataSnapshot){
+      dataSnapshot.forEach(function(child){
+        evnt = child.val()
+        var marker = eventMarkerObjects[evnt.name];
+        marker.setVisible(true)
+      })}) 
+  }else{
+    eventsFirebaseRef.on('value', function(dataSnapshot){
+      dataSnapshot.forEach(function(child){
+        evnt = child.val()
+        var marker = eventMarkerObjects[evnt.name];
+        marker.setVisible(false)
+      })})
+  }
 }
 
 // /* Returns a blue color code for outbound vehicles or a red color code for inbound vehicles */
