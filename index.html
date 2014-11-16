@@ -10,17 +10,19 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/buttons.css" rel="stylesheet">
   <link href="css/site.css" rel="stylesheet">
-  <link href="css/custom.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/material.min.css" rel="stylesheet">
   <link href="css/ripples.min.css" rel="stylesheet">
   <link href="css/material-wfont.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
 
 </head>
 
 <body>
   <!-- MAP -->
+
   <div id="map-canvas"></div>
+
   <div id="sidebar-wrapper" class="hidden-xs"></div>
   <article id="sidebar" class="animated bounceInUp hidden-xs">
     <header>
@@ -42,9 +44,11 @@
             <input type="checkbox", onclick="toggleEvents()">Events
       </div>
 
-
     </section>
   </article>
+  <div id="rumble2014" style="position: fixed; display: block; height: 40px; width: 100%; z-index: 99999; bottom: 0px; left: 0px; padding: 10px 0px; text-align: center; margin: 0px; color: white; background-color: rgb(22, 22, 22);">
+    <span>made in 54 hours with  &#10084;  at <a style="text-decoration: none; font-weight: bold" href="http://www.up.co/communities/usa/portland/startup-weekend/4806">PDXSW2014</a></span><a href="http://www.github.com/geh4y8/pdxshelters"><img style="float:right; padding: 0px; margin-right: 1%" src="/img/github2.png"></a></div>
+  </div>
 
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -74,6 +78,10 @@
 
   <!-- Bootstrap -->
   <script src="js/vendor/bootstrap.min.js"></script>
+
+  <!-- Material -->
+  <script src="js/vendor/material.min.js"></script>
+  <script src="js/vendor/ripples.min.js"></script>
 
   <!-- Firebase -->
   <script src="js/vendor/firebase.js"></script>
