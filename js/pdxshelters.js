@@ -76,6 +76,7 @@ function loadEventMarker(evnt){
   var marker = new google.maps.Marker({
       position: eventLatLong,
       map: map,
+      icon:'/img/blue0.png'
   });
 
   eventMarkerObjects[evnt.name] = marker
