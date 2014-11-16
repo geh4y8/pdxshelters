@@ -4,7 +4,7 @@ var map;
 
 // Set the center as Firebase HQ
 var locations = {
-  "PDXSheltersHQ": [45.516579, -122.672506]
+  "PDXSheltersHQ": [45.531190, -122.680241]
 };
 var center = locations["PDXSheltersHQ"];
 
@@ -81,7 +81,7 @@ function loadMarker(child){
 function modalContent(child){
   //console.log(child)
   console.log(child.facilities.pets)
-  var contentString = "<div id='wrapper' style='width: 100%; height: 200px; font-size: 20px'><div id='name'>"+ child.name + "</div><div id='phone'>" + child.phone + "</div>" + "<div id='hours'> Open: " + child.hours.open + "   Close: " + child.hours.close + "</div>" + "<a href=" + child.url + ">"+ child.url+ "</a><br/>"
+  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name'>"+ child.name + "</div><div id='phone'>" + child.phone + "</div>" + "<div id='hours'> Open: " + child.hours.open + "   Close: " + child.hours.close + "</div>" + "<a href=" + child.url + ">"+ child.url+ "</a><br/>"
 
   if(child.facilities.shower == true){
     contentString += ("<img src='/img/shower.png'>")
@@ -265,14 +265,14 @@ sheltersFirebaseRef.on('value', function(dataSnapshot){
 /*  GEOLOCATE  */
 /***************/
 // Get the location of the user, re-intialize map to that location
-navigator.geolocation.getCurrentPosition(getUserPosition, function(error){console.log("Error with user location:", error.message)})
-
-function getUserPosition(position){
-    center = [position.coords.latitude, position.coords.longitude];
-    locations["PDXSheltersHQ"] = center
-    console.log("Found user location : ", center)
-    initializeMap()
-}
+// navigator.geolocation.getCurrentPosition(getUserPosition, function(error){console.log("Error with user location:", error.message)})
+//
+// function getUserPosition(position){
+//     center = [position.coords.latitude, position.coords.longitude];
+//     locations["PDXSheltersHQ"] = center
+//     console.log("Found user location : ", center)
+//     initializeMap()
+// }
 
 
 /*****************/

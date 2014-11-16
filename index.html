@@ -11,15 +11,15 @@
   <link href="css/buttons.css" rel="stylesheet">
   <link href="css/site.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
-  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
 <body>
   <!-- MAP -->
   <div id="map-canvas"></div>
-  <div id="sidebar-wrapper"></div>
-  <article id="sidebar" class="animated bounceInUp">
+  <div id="sidebar-wrapper" class="hidden-xs"></div>
+  <article id="sidebar" class="animated bounceInUp hidden-xs">
     <header>
       <h1></i> PDXShelters</h1>
     </header>
@@ -61,10 +61,13 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6U2ExB8yLDc7RiGPYK3C3yIzDPpyFJE0&sensor=false"></script>
 
   <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/vendor/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="js/vendor/bootstrap.min.js"></script>
 
   <!-- Firebase -->
-  <script src="https://cdn.firebase.com/js/client/2.0.2/firebase.js"></script>
+  <script src="js/vendor/firebase.js"></script>
 
   <!-- RSVP -->
   <script src="js/vendor/rsvp.min.js"></script>
@@ -80,7 +83,7 @@
 
   <script src="js/pdxshelters.js"></script>
 
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
 
 
 
