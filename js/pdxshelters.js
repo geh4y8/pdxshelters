@@ -93,25 +93,25 @@ function loadEventMarker(evnt){
 
 function shelterDetails(shelter){
   //console.log(shelter)
-  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name'>"+ shelter.name + "</div><div id='phone'>" + shelter.phone + "</div>" + "<div id='hours'> Open: " + shelter.hours.open + "   Close: " + shelter.hours.close + "</div>" + "<a href=" + shelter.url + ">"+ shelter.url+ "</a><br/>"
+  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name', style='font-size: 24px; font-weight:bold' >"+ shelter.name + "</div><div id='phone'>" + shelter.phone + "</div>" + "<div id='hours'> Open: " + shelter.hours.open + "   Close: " + shelter.hours.close + "</div>" + "<a href=" + shelter.url + ">"+ shelter.url+ "</a><br/><div style='font-size:12px'>Last updated: 11-16-1014 18:28</div>"
 
   if(shelter.facilities.shower == true){
-    contentString += ("<img src='/img/shower.png'>")
+    contentString += ("<img style='margin:5px' src='/img/shower.png'>")
   }
   if(shelter.facilities.wifi == true){
-    contentString += ("<img src='/img/wifi.png'>")
+    contentString += ("<img style='margin:5px' src='/img/wifi.png'>")
   }
   if(shelter.facilities.pets == true){
-    contentString += ("<img src='/img/pets.png'>")
+    contentString += ("<img style='margin:5px' src='/img/pets.png'>")
   }
   if(shelter.facilities.food == true){
-    contentString += ("<img src='/img/food.png'>")
+    contentString += ("<img style='margin:5px' src='/img/food.png'>")
   }
   return contentString + "</div>"
 }
 
 function eventDetails(evnt){
-  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name'>"+ evnt.name + "</div><div id='desc'>" + evnt.description + "</div><div id='location'>" + evnt.location + "</div></div id='event-date'>" + evnt.date + "</div><div id='event-time'>" + evnt.time
+  var contentString = "<div id='wrapper'><div id='event-name', style='font-size: 24px; font-weight:bold'>"+ evnt.name + "</div><div id='event-desc'>" + evnt.description + "</div><div id='event-location', style='font-size:18px;'>" + evnt.location + "</div></div id='event-date'>" + evnt.date + "</div><div id='event-time'>" + evnt.time
   if (evnt.url){
     contentString+= '<br/><a href=' + evnt.url + ">" + evnt.url + "</a>"
   }
