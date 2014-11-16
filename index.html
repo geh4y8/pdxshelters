@@ -83,7 +83,7 @@
         PDX Shelter is a Portland-based online resource for homeless shelters and the homeless in Portland.  Users can view bed availability, create a user profile and make shelter reservations.  The mobile and web app allows shelters to update their bed availability and check in guests while saving the information to a database for quick future check-in.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#intakeForm">Guest Registration</button>
+        <button id='guestForm' type="button" class="btn btn-success disabled" data-toggle="modal" data-target="#intakeForm">Guest Registration</button>
         <button type="button" class="btn btn-danger" id="googleOauth">Login With Google</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
@@ -136,6 +136,7 @@
                 </div>
             </div>
         </div>
+        <button style="float:right" type="submit" class="submit btn btn-primary">Submit</button>
 
           </fieldset>
         </form>
