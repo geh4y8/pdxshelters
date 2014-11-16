@@ -12,8 +12,8 @@ var center = locations["PDXSheltersHQ"];
 var radiusInKm = 1;
 
 // Get a reference to the Firebase public transit open data set
-var sheltersFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/")
-var sheltersRef = sheltersFirebaseRef.child("pdxshelters")
+var sheltersFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/shelters")
+var eventsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/events")
 
 //console.log(sheltersFirebaseRef.child('pdxshelters'))
 
