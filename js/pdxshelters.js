@@ -105,6 +105,13 @@ function initializeMap() {
     zoom: 15,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
+  
+  // Create Marker
+  var myMarker = new google.maps.Marker({
+    position: loc,
+    map: map,
+    title: 'I am here!'
+  });
 
   // Create a draggable circle centered on the map
   var circle = new google.maps.Circle({
@@ -127,22 +134,53 @@ function initializeMap() {
       radius: radiusInKm
     });
   }, 10);
-  google.maps.event.addListener(circle, "drag", updateCriteria);
-}
+  google.maps.event.addListener(circle, "drag", updateCriteria);// TEST CALL: NOT NEEDED IN FINAL CODE
+  console.log("PopulateShelterMarkers call....");
+  populateShelterMarkers(map);
+
+}; //End of initializeMap()
+
+
+
+/****
+ *  SHELTER MARKER ADDITION TEST HUB
+ * *****************/
+function populateShelterMarkers(myMap) {
+console.log("Begin function populateShelterMarkers....");
+var firstShelterLoc = new google.maps.LatLng(45.516, -122.682);
+var firstShelterName = "Shelter One";
+
+var secondShelterLoc = new google.maps.LatLng(45.517, -122.6626);
+var secondShelterName = "Shelter Two";
+
+createShelterMarker(firstShelterLoc, firstShelterName, myMap);
+createShelterMarker(secondShelterLoc, secondShelterName, myMap);
+};
 
 /**********************/
-/*  HELPER FUNCTIONS  */
+/*  MARKER FUNCTIONS  */
 /**********************/
-/* Adds a marker for the inputted shelter to the map */
-function createShelterMarker(shelter) {
-  var marker = new google.maps.Marker({
-    icon: "https://chart.googleapis.com/chart?chst=d_bubble_icon_text_small&chld=" + vehicle.vtype + "|bbT|" + vehicle.routeTag + "|" + vehicleColor + "|eee",
-    position: new google.maps.LatLng(shelter.lat, shelter.lon),
-    optimized: true,
-    map: map
-  });
 
-  return marker;
+
+/* Creates a marker for the inputted shelter to the map */
+//function createShelterMarker(shelter) {
+//Shelter Marker Image
+var bedImage = 'images/bed.png';
+
+
+/* Places a single Shelter Marker on the Map */
+function createShelterMarker(shelterLoc, shelterName, curMap) {
+  console.log("Begin function createShelterMarker....");
+
+  // Create the marker 
+  var shelterMarker = new google.maps.Marker({ 
+      position: shelterLoc,
+      title: shelterName,
+      map: curMap,
+      icon: bedImage });
+
+  // Add marker to map
+  shelterMarker.setMap(curMap);
 }
 
 // /* Returns a blue color code for outbound vehicles or a red color code for inbound vehicles */
