@@ -45,8 +45,7 @@
         bed openings near them in real time and shelters can update their count on the fly.  Built to be used on both web
         and mobile platforms, we hope to help keep a roof over heads to those in need.
       </p>
-
-      SHELTERS
+      <b>SHELTERS</b>
       <div class="ronoffswitch">
           <input type="checkbox" name="ronoffswitch" class="ronoffswitch-checkbox" id="rmyonoffswitch"  onclick="toggleShelters()", checked="true", checked>
           <label class="ronoffswitch-label" for="rmyonoffswitch">
@@ -54,8 +53,7 @@
               <span class="ronoffswitch-switch"></span>
           </label>
       </div>
-      <br/>
-      EVENTS
+      <br/><b>EVENTS</b>
       <div class="onoffswitch">
           <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"  onclick="toggleEvents()", checked="true", checked>
           <label class="onoffswitch-label" for="myonoffswitch">
@@ -79,15 +77,68 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Shelter Info</h4>
       </div>
       <div class="modal-body">
-        ...
+        PDX Shelter is a Portland-based online resource for homeless shelters and the homeless in Portland.  Users can view bed availability, create a user profile and make shelter reservations.  The mobile and web app allows shelters to update their bed availability and check in guests while saving the information to a database for quick future check-in.
       </div>
       <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#intakeForm">Guest Registration</button>
         <button type="button" class="btn btn-danger" id="googleOauth">Login With Google</button>
-        <button type="button" class="btn btn-primary">Sign In With Email</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="intakeForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog" style="width:600px">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4 class="modal-title" id="myModalLabel">Intake Form</h4>
+    </div>
+    <div class="modal-body">
+        <form id="intakeForms" class="form-horizontal">
+          <fieldset>
+            <div class="form-group">
+              <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
+              <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputLastName" class="col-lg-2 control-label">Last Name</label>
+              <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputSocialSecurity" class="col-lg-2 control-label">Social Security Number</label>
+              <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputSocialSecurity" placeholder="Social Security Number">
+              </div>
+            </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Social Security</label>
+            <div class="col-lg-10">
+                <div class="radio radio-primary">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                        I don't have one
+                    </label>
+                </div>
+                <div class="radio radio-primary">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        I don't want to share this
+                    </label>
+                </div>
+            </div>
+        </div>
+
+          </fieldset>
+        </form>
       </div>
     </div>
   </div>
