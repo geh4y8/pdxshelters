@@ -13,8 +13,9 @@ var radiusInKm = 1;
 
 // Get a reference to the Firebase public transit open data set
 var sheltersFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/")
+var sheltersRef = sheltersFirebaseRef.child("pdxshelters")
 
-console.log(sheltersFirebaseRef.child('pdxshelters'))
+//console.log(sheltersFirebaseRef.child('pdxshelters'))
 
 sheltersFirebaseRef.on("child_changed", function(snapshot) {
   var changedShelter = snapshot.val();
@@ -28,51 +29,183 @@ sheltersFirebaseRef.on("child_added", function(snapshot) {
 
 
 //Create a new GeoFire instance
-var geoFire = new GeoFire(sheltersFirebaseRef);
+var geoFire = new GeoFire(sheltersFirebaseRef)
+
+
+function loadMarker(lat, lon){
+  var shelterLatLong = new google.maps.LatLng(lat, lon);
+  // To add the marker to the map, use the 'map' property
+  var marker = new google.maps.Marker({
+      position: shelterLatLong,
+      map: map,
+      title:"Hello World!"
+  });
+  google.maps.event.addListener(marker, 'click', function() {
+    map.setZoom(16);
+    map.setCenter(marker.getPosition());
+  });
+}
+
+sheltersFirebaseRef.on('value', function(dataSnapshot){
+  dataSnapshot.forEach(function(child){
+    var coords = child.val().coords.l
+    loadMarker(coords[0], coords[1])
+  })
+})
 
 // geoFire.set("coords", [45.521450, -122.653635]).then(function(){
 //   console.log("key has been added");
 // }, function(error) {
 //   console.log("Error: " + error);
 // })
-sheltersFirebaseRef.forEach(function(childSnapshot){
-  console.log(childSnapshot)
-  // geoFire.get(childSnapshot["coords"]).then(function(location) {
-  //   if (location === null) {
-  //     console.log("Provided key is not in GeoFire");
-  //   }
-  //   else {
-  //     console.log("Provided key has a location of " + location);
-  //     var onKeyEnteredRegistration = geoQuery.on("key_entered", function(key, location, distance){
-  //       console.log(key +" " + location+ " " + distance)
-  //     })
-  //   }
-  // }, function(error) {
-  //   console.log("Error: " + error);
-  // });
-});
-var geoRef = geoFire.ref();
+// var shelters = sheltersFirebaseRef.once(function(childSnapshot){
+//   console.log(childSnapshot)
+// })
 
-/*************/
-/*  GEOQUERY */
-/*************/
-// Keep track of all of the shelters currently within the query
-var sheltersInQuery = {};
-
-// Create a new GeoQuery instance
-var geoQuery = geoFire.query({
-  center: center,
-  radius: radiusInKm
-});
-
-<<<<<<< HEAD
-var onReadyRegistration = geoQuery.on("ready", function() {
-  console.log("geoquery has loaded and fired all queries")
-})
-
-var onKeyEnteredRegistration = geoQuery.on("key_entered", function(key, location, distance){
-  console.log(key +" " + location+ " " + distance)
-})
+// sheltersFirebaseRef.on('value', function(dataSnapshot){
+//   //console.log(dataSnapshot)
+//   dataSnapshot.forEach(function(childSnapshot){
+//     // var shelterLatitude = childSnapshot.val().coords.l
+//     // console.log(shelterLatitude)
+//     // var shelterLongitude = childSnapshot.val().coords.l[1]
+//     console.log(childSnapshot.val())
+// var geoFire1;
+// var geoFire2;
+// var geoFire3;
+// var geoFire4;
+// var geoFire5;
+// var geoFire6;
+// var geoFire7;
+// var geoQuery1;
+// var geoQuery2;
+// var geoQuery3;
+// var geoQuery4;
+// var geoQuery5;
+// var geoQuery6;
+// var geoQuery7;
+//
+// function getShelters(){
+//     geoFire1 = new GeoFire(sheltersFirebaseRef.child("testShelter1"))
+//       geoFire1.get("coords").then(function(location) {
+//         if (location === null) {
+//           console.log("Provided key is not in GeoFire");
+//         }
+//         else {
+//           // console.log("Provided key has a location of " + location);
+//           geoQuery1 = geoFire1.query({
+//             center: center,
+//             radius: radiusInKm
+//           });
+//           var onKeyEnteredRegistration1 = geoQuery1.on("key_entered", function(key, location, distance){
+//             // console.log("key:"+ key +" location: " + location + " distance: " + distance)
+//           })
+//         }
+//       }, function(error) {
+//         console.log("Error: " + error);
+//       });
+//
+//       geoFire2 = new GeoFire(sheltersFirebaseRef.child("testShelter2"))
+//         geoFire2.get("coords").then(function(location) {
+//           if (location === null) {
+//             console.log("Provided key is not in GeoFire");
+//           }
+//           else {
+//             // console.log("Provided key has a location of " + location);
+//               geoQuery2 = geoFire2.query({
+//               center: center,
+//               radius: radiusInKm
+//             });
+//             var onKeyEnteredRegistration2 = geoQuery2.on("key_entered", function(key, location, distance){
+//               // console.log("key:"+ key +" location: " + location + " distance: " + distance)
+//             })
+//           }
+//         }, function(error) {
+//           console.log("Error: " + error);
+//         });
+//
+//
+//       geoFire3 = new GeoFire(sheltersFirebaseRef.child("testShelter3"))
+//         geoFire3.get("coords").then(function(location) {
+//           if (location === null) {
+//             console.log("Provided key is not in GeoFire");
+//           }
+//           else {
+//             console.log("Provided key has a location of " + location);
+//               geoQuery3 = geoFire3.query({
+//               center: center,
+//               radius: radiusInKm
+//             });
+//             var onKeyEnteredRegistration3 = geoQuery3.on("key_entered", function(key, location, distance){
+//               // console.log("key:"+ key +" location: " + location + " distance: " + distance)
+//             })
+//           }
+//         }, function(error) {
+//           console.log("Error: " + error);
+//         });
+//
+//       geoFire4 = new GeoFire(sheltersFirebaseRef.child("testShelter2"))
+//         geoFire4.get("coords").then(function(location) {
+//           if (location === null) {
+//             console.log("Provided key is not in GeoFire");
+//           }
+//           else {
+//             console.log("Provided key has a location of " + location);
+//             geoQuery4 = geoFire4.query({
+//               center: [45.51744,-122.693425],
+//               radius: radiusInKm
+//             });
+//             var onKeyEnteredRegistration4 = geoQuery4.on("key_entered", function(key, location, distance){
+//               console.log("key:"+ key +" location: " + location + " distance: " + distance)
+//               var myLatlng = new google.maps.LatLng(45.51744,-122.693425);
+//
+//               // To add the marker to the map, use the 'map' property
+//               var marker = new google.maps.Marker({
+//                   position: myLatlng,
+//                   map: map,
+//                   title:"Hello World!"
+//               });
+//             })
+//           }
+//         }, function(error) {
+//           console.log("Error: " + error);
+//         });
+// }
+//
+//
+//
+//
+// var geoRef = geoFire.ref();
+//
+// /*************/
+// /*  GEOQUERY */
+// /*************/
+// // Keep track of all of the shelters currently within the query
+// var sheltersInQuery = {};
+//
+// // Create a new GeoQuery instance
+// var geoQuery = geoFire.query({
+//   center: center,
+//   radius: radiusInKm
+// });
+//
+// var onReadyRegistration = geoQuery.on("ready", function() {
+//   console.log("geoquery has loaded and fired all queries")
+//   getShelters();
+// })
+//
+// var onKeyEnteredRegistration1 = geoQuery1.on("key_entered", function(key, location, distance){
+//
+//   // console.log(key +" " + location+ " " + distance)
+// })
+// var onKeyEnteredRegistration2 = geoQuery2.on("key_entered", function(key, location, distance){
+//   // console.log(key +" " + location+ " " + distance)
+// })
+// var onKeyEnteredRegistration3 = geoQuery3.on("key_entered", function(key, location, distance){
+//   // console.log(key +" " + location+ " " + distance)
+// })
+// var onKeyEnteredRegistration4 = geoQuery4.on("key_entered", function(key, location, distance){
+//   // console.log(key +" " + location+ " " + distance)
+// })
 
 
 
@@ -102,33 +235,35 @@ function initializeMap() {
   // Create the Google Map
   map = new google.maps.Map(document.getElementById("map-canvas"), {
     center: loc,
-    zoom: 15,
+    zoom: 14,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
   // Create a draggable circle centered on the map
-  var circle = new google.maps.Circle({
-    strokeColor: "#6D3099",
-    strokeOpacity: 0.7,
-    strokeWeight: 1,
-    fillColor: "#B650FF",
-    fillOpacity: 0.35,
-    map: map,
-    center: loc,
-    radius: ((radiusInKm) * 1000),
-    draggable: true
-  });
+  // var circle = new google.maps.Circle({
+  //   strokeColor: "#6D3099",
+  //   strokeOpacity: 0.7,
+  //   strokeWeight: 1,
+  //   fillColor: "#B650FF",
+  //   fillOpacity: 0.35,
+  //   map: map,
+  //   center: loc,
+  //   radius: ((radiusInKm) * 1000),
+  //   draggable: true
+  // });
 
   //Update the query's criteria every time the circle is dragged
-  var updateCriteria = _.debounce(function() {
-    var latLng = circle.getCenter();
-    geoQuery.updateCriteria({
-      center: [latLng.lat(), latLng.lng()],
-      radius: radiusInKm
-    });
-  }, 10);
-  google.maps.event.addListener(circle, "drag", updateCriteria);
-}
+//   var updateCriteria = _.debounce(function() {
+//
+//     var latLng = circle.getCenter();
+//     center = [latLng.lat(), latLng.lng()]
+//     geoQuery.updateCriteria({
+//       center: center,
+//       radius: radiusInKm
+//     });
+//   }, 10);
+//   google.maps.event.addListener(circle, "drag", updateCriteria);
+ }
 
 /**********************/
 /*  HELPER FUNCTIONS  */
