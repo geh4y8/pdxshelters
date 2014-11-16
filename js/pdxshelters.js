@@ -19,7 +19,20 @@ var sheltersRef = sheltersFirebaseRef.child("pdxshelters")
 
 sheltersFirebaseRef.on("child_changed", function(snapshot) {
   var changedShelter = snapshot.val();
-  console.log("The updated shelter has " + changedShelter.beds + " beds")
+  console.log("The updated shelter has " + changedShelter.beds + " beds");
+  console.log(changedShelter.name)
+  var marker = markerObject[changedShelter.name];
+  // for(var key in markerObject){
+  //   markerObject[key] = null
+  // }
+  if(changedShelter.beds > 10){
+    marker.setIcon("/img/no10+.png")
+  }else if(changedShelter.beds === 0){
+
+  }else{
+    marker.setIcon("/img/"+"no"+changedShelter.beds + ".png")
+  }
+
 })
 
 sheltersFirebaseRef.on("child_added", function(snapshot) {
@@ -30,26 +43,64 @@ sheltersFirebaseRef.on("child_added", function(snapshot) {
 
 //Create a new GeoFire instance
 var geoFire = new GeoFire(sheltersFirebaseRef)
+var markerObject = {};
 
-
-function loadMarker(lat, lon){
-  var shelterLatLong = new google.maps.LatLng(lat, lon);
+function loadMarker(child){
   // To add the marker to the map, use the 'map' property
+  var coords = child.coords.l
+  var shelterLatLong = new google.maps.LatLng(coords[0], coords[1]);
+  if(child.beds > 10){
+    var iconName = "/img/no10+.png"
+  }else if(child.beds === 0){
+
+  }else{
+    iconName = "/img/"+"no"+child.beds + ".png"
+  }
   var marker = new google.maps.Marker({
       position: shelterLatLong,
       map: map,
-      title:"Hello World!"
+      title:"Hello World!",
+      icon: iconName
   });
+
+  markerObject[child.name] = marker
+
+  var contentString = modalContent(child);
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  })
   google.maps.event.addListener(marker, 'click', function() {
-    map.setZoom(16);
-    map.setCenter(marker.getPosition());
+    //map.setZoom(16);
+    //map.setCenter(marker.getPosition());
+    infowindow.open(map, marker)
   });
+
+
+}
+
+function modalContent(child){
+  console.log(child)
+  console.log(child.hours)
+  var contentString = "<div id='phone'>" + child.phone + "</div>" + "<div id='hours'> Open: " + child.hours.open + "   Close: " + child.hours.close + "</div>" + "<a href=" + child.url + ">"+ child.url+ "</a>"
+
+  if(child.showers === 1){
+    contentString.concat("<img src=....>")
+  }
+  if(child.wifi === 1){
+    contentString.concat("<img src=...>")
+  }
+  if(child.pets === 1){
+    contentString.concat("<img src=...>")
+  }
+  if(child.food === 1){
+    contentString.concat("<img src=...>")
+  }
+  return contentString
 }
 
 sheltersFirebaseRef.on('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
-    var coords = child.val().coords.l
-    loadMarker(coords[0], coords[1])
+    loadMarker(child.val())
   })
 })
 
