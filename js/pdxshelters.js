@@ -111,7 +111,12 @@ function shelterDetails(shelter){
 }
 
 function eventDetails(evnt){
-  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name'>"+ evnt.name + "</div><div id='desc'>" + evnt.description + "</div><div id='location'>" + evnt.location + "</div>"
+  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name'>"+ evnt.name + "</div><div id='desc'>" + evnt.description + "</div><div id='location'>" + evnt.location + "</div></div id='event-date'>" + evnt.date + "</div><div id='event-time'>" + evnt.time
+  if (evnt.url){
+    console.log('event url', evnt.url)
+    contentString+= '<br/><a href=' + evnt.url + ">" + evnt.url + "</a>"
+  }
+
   return contentString
 }
 
@@ -358,7 +363,6 @@ var showShelters = 1
 var showEvents = 1
 
 function toggleShelters(){
-  console.log("HAHAHAHA IT WORKS!")
   showShelters = !showShelters
   if (showShelters){
     sheltersFirebaseRef.on('value', function(dataSnapshot){
