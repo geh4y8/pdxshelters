@@ -26,23 +26,23 @@ sheltersFirebaseRef.on("child_changed", function(snapshot) {
   //   markerObject[key] = null
   // }
   if(changedShelter.beds > 10){
-    marker.setIcon("/img/no10+.png")
+    marker.setIcon("/img/red10+.png");
   }else if(changedShelter.beds === 0){
-
+    marker.setIcon("/img/red0.png");
   }else{
-    marker.setIcon("/img/"+"no"+changedShelter.beds + ".png")
+    marker.setIcon("/img/"+"red"+changedShelter.beds + ".png");
   }
 
 })
 
 sheltersFirebaseRef.on("child_added", function(snapshot) {
   var newShelter = snapshot.val();
-  console.log("There is a new Shelter in town! It is called " + newShelter.name + " and it is located at " + newShelter.location + " and they have " + newShelter.beds + " beds!")
+  console.log("There is a new Shelter in town! It is called " + newShelter.name + " and it is located at " + newShelter.location + " and they have " + newShelter.beds + " beds!");
 })
 
 
 //Create a new GeoFire instance
-var geoFire = new GeoFire(sheltersFirebaseRef)
+var geoFire = new GeoFire(sheltersFirebaseRef);
 var markerObject = {};
 
 function loadMarker(child){
@@ -50,11 +50,11 @@ function loadMarker(child){
   var coords = child.coords.l
   var shelterLatLong = new google.maps.LatLng(coords[0], coords[1]);
   if(child.beds > 10){
-    var iconName = "/img/no10+.png"
+    var iconName = "/img/red10+.png"
   }else if(child.beds === 0){
 
   }else{
-    iconName = "/img/"+"no"+child.beds + ".png"
+    iconName = "/img/"+"red"+child.beds + ".png"
   }
   var marker = new google.maps.Marker({
       position: shelterLatLong,
