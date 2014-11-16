@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
-  <title>Query Realtime PDX Shelter Locations</title>
+  <title>PDX Shelter</title>
 
   <!-- STYLESHEETS -->
   <link href="css/animate.min.css" rel="stylesheet">
@@ -22,17 +22,26 @@
   <!-- MAP -->
 
   <div id="map-canvas"></div>
-
+  <div id="overlay-video"></div>
+  <div class="background-image"></div>
+  <nav id="sidebar" class="visible-xs" style="width: 100%; height:50px">
+    <!-- <article id="sidebar" class="visible-xs-*"> -->
+      <header>
+        <h1 style="margin-bottom:30px"><img src="/img/pdxsheltericon.png"></h1>
+      </header>
+    <!-- </article> -->
+  </nav>
   <div id="sidebar-wrapper" class="hidden-xs"></div>
+
   <article id="sidebar" class="animated bounceInUp hidden-xs">
     <header>
-      <h1></i> PDXShelters</h1>
+      <h1 style="margin-bottom:30px"><img src="/img/pdxsheltericon.png"></h1>
     </header>
 
     <section class="content">
-      <h3>What is PDXShelters?</h3>
+      <h3>What is PDXShelter?</h3>
       <p>
-        PDXShelters is a resource for both providers and tenants of homeless shelters. Users can view shelter
+        PDXShelter is a resource for both providers and tenants of homeless shelters. Users can view shelter
         bed openings near them in real time and shelters can update their count on the fly.  Built to be used on both web
         and mobile platforms, we hope to help keep a roof over heads to those in need.
       </p>
@@ -61,7 +70,7 @@
 
     </section>
   </article>
-  <div id="rumble2014" style="position: fixed; display: block; height: 40px; width: 100%; z-index: 99999; bottom: 0px; left: 0px; padding: 10px 0px; text-align: center; margin: 0px; color: white; background-color: rgb(22, 22, 22);">
+  <div id="rumble2014" style="position: fixed; display: block; height: 40px; width: 100%; z-index: 99998; bottom: 0px; left: 0px; padding: 10px 0px; text-align: center; margin: 0px; color: white; background-color: rgb(22, 22, 22);">
     <span>made in 54 hours with  &#10084;  at <a style="text-decoration: none; font-weight: bold" href="http://www.up.co/communities/usa/portland/startup-weekend/4806">PDXSW2014</a></span><a href="http://www.github.com/geh4y8/pdxshelters"><img style="float:right; padding: 0px; margin-right: 1%" src="/img/github2.png"></a></div>
   </div>
 
@@ -83,6 +92,7 @@
     </div>
   </div>
 </div>
+
 
   <!-- JAVASCRIPT -->
   <!-- Google Maps -->
