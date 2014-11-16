@@ -79,23 +79,23 @@ function loadMarker(child){
 }
 
 function modalContent(child){
-  console.log(child)
-  console.log(child.hours)
-  var contentString = "<div id='phone'>" + child.phone + "</div>" + "<div id='hours'> Open: " + child.hours.open + "   Close: " + child.hours.close + "</div>" + "<a href=" + child.url + ">"+ child.url+ "</a>"
+  //console.log(child)
+  console.log(child.facilities.pets)
+  var contentString = "<div id='wrapper' style='width: 100%; height: 200px; font-size: 20px'><div id='name'>"+ child.name + "</div><div id='phone'>" + child.phone + "</div>" + "<div id='hours'> Open: " + child.hours.open + "   Close: " + child.hours.close + "</div>" + "<a href=" + child.url + ">"+ child.url+ "</a><br/>"
 
-  if(child.showers === 1){
-    contentString.concat("<img src=....>")
+  if(child.facilities.shower == true){
+    contentString += ("<img src='/img/shower.png'>")
   }
-  if(child.wifi === 1){
-    contentString.concat("<img src=...>")
+  if(child.facilities.wifi == true){
+    contentString += ("<img src='/img/wifi.png'>")
   }
-  if(child.pets === 1){
-    contentString.concat("<img src=...>")
+  if(child.facilities.pets == true){
+    contentString += ("<img src='/img/pets.png'>")
   }
-  if(child.food === 1){
-    contentString.concat("<img src=...>")
+  if(child.facilities.food == true){
+    contentString += ("<img src='/img/food.png'>")
   }
-  return contentString
+  return contentString + "</div>"
 }
 
 sheltersFirebaseRef.on('value', function(dataSnapshot){
