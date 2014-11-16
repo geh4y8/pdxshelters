@@ -4,7 +4,7 @@ var map;
 
 // Set the center as Firebase HQ
 var locations = {
-  "PDXSheltersHQ": [45.531190, -122.680241]
+  "PDXSheltersHQ": [45.531436, -122.655222]
 };
 var center = locations["PDXSheltersHQ"];
 
@@ -369,7 +369,7 @@ function toggleShelters(){
         shelter = child.val()
         var marker = shelterMarkerObjects[shelter.name];
         marker.setVisible(true)
-      })}) 
+      })})
   }else{
     sheltersFirebaseRef.on('value', function(dataSnapshot){
       dataSnapshot.forEach(function(child){
@@ -388,7 +388,7 @@ function toggleEvents(){
         evnt = child.val()
         var marker = eventMarkerObjects[evnt.name];
         marker.setVisible(true)
-      })}) 
+      })})
   }else{
     eventsFirebaseRef.on('value', function(dataSnapshot){
       dataSnapshot.forEach(function(child){
