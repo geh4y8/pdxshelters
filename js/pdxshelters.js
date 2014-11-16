@@ -32,7 +32,6 @@ sheltersFirebaseRef.on("child_changed", function(snapshot) {
   }else{
     marker.setIcon("/img/"+"no"+changedShelter.beds + ".png")
   }
-
 })
 
 sheltersFirebaseRef.on("child_added", function(snapshot) {
@@ -45,62 +44,86 @@ sheltersFirebaseRef.on("child_added", function(snapshot) {
 var geoFire = new GeoFire(sheltersFirebaseRef)
 var markerObject = {};
 
-function loadMarker(child){
+function loadShelterMarker(shelter){
   // To add the marker to the map, use the 'map' property
-  var coords = child.coords.l
+  var coords = shelter.coords.l
   var shelterLatLong = new google.maps.LatLng(coords[0], coords[1]);
-  if(child.beds > 10){
+  if(shelter.beds > 10){
     var iconName = "/img/no10+.png"
-  }else if(child.beds === 0){
+  }else if(shelter.beds === 0){
 
   }else{
-    iconName = "/img/"+"no"+child.beds + ".png"
+    iconName = "/img/"+"no"+shelter.beds + ".png"
   }
   var marker = new google.maps.Marker({
       position: shelterLatLong,
       map: map,
-      title:"Hello World!",
       icon: iconName
   });
 
-  markerObject[child.name] = marker
+  markerObject[shelter.name] = marker
 
-  var contentString = modalContent(child);
+  var contentString = shelterDetails(shelter);
   var infowindow = new google.maps.InfoWindow({
     content: contentString
   })
   google.maps.event.addListener(marker, 'click', function() {
-    //map.setZoom(16);
-    //map.setCenter(marker.getPosition());
     infowindow.open(map, marker)
   });
-
-
 }
 
-function modalContent(child){
-  //console.log(child)
-  console.log(child.facilities.pets)
-  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name'>"+ child.name + "</div><div id='phone'>" + child.phone + "</div>" + "<div id='hours'> Open: " + child.hours.open + "   Close: " + child.hours.close + "</div>" + "<a href=" + child.url + ">"+ child.url+ "</a><br/>"
+function loadEventMarker(evnt){
+  var coords = evnt.coords.l
+  var eventLatLong = new google.maps.LatLng(coords[0], coords[1]);
+  var marker = new google.maps.Marker({
+      position: eventLatLong,
+      map: map,
+  });
 
-  if(child.facilities.shower == true){
+  var contentString = eventDetails(evnt);
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  })
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map, marker)
+  });
+}
+
+function shelterDetails(shelter){
+  //console.log(shelter)
+  console.log(shelter.facilities.pets)
+  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name'>"+ shelter.name + "</div><div id='phone'>" + shelter.phone + "</div>" + "<div id='hours'> Open: " + shelter.hours.open + "   Close: " + shelter.hours.close + "</div>" + "<a href=" + shelter.url + ">"+ shelter.url+ "</a><br/>"
+
+  if(shelter.facilities.shower == true){
     contentString += ("<img src='/img/shower.png'>")
   }
-  if(child.facilities.wifi == true){
+  if(shelter.facilities.wifi == true){
     contentString += ("<img src='/img/wifi.png'>")
   }
-  if(child.facilities.pets == true){
+  if(shelter.facilities.pets == true){
     contentString += ("<img src='/img/pets.png'>")
   }
-  if(child.facilities.food == true){
+  if(shelter.facilities.food == true){
     contentString += ("<img src='/img/food.png'>")
   }
   return contentString + "</div>"
 }
 
+function eventDetails(evnt){
+  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name'>"+ evnt.name + "</div><div id='desc'>" + evnt.description + "</div><div id='location'>" + evnt.location + "</div>"
+  return contentString
+}
+
 sheltersFirebaseRef.on('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
-    loadMarker(child.val())
+    loadShelterMarker(child.val())
+  })
+})
+
+eventsFirebaseRef.on('value', function(dataSnapshot){
+  dataSnapshot.forEach(function(child){
+    loadEventMarker(child.val())
   })
 })
 
