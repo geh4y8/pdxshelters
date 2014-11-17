@@ -15,17 +15,12 @@ var radiusInKm = 1;
 var sheltersFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/shelters")
 var eventsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/events")
 
-//console.log(sheltersFirebaseRef.child('pdxshelters'))
-
 
 sheltersFirebaseRef.on("child_changed", function(snapshot) {
   var changedShelter = snapshot.val();
   console.log("The updated shelter has " + changedShelter.beds + " beds");
   console.log(changedShelter.name)
   var marker = shelterMarkerObjects[changedShelter.name];
-  // for(var key in shelterMarkerObjects){
-  //   shelterMarkerObjects[key] = null
-  // }
   marker.setIcon(shelterIconName(changedShelter))
 })
 
@@ -170,16 +165,16 @@ function initializeMap() {
 /*  HELPER FUNCTIONS  */
 /**********************/
 /* Adds a marker for the inputted shelter to the map */
-function createShelterMarker(shelter) {
-  var marker = new google.maps.Marker({
-    icon: "https://chart.googleapis.com/chart?chst=d_bubble_icon_text_small&chld=" + vehicle.vtype + "|bbT|" + vehicle.routeTag + "|" + vehicleColor + "|eee",
-    position: new google.maps.LatLng(shelter.lat, shelter.lon),
-    optimized: true,
-    map: map
-  });
-
-  return marker;
-}
+// function createShelterMarker(shelter) {
+//   var marker = new google.maps.Marker({
+//     icon: "https://chart.googleapis.com/chart?chst=d_bubble_icon_text_small&chld=" + vehicle.vtype + "|bbT|" + vehicle.routeTag + "|" + vehicleColor + "|eee",
+//     position: new google.maps.LatLng(shelter.lat, shelter.lon),
+//     optimized: true,
+//     map: map
+//   });
+//
+//   return marker;
+// }
 
 var showShelters = 1
 var showEvents = 1
