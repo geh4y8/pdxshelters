@@ -198,3 +198,16 @@ header .carousel-indicators li {
 	text-indent: -999px;
 	cursor: pointer;
 }
+
+
+.iphone-tagline{
+	overflow: hidden;
+	padding: 100px 0px 100px 0px;
+	min-height: 200px;
+}
+
+.iphone-tagline button{
+	width: 152px;
+	height: 52px;
+	color: white;
+}
