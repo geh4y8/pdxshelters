@@ -162,6 +162,7 @@ header p.lead{
 header .carousel-iphone{
 	margin-right: auto;
 	margin-left: auto;
+  margin-top: 200px;
 	width: 320px;
 	height: 672px;
 	background: url('../img/iphone-front.png') no-repeat;
