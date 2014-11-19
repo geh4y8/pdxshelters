@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+  <title>PDX Shelter</title>
+
+  <!-- STYLESHEETS -->
+  <link href="css/animate.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/buttons.css" rel="stylesheet">
+  <link href="css/site.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/material.min.css" rel="stylesheet">
+  <link href="css/ripples.min.css" rel="stylesheet">
+  <link href="css/material-wfont.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- MAP -->
+
+  <div id="map-canvas"></div>
+  <div id="overlay-video"></div>
+  <div class="background-image"></div>
+  <nav id="sidebar" class="visible-xs" style="width: 100%; height:50px">
+    <!-- <article id="sidebar" class="visible-xs-*"> -->
+      <header>
+        <h1 style="margin-bottom:30px"><img src="/img/pdxsheltericon.png"></h1>
+      </header>
+    <!-- </article> -->
+  </nav>
+  <div id="sidebar-wrapper" class="hidden-xs"></div>
+
+  <article id="sidebar" class="animated bounceInUp hidden-xs">
+    <header>
+      <h1 style="margin-bottom:30px"><img src="/img/pdxsheltericon.png"></h1>
+    </header>
+
+    <section class="content">
+      <h3>What is PDXShelter?</h3>
+      <p>
+        PDXShelter is a resource for both providers and tenants of homeless shelters. Users can view shelter
+        bed openings near them in real time and shelters can update their count on the fly.  Built to be used on both web
+        and mobile platforms, we hope to help keep a roof over heads to those in need.
+      </br>
+    </br>
+        ***still in production, please call for availabilities***
+      </p>
+      <b>SHELTERS</b>
+      <div class="ronoffswitch">
+          <input type="checkbox" name="ronoffswitch" class="ronoffswitch-checkbox" id="rmyonoffswitch"  onclick="toggleShelters()", checked="true", checked>
+          <label class="ronoffswitch-label" for="rmyonoffswitch">
+              <span class="ronoffswitch-inner"></span>
+              <span class="ronoffswitch-switch"></span>
+          </label>
+      </div>
+      <br/><b>EVENTS</b>
+      <div class="onoffswitch">
+          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"  onclick="toggleEvents()", checked="true", checked>
+          <label class="onoffswitch-label" for="myonoffswitch">
+              <span class="onoffswitch-inner"></span>
+              <span class="onoffswitch-switch"></span>
+          </label>
+      </div>
+
+      <button type="button" class="btn btn-success btn-lg" id="shelter-login-button" data-toggle="modal" data-target="#myModal" >SHELTER LOGIN</button>
+      <div class="row">
+      <div class="col-lg-6">
+
+    </section>
+  </article>
+  <div id="pdxsw2014" style="position: fixed; display: block; height: 40px; width: 100%; z-index: 99998; bottom: 0px; left: 0px; padding: 10px 0px; text-align: center; margin: 0px; color: white; background-color: #585555;">
+    <span>made in 54 hours with  <span style="color:red; font-size:20px">&#10084;</span>  at <a style="text-decoration: none; font-weight: bold" href="http://www.up.co/communities/usa/portland/startup-weekend/4806">PDXSW2014</a></span><a href="http://www.github.com/geh4y8/pdxshelters"><img style="float:right; padding: 0px; margin-right: 1%" src="/img/github2.png"></a></div>
+  </div>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Shelter Info</h4>
+      </div>
+      <div class="modal-body">
+        PDX Shelter is a Portland-based online resource for homeless shelters and the homeless in Portland.  Users can view bed availability, create a user profile and make shelter reservations.  The mobile and web app allows shelters to update their bed availability and check in guests while saving the information to a database for quick future check-in.
+      </div>
+      <div class="modal-footer">
+        <button id='guestForm' type="button" class="btn btn-success disabled" data-toggle="modal" data-target="#intakeForm">Guest Registration</button>
+        <button type="button" class="btn btn-danger" id="googleOauth">Login With Google</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="intakeForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog" style="width:600px">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+      <h4 class="modal-title" id="myModalLabel">Intake Form</h4>
+    </div>
+    <div class="modal-body">
+        <form id="intakeForms" class="form-horizontal">
+          <fieldset>
+            <div class="form-group">
+              <label for="inputFirstName" class="col-lg-2 control-label">First Name</label>
+              <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputLastName" class="col-lg-2 control-label">Last Name</label>
+              <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputSocialSecurity" class="col-lg-2 control-label">Social Security Number</label>
+              <div class="col-lg-10">
+                  <input type="text" class="form-control" id="inputSocialSecurity" placeholder="Social Security Number">
+              </div>
+            </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Social Security</label>
+            <div class="col-lg-10">
+                <div class="radio radio-primary">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                        I don't have one
+                    </label>
+                </div>
+                <div class="radio radio-primary">
+                    <label>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        I don't want to share this
+                    </label>
+                </div>
+            </div>
+        </div>
+        <button style="float:right" type="submit" class="submit btn btn-primary">Submit</button>
+
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- JAVASCRIPT -->
+  <!-- Google Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6U2ExB8yLDc7RiGPYK3C3yIzDPpyFJE0&sensor=false"></script>
+
+  <!-- jQuery -->
+  <script src="js/vendor/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="js/vendor/bootstrap.min.js"></script>
+
+  <!-- Material -->
+  <script src="js/vendor/material.min.js"></script>
+  <script src="js/vendor/ripples.min.js"></script>
+
+  <!-- Firebase -->
+  <script src="js/vendor/firebase.js"></script>
+
+  <!-- RSVP -->
+  <script src="js/vendor/rsvp.min.js"></script>
+
+  <!-- GeoFire -->
+  <script src="js/vendor/geofire.min.js"></script>
+
+  <!-- Lo-Dash -->
+  <script src="js/vendor/lodash.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="js/oauth.js"></script>
+
+  <script src="js/pdxshelters.js"></script>
+
+
+
+
+
+  <script type="text/javascript">
+    google.maps.event.addDomListener(window, "load", initializeMap);
+  </script>
+</body>
+</html>
