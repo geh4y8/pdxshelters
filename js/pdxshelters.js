@@ -34,6 +34,16 @@ sheltersFirebaseRef.on("child_added", function(snapshot) {
 var geoFire = new GeoFire(sheltersFirebaseRef);
 var shelterMarkerObjects = {};
 var eventMarkerObjects = {};
+var openWindow;
+
+function openSoloWindow(infowindow, marker){
+  //close the last opened window first
+  if (typeof openWindow != "undefined"){
+    openWindow.close()
+  }
+  infowindow.open(map, marker)
+  openWindow = infowindow;
+}
 
 function shelterIconName(shelter){
   if(shelter.beds > 10){
@@ -60,9 +70,7 @@ function loadShelterMarker(shelter){
   var infowindow = new google.maps.InfoWindow({
     content: contentString
   })
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map, marker)
-  });
+  google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
 }
 
 function loadEventMarker(evnt){
@@ -81,9 +89,7 @@ function loadEventMarker(evnt){
     content: contentString
   })
 
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map, marker)
-  });
+  google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
 }
 
 function shelterDetails(shelter){
@@ -215,4 +221,10 @@ function toggleEvents(){
         marker.setVisible(false)
       })})
   }
+}
+
+function overlay() {
+  el = document.getElementById("overlay");
+  console.log("Setting visibility to: ", (el.style.visibility == "visible") ? "hidden" : "visible")
+  el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
 }
