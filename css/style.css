@@ -199,10 +199,13 @@ header .carousel-indicators li {
 	cursor: pointer;
 }
 
+.iphone-text{
+  margin-top:150px;
+}
 
 .iphone-tagline{
 	overflow: hidden;
-	padding: 100px 0px 100px 0px;
+	padding: 150px 0px 75px 0px;
 	min-height: 200px;
 }
 
