@@ -216,3 +216,10 @@ function toggleEvents(){
       })})
   }
 }
+
+function overlay() {
+  console.log("Show Dialog!")
+  el = document.getElementById("overlay");
+  console.log("Setting visibility to: ", (el.style.visibility == "visible") ? "hidden" : "visible")
+  el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+}
