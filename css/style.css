@@ -371,7 +371,7 @@ header .carousel-indicators li {
 
 .get-it ul li a{
 	color: #aaa;
-	font-size: 1.2em;
+	font-size: 2em;
 	-webkit-transition: all 300ms ease-in-out;
 	-moz-transition: all 300ms ease-in-out;
 	-ms-transition: all 300ms ease-in-out;
@@ -464,6 +464,7 @@ header, .social{
 	.features col-md-4{
 		margin-bottom: 50px;
 	}
+
 
 }
 
