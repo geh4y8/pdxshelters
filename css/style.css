@@ -27,16 +27,16 @@ p{
 button {
 	display: inline-block;
 	margin-bottom: 0;
-	margin-bottom: 10px;
-	padding: 6px 12px;
+	margin-bottom: 0.625em;
+	padding: 0.375em 0.750em;
 	border: 1px solid transparent;
-	border-radius: 4px;
+	border-radius: 0.25em;
 	border-radius: 5px;
 	vertical-align: middle;
 	text-align: center;
 	white-space: nowrap;
 	font-weight: normal;
-	font-size: 14px;
+	font-size: 1ems;
 	line-height: 1.428571429;
 	cursor: pointer;
 	-webkit-user-select: none;
@@ -83,9 +83,9 @@ header h1,
 
 nav.navbar{
 	position: fixed;
-	top: -72px;
+	top: -4.5em;
 	margin-bottom: 0px;
-	padding: 10px 0px 10px 0px;
+	padding: 0.625em 0em 0.625em 0em;
 	width: 100%;
 	border-radius: 0px;
 	transition: all 0.2s;
@@ -136,8 +136,8 @@ nav.navbar.fixed-to-top{
 /*-----------------------------------------------------------------------------------*/
 
 header{
-	padding: 150px 0px 0px 0px;
-	height: 960px;
+	padding: 9.375em 0px 0px 0px;
+	height: 60em;
 	background: url('../img/bench.jpg');
 	background-color: white!important;
 	background-size: cover;
@@ -149,22 +149,22 @@ header h1{
 	text-transform: uppercase;
 	font-weight: 700;
 	font-weight: 300;
-	font-size: 100px;
+	font-size: 6.25em;
 	font-family: 'Roboto Condensed', sans-serif;
 
 }
 
 header p.lead{
-	font-size: 36px;
+	font-size: 2.25em;
 }
 
 
 header .carousel-iphone{
 	margin-right: auto;
 	margin-left: auto;
-  margin-top: 200px;
-	width: 320px;
-	height: 672px;
+  margin-top: 12.5em;
+	width: 20em;
+	height: 42em;
 	background: url('../img/iphone-front.png') no-repeat;
 	background-size: 100%;
 
@@ -174,28 +174,28 @@ header .carousel {
 	position: relative;
 	margin-right: auto;
 	margin-left: auto;
-	padding: 95px 0px 0px 4px;
-	width: 282px;
+	padding: 5.938em 0px 0px 0.25em;
+	width: 17.625em;
 }
 
 header .carousel-indicators .active {
-	width: 15px;
-	height: 15px;
+	width: 0.938em;
+	height: 0.938em;
 	background: #444444;
 }
 
 header .carousel-indicators {
-	bottom: -63px;
+	bottom: -3.938em;
 }
 
 header .carousel-indicators li {
 	display: inline-block;
 	margin: 1px;
-	width: 15px;
-	height: 15px;
+	width: 0.938em;
+	height: 0.938em;
 	border: 1px solid #666666;
 	border-radius: 10px;
-	text-indent: -999px;
+	text-indent: -62.438em;
 	cursor: pointer;
 }
 
@@ -205,20 +205,20 @@ header .carousel-indicators li {
 
 .iphone-tagline{
 	overflow: hidden;
-	padding: 150px 0px 75px 0px;
-	min-height: 200px;
+	padding: 9.375em 0em 4.688em 0px;
+	min-height: 12.500em;
 }
 
 .iphone-tagline button{
-	width: 152px;
-	height: 52px;
+	width: 9.500em;
+	height: 3.250em;
 	color: white;
 }
 
 .middle{
 	overflow: hidden;
-	padding: 230px 0px 150px 0px;
-	min-height: 600px;
+	padding: 14.375em 0em 9.375em 0em;
+	min-height: 37.500em;
 	background: url('../img/man.jpg');
 	background-position: center top;
 	background-repeat: repeat-x;
@@ -234,17 +234,17 @@ header .carousel-indicators li {
 
 .detail{
 	overflow: hidden;
-	padding: 50px 0px 0px 0px;
-	min-height: 500px;
+	padding: 3.125em 0em 0em 0em;
+	min-height: 31.250em;
 }
 
 .detail .title{
-	margin-bottom: 80px;
+	margin-bottom: 5em;
 	text-align: center;
 }
 
 .detail .features .row{
-	margin-bottom: 40px;
+	margin-bottom: 2.5em;
 }
 
 .detail .carousel h1{
@@ -268,9 +268,9 @@ header .carousel-indicators li {
 	overflow: hidden;
 	margin-right: auto;
 	margin-left: auto;
-	padding-top: 95px;
-	width: 320px;
-	height: 450px;
+	padding-top: 5.938em;
+	width: 20em;
+	height: 28.125em;
 	background: url('../img/iphone-front.png') no-repeat;
 	background-size: 100%;
 }
@@ -278,27 +278,27 @@ header .carousel-indicators li {
 .detail .app-screenshot img{
 	margin-right: auto;
 	margin-left: auto;
-	padding-left: 4px;
-	width: 280px;
+	padding-left: .25em;
+	width: 17.5em;
 }
 
 .detail .carousel-indicators {
 	position: relative;
 	bottom: 0;
 	left: 0;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
-	padding: 5px;
-	padding-bottom: 8px;
+	margin-top: 0em;
+	margin-bottom: 0em;
+	margin-left: 0em;
+	padding: 0.313em;
+	padding-bottom: 0.500em;
 	width: 100%;
 	border-top: 1px solid #eee;
 	background: #ffffff;
 }
 
 .detail .carousel-indicators .active {
-	width: 45px;
-	height: 5px;
+	width: 2.813em;
+	height: 0.313em;
 	border: none;
 	border-radius: 0px;
 }
@@ -306,12 +306,12 @@ header .carousel-indicators li {
 .detail .carousel-indicators li {
 	display: inline-block;
 	margin: 1px;
-	width: 45px;
-	height: 5px;
+	width: 2.813em;
+	height: 0.313em;
 	border: none;
 	border-radius: 0px;
 	background: #eeeeee;
-	text-indent: -999px;
+	text-indent: -62.438em;
 	cursor: pointer;
 }
 
@@ -321,8 +321,8 @@ header .carousel-indicators li {
 
 .social{
 	overflow: hidden;
-	padding: 80px 0px 150px 0px;
-	min-height: 350px;
+	padding: 5em 0em 9.375em 0em;
+	min-height: 21.875em;
 	background: url('../img/couple.jpg');
 	background-position: center top;
 	background-repeat: repeat-x;
@@ -334,7 +334,7 @@ header .carousel-indicators li {
 }
 
 .social a {
-	margin-left: 10px;
+	margin-left: 0.625em;
 	color: #FFF;
 	font-size: 5em;
 	transition: all 0.3s;
@@ -348,13 +348,13 @@ header .carousel-indicators li {
 
 
 .get-it{
-	padding: 100px 0px 160px 0px;
+	padding: 6.250em 0em 10em 0em;
 	text-align: center;
 }
 
 .get-it button.app-store{
-	width: 152px;
-	height: 52px;
+	width: 9.5em;
+	height: 3.25em;
 	background: url(../img/badge-appstore.png) #373737 no-repeat 0px 5px;
 	color: white;
 }
@@ -373,7 +373,7 @@ header .carousel-indicators li {
 
 .get-it ul li{
 	display: inline-block;
-	margin-left:30px;
+	margin-left: 1.875em;
 }
 
 .get-it ul li:first-child{
@@ -403,8 +403,8 @@ header .carousel-indicators li {
 @media (max-width:768px) {
 
 	header{
-		padding-bottom: 50px;
-		min-height: 1000px;
+		padding-bottom: 3.125em;
+		min-height: 62.5em;
 		height: 100%;
 	}
 
@@ -423,26 +423,26 @@ header .carousel-indicators li {
 }
 
 .detail p{
-		margin-bottom: 60px;
+		margin-bottom: 3.75em;
 }
 
 header, .social{
-	background-position-y: 0px;
+	background-position-y: 0em;
 	background-size: 200%;
 }
 
-.payoff{
-	padding-top: 50px;
-	padding-bottom: 50px;
-	min-height: 200px;
+.middle{
+	padding-top: 3.125em;
+	padding-bottom: 3.125em;
+	min-height: 12.5em;
 }
 
-.payoff h1{
-	font-size: 24px;
+.middle h1{
+	font-size: 1.5em;
 }
 
 .features .col-md-4{
-	margin-bottom: 60px;
+	margin-bottom: 3.75em;
 }
 
 }
@@ -450,30 +450,26 @@ header, .social{
 @media (max-width:480px){
 
 	header .carousel-iphone, .detail .app-screenshot{
-		width: 280px;
+		width: 17.5em;
 	}
 
 	header .carousel, .detail .app-screenshot img{
-		padding-top: 85px;
-		width: 245px;
+		padding-top: 5.313em;
+		width: 15.313em;
 	}
 
 	.detail .app-screenshot img{
-		margin-top: -12px;
-		padding-top: 0px;
+		margin-top: -0.75em;
+		padding-top: 0em;
 	}
 
 	header{
-		padding-top: 30px;
-		padding-bottom: 0px;
+		padding-top: 1.875em;
+		padding-bottom: 0em;
 	}
 
 	header h1{
-		font-size: 70px;
-	}
-
-	.purchase{
-		padding-top: 50px;
+		font-size: 4.375em;
 	}
 
 	.features col-md-4{
