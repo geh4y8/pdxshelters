@@ -108,8 +108,8 @@
 }
 
 #shelter-login-button{
-   bottom:0;
-   position:absolute;
+   bottom:-3rem;
+   position:relative;
 
 }
 

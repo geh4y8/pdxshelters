@@ -83,7 +83,7 @@ header h1,
 
 nav.navbar{
 	position: fixed;
-	top: -4.5em;
+	top: -4.5rem;
 	margin-bottom: 0px;
 	padding: 0.625em 0em 0.625em 0em;
 	width: 100%;
@@ -138,7 +138,7 @@ nav.navbar.fixed-to-top{
 header{
 	padding: 9.375em 0px 0px 0px;
 	height: 60em;
-	background: url('../img/bench.jpg');
+	background: url('../img/chalkboard.jpg');
 	background-color: white!important;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -146,23 +146,23 @@ header{
 }
 
 header h1{
-	text-transform: uppercase;
 	font-weight: 700;
 	font-weight: 300;
 	font-size: 6.25em;
 	font-family: 'Roboto Condensed', sans-serif;
+	color: white;
 
 }
 
 header p.lead{
 	font-size: 2.25em;
+	color: white;
 }
 
 
 header .carousel-iphone{
 	margin-right: auto;
 	margin-left: auto;
-  margin-top: 12.5em;
 	width: 20em;
 	height: 42em;
 	background: url('../img/iphone-front.png') no-repeat;
@@ -199,10 +199,6 @@ header .carousel-indicators li {
 	cursor: pointer;
 }
 
-.iphone-text{
-  margin-top:150px;
-}
-
 .iphone-tagline{
 	overflow: hidden;
 	padding: 9.375em 0em 4.688em 0px;
@@ -219,9 +215,9 @@ header .carousel-indicators li {
 	overflow: hidden;
 	padding: 14.375em 0em 9.375em 0em;
 	min-height: 37.500em;
-	background: url('../img/man.jpg');
+	background: url('../img/dark_wood.jpg');
 	background-position: center top;
-	background-repeat: repeat-x;
+	background-repeat: repeat;
 	color: white;
 }
 
@@ -244,11 +240,11 @@ header .carousel-indicators li {
 }
 
 .detail .features .row{
-	margin-bottom: 2.5em;
+	margin-bottom: 2.5rem;
 }
 
 .detail .carousel h1{
-	font-size: 3.8em;
+	font-size: 3.8rem;
 }
 .detail .carousel h1, .detail p{
 	text-align: left;
@@ -323,14 +319,14 @@ header .carousel-indicators li {
 	overflow: hidden;
 	padding: 5em 0em 9.375em 0em;
 	min-height: 21.875em;
-	background: url('../img/couple.jpg');
+	background: url('../img/grey_wash_wall.png');
 	background-position: center top;
-	background-repeat: repeat-x;
-	color: white;
+	background-repeat: repeat;
+	color: black;
 }
 
 .social h2{
-	color: white;
+	color: black;
 }
 
 .social a {
@@ -350,13 +346,6 @@ header .carousel-indicators li {
 .get-it{
 	padding: 6.250em 0em 10em 0em;
 	text-align: center;
-}
-
-.get-it button.app-store{
-	width: 9.5em;
-	height: 3.25em;
-	background: url(../img/badge-appstore.png) #373737 no-repeat 0px 5px;
-	color: white;
 }
 
 .get-it hr{
