@@ -15,37 +15,42 @@
 	  <!-- NAVBAR
 	      ================================================== -->
 	  <nav class="navbar navbar-default" role="navigation">
-	  	  <div class="container">
+	  	  <div class="container-fluid">
 			  <div class="navbar-header">
+                  
+<!-- NOTHING IN NAVIGATION AT THIS POINT
 			    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 			      <span class="sr-only">Toggle navigation</span>
 			      <span class="icon-bar"></span>
 			      <span class="icon-bar"></span>
 			      <span class="icon-bar"></span>
 			    </button>
+-->
 
-			    <a class="navbar-brand" href="#"><image height="30px" width="100px" src="img/pdxsheltericon.png"></a>
+			    <a class="navbar-brand" href="#"><img height="30px" width="100px" src="img/pdxsheltericon.png"></a>
 
 			  </div>
+<!--
 			  <div class="collapse navbar-collapse navbar-ex1-collapse">
-			    <!-- <ul class="nav navbar-nav">
+			    <ul class="nav navbar-nav">
 			      <li><a onclick="$('header').animatescroll({padding:71});">Start</a></li>
 			      <li><a onclick="$('.detail').animatescroll({padding:71});">Screenshot</a></li>
 			      <li><a onclick="$('.features').animatescroll({padding:71});">Features</a></li>
 			      <li><a onclick="$('.social').animatescroll({padding:71});">Social</a></li>
-			    </ul> -->
+			    </ul>
 			  </div>
+-->
 		  </div>
 	  </nav>
 
     <!-- HEADER
 	   ================================================== -->
 	  <header>
-		 <div class="container">
+		 <div class="container-fluid">
 			 <div class="row">
 				 <div class="col-md-12">
-					  <h1>PDXShelter</h1>
-					  <p class="lead">Bridging the gap for those who need it most.</p>
+					  <h1 class="text-center">PDXShelter</h1>
+					  <p class="lead text-center">Bridging the gap for those who need it most.</p>
 
 					  <div class="carousel-iphone">
 					  	<div id="carousel-example-generic" class="carousel slide">
@@ -78,30 +83,30 @@
 	 </header>
 
    <section class="iphone-tagline">
-		  <div class="container">
+		  <div class="container-fluid">
 			  <div class="row">
-				  <div class="iphone-text" class="col-md-offset-2 col-md-8">
-					 <h1>Enabling access to real time shelter information.</h1>
-					 	    <p class="lead">Research shows that 70% of homeless youth have access to smartphones. <br />
+				  <div class="iphone-text text-center" class="col-md-offset-2 col-md-8">
+					 <h2 class="text-center">Enabling access to real time shelter information.</h2>
+					 	 <p class="lead text-center">Research shows that 70% of homeless youth have access to smartphones. <br />
                    We are a nonprofit organization dedicated to bringing critical resource information on demand.</p>
-					 	    <a href="demo.html"><button type="button" class="btn btn-success">Click for Demo</button></a>
+					 	 <a href="demo.html" id="demo-button" class="btn btn-demo" role="button">Click for Demo</a>
 				  </div>
 			  </div>
 		  </div>
 	 </section>
 
    <section class="middle">
-		<div class="container">
+		<div class="container-fluid">
 			  <div class="row">
-				  <div class="col-md-12">
-					  <h1>Built to be used on both web and mobile devices, we hope to provide a platform everyone can use, even the illiterate.</h1>
+				  <div class="text-center col-md-12">
+					  <h2>Built to be used on both web and mobile devices, we hope to provide a platform everyone can use, even the illiterate.</h2>
 				  </div>
 			  </div>
 		  </div>
 	  </section>
 
     <section class="detail">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
 					<div id="carousel-example-generic-2" class="carousel slide">
@@ -161,9 +166,9 @@
   <!-- SOCIAL
 	     ================================================== -->
 	  <section class="social">
-	  	<div class="container">
+	  	<div class="container-fluid" id="social">
 	  		  <div class="row">
-	  			  <div class="col-md-12">
+	  			  <div class="col-md-12 text-center">
 	  			  	<h2>Connect with us</h2>
 	  			   	<a href="http://twitter.com/pdxshelter" class="icon-twitter"></a>
 	  			   </div>
@@ -173,24 +178,23 @@
 
 
     <section class="get-it">
-	  	<div class="container">
+	  	<div class="container-fluid">
 	  		<div class="row">
 	  			<div class="col-md-12">
-	  				<h1>Stay tuned for more information!</h1>
+	  				<h2>Stay tuned for more information!</h2>
 	  				<p class="lead">There is a lot of work to be done, let us know if you can help!</p>
 	  			</div>
 	  			<div class="col-md-12">
-	  				<hr />
 		  			<ul>
-            	<li><a href="mailto:matthewdfountain@gmail.com?Subject=Hello%20PDXShelter!">Contact</a></li>
-            	<li><a href="http://twitter.com/pdxshelter">Twitter</a></li>
-            	<li><a href="mailto:guy.halperin88@gmail.com?Subject=I%20Can%20Help%20You%20Hack!">Developers</a></li>
-          	  <li><a href="credits.html">Credits</a></li>
-            </ul>
+                        <li><a href="mailto:matthewdfountain@gmail.com?Subject=Hello%20PDXShelter!">Contact</a></li>
+                        <li><a href="http://twitter.com/pdxshelter">Twitter</a></li>
+                        <li><a href="mailto:guy.halperin88@gmail.com?Subject=I%20Can%20Help%20You%20Hack!">Developers</a></li>
+                        <li><a href="credits.html">Credits</a></li>
+                    </ul>
 	  			</div>
 	  		</div>
 	  	</div>
-	  </section>
+    </section>
 
      <!-- JAVASCRIPT
 	     ================================================== -->
