@@ -223,7 +223,7 @@ header .carousel-indicators li {
 
 .middle h1{
   color: white;
-	font-weight: 1000;
+	font-weight: 500;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 2.8em;
 }
@@ -435,6 +435,11 @@ header, .social{
 }*/
 
 }
+
+/*#team {
+	background: url(../img/heart_tile.jpg) repeat-x;
+	background-size: 100%
+}*/
 
 .team-member {
     margin-bottom: 50px;
