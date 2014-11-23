@@ -502,3 +502,16 @@ header, .social{
     	color: white;
     }
 }
+
+/*PDXSW banner*/
+#banner-container {
+	width: 50%;
+	display:inline;
+	position: absolute;
+	z-index: 999;
+}
+
+.banner img {
+	float:right;	
+	z-index: 999;
+}

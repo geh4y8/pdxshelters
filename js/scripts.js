@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	$('header').addClass('visibility');
+	$('#banner-container').addClass('visibility');
 	$('.carousel-iphone').addClass('visibility');
 	$('.middle h1').addClass('visibility');
 	// $('.features .col-md-4').addClass('visibility');
@@ -9,6 +10,7 @@ $(document).ready(function() {
 //iphone carousel animation
 $(window).load(function () {
 	$('header').addClass("animated fadeIn");
+	$('#banner-container').addClass('animated fadeIn');
 	$('.carousel-iphone').addClass("animated fadeInLeft");
 });
 
