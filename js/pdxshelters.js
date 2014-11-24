@@ -12,15 +12,15 @@ var center = locations["PDXSheltersHQ"];
 var radiusInKm = 1;
 
 // Get a reference to the Firebase public transit open data set
-var sheltersFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/shelters")
-var eventsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/events")
-var mealsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/meals")
-
+var sheltersFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/shelters");
+var eventsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/events");
+var mealsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/meals");
+var clothFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/clothing");
 
 sheltersFirebaseRef.on("child_changed", function(snapshot) {
   var changedShelter = snapshot.val();
   var marker = shelterMarkerObjects[changedShelter.name];
-  marker.setIcon(shelterIconName(changedShelter))
+  marker.setIcon(shelterIconName(changedShelter));
 })
 
 sheltersFirebaseRef.on("child_added", function(snapshot) {
@@ -33,15 +33,16 @@ var geoFire = new GeoFire(sheltersFirebaseRef);
 var shelterMarkerObjects = {};
 var eventMarkerObjects = {};
 var mealMarkerObjects = {};
+var clothMarkerObjects = {};
 var openWindow;
 
 function openSoloWindow(infowindow, marker){
   //close the last opened window first
   if (typeof openWindow != "undefined"){
-    openWindow.close()
+    openWindow.close();
   }
-  infowindow.open(map, marker)
-  openWindow = infowindow;
+  infowindow.open(map, marker);
+  openWindow = infowindow
 }
 
 function shelterIconName(shelter){
@@ -110,6 +111,25 @@ function loadMealMarker(meal){
   google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
 }
 
+function loadClothMarker(cloth){
+  var coords = cloth.coords.l
+  var clothLatLong = new google.maps.LatLng(coords[0], coords[1]);
+  var marker = new google.maps.Marker({
+      position: clothLatLong,
+      map: map,
+      icon:'/img/clothMarker.png'
+  });
+
+  clothMarkerObjects[cloth.name] = marker
+
+  var contentString = clothDetails(cloth);
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  })
+
+  google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
+}
+
 function shelterDetails(shelter){
   //console.log(shelter)
   var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name', style='font-size: 24px; font-weight:bold' >"+ shelter.name + "</div><div id='phone'>" + shelter.phone + "</div>" + "<div id='hours'> Open: " + shelter.hours.open + "   Close: " + shelter.hours.close + "</div>" + "<a href=" + shelter.url + ">"+ shelter.url+ "</a><br/><div style='font-size:12px'>Last updated: 11-16-1014 18:28</div>"
@@ -147,6 +167,15 @@ function mealDetails(meal){
   return contentString
 }
 
+function clothDetails(cloth){
+  var contentString = "<div id='wrapper'><div id='cloth-name', style='font-size: 24px; font-weight:bold'>"+ cloth.name + "</div><div id='cloth-phone'>" + cloth.phone + "</div><div id='cloth-address', style='font-size:18px;'>" + cloth.address + "</div></div id='cloth-hours'>" + cloth.hours //+ "</div><div id='event-time'>" + cloth.time
+  if (cloth.url){
+    contentString+= '<br/><a href=' + cloth.url + ">" + cloth.url + "</a>"
+  }
+
+  return contentString
+}
+
 sheltersFirebaseRef.on('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
     loadShelterMarker(child.val())
@@ -162,6 +191,12 @@ eventsFirebaseRef.on('value', function(dataSnapshot){
 mealsFirebaseRef.on('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
     loadMealMarker(child.val())
+  })
+})
+
+clothFirebaseRef.on('value', function(dataSnapshot){
+  dataSnapshot.forEach(function(child){
+    loadClothMarker(child.val())
   })
 })
 
@@ -195,9 +230,10 @@ function initializeMap() {
 
  }
 
-var showShelters = 1
-var showEvents = 1
-var showMeals = 1
+var showShelters = 1;
+var showEvents = 1;
+var showMeals = 1;
+var showCloth = 1;
 
 function toggleShelters(){
   showShelters = !showShelters
@@ -243,7 +279,6 @@ function toggleMeals(){
     mealsFirebaseRef.on('value', function(dataSnapshot){
       dataSnapshot.forEach(function(child){
         meal = child.val()
-        console.log(meal)
         var marker = mealMarkerObjects[meal.name];
         marker.setVisible(true)
       })})
@@ -251,10 +286,28 @@ function toggleMeals(){
     mealsFirebaseRef.on('value', function(dataSnapshot){
       dataSnapshot.forEach(function(child){
         meal = child.val()
-        console.log(meal)
         var marker = mealMarkerObjects[meal.name];
         marker.setVisible(false)
       })})
+  }
+}
+
+function toggleClothing(){
+  showCloth = !showCloth
+  if (showCloth){
+    clothFirebaseRef.on('value', function(dataSnapshot){
+      dataSnapshot.forEach(function(child){
+        cloth = child.val();
+        var marker = clothMarkerObjects[cloth.name];
+        marker.setVisible(true);
+      })});
+  }else{
+    clothFirebaseRef.on('value', function(dataSnapshot){
+      dataSnapshot.forEach(function(child){
+        cloth = child.val();
+        var marker = clothMarkerObjects[cloth.name];
+        marker.setVisible(false);
+      })});
   }
 }
 
