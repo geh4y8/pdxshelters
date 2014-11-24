@@ -11,8 +11,8 @@
   <link href="css/buttons.css" rel="stylesheet">
   <link href="css/site.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/material.min.css" rel="stylesheet">
   <link href="css/ripples.min.css" rel="stylesheet">
+  <link href="css/material.min.css" rel="stylesheet">
   <link href="css/material-wfont.min.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
 
@@ -48,7 +48,25 @@
     </br>
         ***still in development, please call for availabilities***
       </p>
-      <b>SHELTERS</b>
+      <div class="form-group">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" onclick="toggleShelters()" checked="true"> Shelters
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" onclick="toggleMeals()" checked="true"> Meals
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" onclick="toggleEvents()" checked="true"> Events
+          </label>
+        </div>
+      </div>
+
+      <!-- <b>SHELTERS</b>
       <div class="ronoffswitch">
           <input type="checkbox" name="ronoffswitch" class="ronoffswitch-checkbox" id="rmyonoffswitch"  onclick="toggleShelters()", checked="true", checked>
           <label class="ronoffswitch-label" for="rmyonoffswitch">
@@ -58,7 +76,7 @@
       </div>
       <br/><b>MEALS</b>
       <div class="onoffswitch">
-          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"  onclick="toggleMeals()", checked="true", checked>
+          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch"  onclick="toggleMeals()", checked="false">
           <label class="onoffswitch-label" for="myonoffswitch">
               <span class="onoffswitch-inner"></span>
               <span class="onoffswitch-switch"></span>
@@ -71,7 +89,7 @@
               <span class="onoffswitch-inner"></span>
               <span class="onoffswitch-switch"></span>
           </label>
-      </div>
+      </div> -->
 
       <button type="button" class="btn btn-success btn-lg" id="shelter-login-button" data-toggle="modal" data-target="#myModal" >SHELTER LOGIN</button>
       <div class="row">
@@ -174,6 +192,11 @@
   <!-- Material -->
   <script src="js/vendor/material.min.js"></script>
   <script src="js/vendor/ripples.min.js"></script>
+  <script>
+    $(document).ready(function() {
+        $.material.init();
+    });
+  </script>
 
   <!-- Firebase -->
   <script src="js/vendor/firebase.js"></script>

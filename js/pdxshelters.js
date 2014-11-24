@@ -102,7 +102,7 @@ function loadMealMarker(meal){
 
   mealMarkerObjects[meal.name] = marker
 
-  var contentString = eventDetails(meal);
+  var contentString = mealDetails(meal);
   var infowindow = new google.maps.InfoWindow({
     content: contentString
   })
@@ -133,6 +133,15 @@ function eventDetails(evnt){
   var contentString = "<div id='wrapper'><div id='event-name', style='font-size: 24px; font-weight:bold'>"+ evnt.name + "</div><div id='event-desc'>" + evnt.description + "</div><div id='event-location', style='font-size:18px;'>" + evnt.location + "</div></div id='event-date'>" + evnt.date + "</div><div id='event-time'>" + evnt.time
   if (evnt.url){
     contentString+= '<br/><a href=' + evnt.url + ">" + evnt.url + "</a>"
+  }
+
+  return contentString
+}
+
+function mealDetails(meal){
+  var contentString = "<div id='wrapper'><div id='meal-name', style='font-size: 24px; font-weight:bold'>"+ meal.name + "</div><div id='meal-phone'>" + meal.phone + "</div><div id='meal-address', style='font-size:18px;'>" + meal.address + "</div></div id='meal-hours'>" + meal.hours //+ "</div><div id='event-time'>" + meal.time
+  if (meal.url){
+    contentString+= '<br/><a href=' + meal.url + ">" + meal.url + "</a>"
   }
 
   return contentString
