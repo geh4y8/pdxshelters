@@ -1,0 +1,332 @@
+{
+    "offset": 0,
+    "title": "Resources: Meals | rosecityresource.org",
+    "meals": [
+        {
+            "zip": "97202-7661",
+            "phone": "503-777-3829",
+            "address": "4033 SE Woodstock Blvd.",
+            "hours": "Hours for meals: 11:30 a.m. - 12:30 p.m. Sat.",
+            "name": "All Saints Episcopal Church",
+            "notes": "All Saints Episcopal Church 4033 SE Woodstock Blvd. Portland OR 97202-7661 503-777-3829 http://www.allsaintspdx.com Hours for meals: 11:30 a.m. - 12:30 p.m. Sat. Transit: 10, 19, 75. Hot meals every every Saturday. The Mustard Seed thrift shop is open 10:00a.m.-3:00p.m.",
+            "url": "http://www.allsaintspdx.com",
+            "city": "Portland"
+        },
+        {
+            "zip": "97227",
+            "phone": "503.888.4453",
+            "address": "3733 N Williams",
+            "hours": "Every Sunday, Meal at 5pm, Worship at 6pm",
+            "name": "Anawim (North)",
+            "notes": "Anawim (North) 3733 N Williams Portland OR 97227 503.888.4453 Every Sunday, Meal at 5pm, Worship at 6pm House Worship (Home cooked meal and home meeting)",
+            "city": "Portland"
+        },
+        {
+            "zip": "97203",
+            "phone": "503-888-4453",
+            "address": "6265 N. Columbia Way.",
+            "hours": "Saturday 11-1pm",
+            "name": "Anawim Trail Ministry",
+            "notes": "Anawim Trail Ministry 6265 N. Columbia Way. Portland OR 97203 503-888-4453 Saturday 11-1pm Food, clothes, socks, resources",
+            "city": "Portland"
+        },
+        {
+            "zip": "97209-3712",
+            "phone": "503-226-3911",
+            "address": "310 NW Glisan St.",
+            "hours": "6:30-7:30 a.m. (breakfast), 11:30 a.m.-12:30 p.m. (lunch), 5 p.m-6 p.m. (dinner), Monday-Saturday.",
+            "name": "Blanchet House",
+            "notes": "Blanchet House 310 NW Glisan St. Portland OR 97209-3712 503-226-3911 http://www.blanchethouse.org 6:30-7:30 a.m. (breakfast), 11:30 a.m.-12:30 p.m. (lunch), 5 p.m-6 p.m. (dinner), Monday-Saturday. Transit: Max All. Serving breakfast, lunch and dinner.",
+            "url": "http://www.blanchethouse.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97214-2215",
+            "phone": "503-231-9334",
+            "address": "526 SE Grand Ave.",
+            "hours": "Dinner at 5:45 p.m. Monday-Saturday.",
+            "notes": "City Team Int'l. 526 SE Grand Ave. Portland OR 97214-2215 503-231-9334 http://www.cityteam.org Dinner at 5:45 p.m. Monday-Saturday. Feeding program focuses on serving meals each evening (except Sunday) Shelter available, $5/night; Shower for overnight guests.",
+            "url": "http://www.cityteam.org",
+            "city": "Portland"
+        },
+        {
+            "phone": "503-639-4179",
+            "address": "12645 SW Pacific Hwy",
+            "hours": "Sunday 5:30p.m.-7p.m.",
+            "notes": "Community Cafe at St. Anthony School Cafeteria 12645 SW Pacific Hwy Tigard OR 503-639-4179 Sunday 5:30p.m.-7p.m. Transit: 12 Free hot dinner every Sunday. No ID required.",
+            "city": "Tigard"
+        },
+        {
+            "zip": "97123",
+            "phone": "503-615-1090",
+            "address": "750 SE 8th Ave.",
+            "hours": "Mon.-Fri., 9:00a.m.-5:00p.m.",
+            "name": "Community Senior Center of Hillsboro",
+            "notes": "Community Senior Center of Hillsboro 750 SE 8th Ave. Hillsboro OR 97123 503-615-1090 Mon.-Fri., 9:00a.m.-5:00p.m. Transit: 57 Congregate meals, trips, activities, client services, advocacy and legal services.",
+            "city": "Hillsboro"
+        },
+        {
+            "zip": "97209-3614",
+            "phone": "503-228-0746",
+            "address": "601 W. Burnside St.",
+            "hours": "7 p.m. Fri.",
+            "name": "Downtown Chapel",
+            "notes": "Downtown Chapel 601 W. Burnside St. Portland OR 97209-3614 503-228-0746 http://www.downtownchapel.org/foodpantry 7 p.m. Fri. Transit: Max All, 9, 12, 33, 54. Friday night it's ‘Brother Andre Café' inviting neighbors and guests of Old Town to join in a warm meal and fellowship. People are invited to go through the food line as often as they like.",
+            "url": "http://www.downtownchapel.org/foodpantry",
+            "city": "Portland"
+        },
+        {
+            "zip": "97205-2002",
+            "phone": "503-228-7465",
+            "address": "909 SW 11th Ave.",
+            "hours": "2:00pm-4:00pm",
+            "name": "First Baptist Church",
+            "notes": "First Baptist Church 909 SW 11th Ave. Portland OR 97205-2002 503-228-7465 http://www.fbc-portland.org 2:00pm-4:00pm Transit: Max Blue, Red. Hot lunches on Monday and Thursday. Food boxes with vouchers from TPI, CCC, NW Pilot Project, Outside In.",
+            "url": "http://www.fbc-portland.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97116",
+            "phone": "503-357-2021",
+            "address": "2037 Douglas St.",
+            "hours": "Mon.-Fri., 7:30a.m.-4:30p.m.; Breakfast 7:30a.m.-9:30a.m.; Lunch at 12:00p.m.-1:00p.m.",
+            "notes": "Forest Grove Senior & Community Center (FGSC) 2037 Douglas St. Forest Grove OR 97116 503-357-2021 http://www.fgseniorcenter.org Mon.-Fri., 7:30a.m.-4:30p.m.; Breakfast 7:30a.m.-9:30a.m.; Lunch at 12:00p.m.-1:00p.m. Transit: 57 Provides breakfast, lunch as well as Meals on Wheels service to homebound seniors. FGSC publishes a quarterly newsletter and offers a variety of activities and classes.",
+            "url": "http://www.fgseniorcenter.org",
+            "city": "Forest Grove"
+        },
+        {
+            "zip": "97232-1417",
+            "phone": "503-287-0418",
+            "address": "1535 NE 17th Ave.",
+            "hours": "6 p.m. Fri.; Snacks served on Tues., Wed. and Thurs., 11a.m.-1p.m.",
+            "name": "Grace Memorial Episcopal Church",
+            "notes": "Grace Memorial Episcopal Church 1535 NE 17th Ave. Portland OR 97232-1417 503-287-0418 http://www.grace-memorial.org 6 p.m. Fri.; Snacks served on Tues., Wed. and Thurs., 11a.m.-1p.m. Transit: 8, 9, 10, 77 Dinners and lunches. No sermon required. One per person, once a week.",
+            "url": "http://www.grace-memorial.org",
+            "city": "Portland"
+        },
+        {
+            "phone": "503-625-7067",
+            "address": "15659 SW Oregon St.",
+            "hours": "Last Thursday of month at 6p.m.",
+            "notes": "Hope Diner at St. Francis Church 15659 SW Oregon St. Sherwood OR 503-625-7067 Last Thursday of month at 6p.m. Transit: 12 Free hot dinner every Sunday. No ID required. Emergency food boxes also available for low income residents of Sherwood (zip code 97140 Only).",
+            "city": "Sherwood"
+        },
+        {
+            "address": "SW 9th Ave. at Washington, O'Bryant Square",
+            "name": "Living Hope Int'l",
+            "notes": "Living Hope Int'l SW 9th Ave. at Washington, O'Bryant Square Portland OR Transit: Max Breakfast buffet. Hours: 8-10 a.m. every Sunday.",
+            "city": "Portland"
+        },
+        {
+            "zip": "97124-3146",
+            "phone": "503-648-2950",
+            "address": "372 NE Lincoln St.",
+            "hours": "11:30 a.m. daily",
+            "name": "Loaves and Fishes",
+            "notes": "Loaves and Fishes 372 NE Lincoln St. Hillsboro OR 97124-3146 503-648-2950 http://www.feedseniors.org 11:30 a.m. daily Transit: 46 60+, free senior nutrition program meals, all others $5.50",
+            "url": "http://www.feedseniors.org",
+            "city": "Hillsboro"
+        },
+        {
+            "phone": "None",
+            "address": "SW 9th Ave. at Washington St.",
+            "hours": "8 a.m. first Sat. of each month",
+            "name": "O'Bryant Square",
+            "notes": "O'Bryant Square SW 9th Ave. at Washington St. Portland OR None 8 a.m. first Sat. of each month Transit: Max All. Every Sunday breakfast buffet served all morning.",
+            "city": "Portland"
+        },
+        {
+            "phone": "503-220-0438",
+            "address": "1432 SW 13th Ave",
+            "name": "Operation Nightwatch",
+            "notes": "Operation Nightwatch 1432 SW 13th Ave Portland OR 503-220-0438 Transit: Bus 6,MAX. Sandwiches and games. Hours: 7 p.m.-11 p.m. Thurs-Sat. Foot care 2nd and 4th Saturdays, 10 a.m. to noon.",
+            "city": "Portland"
+        },
+        {
+            "zip": "97124-5102",
+            "phone": "503-726-0773",
+            "address": "1400 NE 48th Ave.",
+            "hours": "5:30 p.m. Wednesday.",
+            "name": "Our Place Christian Church",
+            "notes": "Our Place Christian Church 1400 NE 48th Ave. Hillsboro OR 97124-5102 503-726-0773 http://www.ourplacechurch.com 5:30 p.m. Wednesday. Transit: 48 Wednesday evening meal service, clothes closet, and food pantry.",
+            "url": "http://www.ourplacechurch.com",
+            "city": "Hillsboro"
+        },
+        {
+            "phone": "None",
+            "address": "1550 NW Overton St at 16th",
+            "hours": "7 p.m., Fri.; 2 p.m. and 7 p.m., Sat.",
+            "name": "Overton Feed",
+            "notes": "Overton Feed 1550 NW Overton St at 16th Portland OR None 7 p.m., Fri.; 2 p.m. and 7 p.m., Sat. Transit: 17, 77, Streetcar Free meals served every weekend.",
+            "city": "Portland"
+        },
+        {
+            "zip": "97209-3906",
+            "address": "15 NW 3rd Ave.",
+            "hours": "10:30 a.m.- 11a.m., Saturday lunch",
+            "name": "People's Bible Church",
+            "notes": "People's Bible Church 15 NW 3rd Ave. Portland OR 97209-3906 10:30 a.m.- 11a.m., Saturday lunch Transit: Fareless Max All. Sunday morning hot breakfast, church services not required.",
+            "city": "Portland"
+        },
+        {
+            "zip": "97209-4007",
+            "phone": "503-906-7690",
+            "address": "111 W. Burnside St",
+            "hours": "Breakfast at 7 a.m. daily; Dinner at 6 p.m. daily.",
+            "name": "Portland Rescue Mission",
+            "notes": "Portland Rescue Mission 111 W. Burnside St Portland OR 97209-4007 503-906-7690 http://www.PortlandRescueMission.org Breakfast at 7 a.m. daily; Dinner at 6 p.m. daily. Transit: Max All, 16,12,19,20. Two daily meals, sermon not required. Meals are provided free of charge.",
+            "url": "http://www.PortlandRescueMission.org",
+            "city": "Portland"
+        },
+        {
+            "phone": "503-255-7611",
+            "address": "SW 9th Ave. at Washington St.",
+            "hours": "Lunch tickets given at 1 p.m. Meal serving begins at 3 p.m., Sun.",
+            "notes": "Potluck In The Park, O'Bryant Square SW 9th Ave. at Washington St. Portland OR 503-255-7611 http://www.potluckinthepark.org Lunch tickets given at 1 p.m. Meal serving begins at 3 p.m., Sun. Transit: Max All. Lunch and snacks on Sundays.",
+            "url": "http://www.potluckinthepark.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97215-1554",
+            "phone": "503-254-8168",
+            "address": "8147 SE Pine St at Ash Street.",
+            "hours": "7 p.m.-10 p.m. Friday.",
+            "name": "Rahab's Sisters",
+            "notes": "Rahab's Sisters 8147 SE Pine St at Ash Street. Portland OR 97215-1554 503-254-8168 http://www.rahabs-sisters.org 7 p.m.-10 p.m. Friday. Transit: 20, 72 Food and hospitality drop-in center. All women welcome for meal, personal hygiene supplies.",
+            "url": "http://www.rahabs-sisters.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97219",
+            "address": "3612 SW Troy",
+            "hours": "Tuesdays at 6p.m.",
+            "name": "Riversgate Church",
+            "notes": "Riversgate Church 3612 SW Troy Portland OR 97219 http://www.riversgate.net Tuesdays at 6p.m. Transit: 44 We serve a hot dinner every Tuesday evenings at 6:00pm. No sermon required.",
+            "url": "http://www.riversgate.net",
+            "city": "Portland"
+        },
+        {
+            "phone": "None",
+            "address": "SE Main just north of Hawthorn Bridge (under East Esplanade)",
+            "hours": "Wed. 6 p.m. - 8 p.m.",
+            "name": "Sanctity of Hope (SOH)",
+            "notes": "Sanctity of Hope (SOH) SE Main just north of Hawthorn Bridge (under East Esplanade) Portland OR None http://www.sanctityofhope.org Wed. 6 p.m. - 8 p.m. Transit: Bus Service: 4, 10, 14. Hot Dog dinners.",
+            "url": "http://www.sanctityofhope.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97209-3608",
+            "phone": "503-222-5694",
+            "address": "133 NW 6th Ave.",
+            "hours": "10 a.m.- 2:00 p.m. Mon. - Fri.",
+            "name": "Sisters Of The Road Café",
+            "notes": "Sisters Of The Road Café 133 NW 6th Ave. Portland OR 97209-3608 503-222-5694 http://www.sistersoftheroadcafe.org 10 a.m.- 2:00 p.m. Mon. - Fri. Transit: Max Green, Yellow. Lunches served daily. $1.50 cash, Oregon Trail Card, or barter meal for chores.",
+            "url": "http://www.sistersoftheroadcafe.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97214-1317",
+            "phone": "503-234-2028",
+            "address": "330 SE 11th Ave.",
+            "hours": "5 p.m. Mon. - Fri.; 3:30 p.m. Sun. Showers are on Mon. & Thurs., women 11:00a.m.-12:00p.m.; Men 1:30p.m.-4:00p.m.",
+            "notes": "St. Francis Dining Hall 330 SE 11th Ave. Portland OR 97214-1317 503-234-2028 5 p.m. Mon. - Fri.; 3:30 p.m. Sun. Showers are on Mon. & Thurs., women 11:00a.m.-12:00p.m.; Men 1:30p.m.-4:00p.m. Transit: 12, 19, 20. Serving dinners six days a week; closed on Sat. Free clothing, showers and hygiene products available after 10a.m.",
+            "city": "Portland"
+        },
+        {
+            "zip": "97222-7660",
+            "phone": "503-653-5880",
+            "address": "2036 SE Jefferson Ave.",
+            "hours": "2:15 p.m. on Sun.",
+            "notes": "St. John's Episcopal Church 2036 SE Jefferson Ave. Milwaukie OR 97222-7660 503-653-5880 http://www.stjohnsmilwaukie.org 2:15 p.m. on Sun. Transit: 31, 32, 33, 70 Meal service ministry.",
+            "url": "http://www.stjohnsmilwaukie.org",
+            "city": "Milwaukie"
+        },
+        {
+            "zip": "97201-5504",
+            "phone": "503-228-0842",
+            "address": "424 SW Mill St.",
+            "hours": "10 a.m.-11 a.m. Mon. - Fri.",
+            "notes": "St. Michael's & All Angels Church 424 SW Mill St. Portland OR 97201-5504 503-228-0842 10 a.m.-11 a.m. Mon. - Fri. Transit: MAX, Streetcar Sack lunches.",
+            "city": "Portland"
+        },
+        {
+            "zip": "97213-1402",
+            "phone": "503-284-7141",
+            "address": "1704 NE 43rd Ave.",
+            "hours": "11:30 a.m.-12:30 p.m., Second and last Saturday of each month.",
+            "notes": "St. Michael's & All Angels Church 1704 NE 43rd Ave. Portland OR 97213-1402 503-284-7141 http://www.stmaa.org 11:30 a.m.-12:30 p.m., Second and last Saturday of each month. Transit: 12, 77, Hollywood MAX Spaghetti lunch last Saturday of month/second Saturday of month mixed menu lunch.",
+            "url": "http://www.stmaa.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97212-3010",
+            "phone": "None",
+            "address": "120 NE Knott St.",
+            "hours": "11 a.m.-1 p.m. Saturdays.",
+            "notes": "St. Philip's 120 NE Knott St. Portland OR 97212-3010 None 11 a.m.-1 p.m. Saturdays. Transit: 4, 6, 33, 44 Saturday meal.",
+            "city": "Portland"
+        },
+        {
+            "zip": "97201-3390",
+            "phone": "503-223-6424",
+            "address": "1432 SW 13th Ave.",
+            "hours": "12 Noon",
+            "notes": "St. Stephen's Episcopal Church 1432 SW 13th Ave. Portland OR 97201-3390 503-223-6424 12 Noon Transit: MAX, Streetcar Chili lunch served on Tuesday.",
+            "city": "Portland"
+        },
+        {
+            "zip": "97214-4349",
+            "phone": "503-235-8726",
+            "address": "3520 SE Yamhill St.",
+            "hours": "Wednesday, 6 p.m.-7:p.m., dinner; Friday 6 p.m.- 8 p.m. dinner.",
+            "name": "Sunnyside Methodist Church",
+            "notes": "Sunnyside Methodist Church 3520 SE Yamhill St. Portland OR 97214-4349 503-235-8726 Wednesday, 6 p.m.-7:p.m., dinner; Friday 6 p.m.- 8 p.m. dinner. Transit: 14, 15, 75 Dinners, coffee house, bible study, entertainment.",
+            "city": "Portland"
+        },
+        {
+            "phone": "503-640-4311",
+            "address": "1712 NE Sandy",
+            "hours": "Mon., 11a.m.-1p.m., 5p.m.-7 (meals)",
+            "name": "The Salvation Army Corps",
+            "notes": "The Salvation Army Corps 1712 NE Sandy Portland OR 503-640-4311 Mon., 11a.m.-1p.m., 5p.m.-7 (meals) Transit: 12,20 Free hot meal on Wed. 11a.m.-1p.m., Mon. 5p.m.-7. No ID required for meals. Utility assistance applications accepted 9a.m.-11 weekdays, except Wed., for Hillsboro water service and PGE, when funds are available.",
+            "city": "Portland"
+        },
+        {
+            "phone": "503-639-3084",
+            "address": "11321 SW Naeve St.",
+            "hours": "6:00p.m.",
+            "name": "Tigard Covenant Church",
+            "notes": "Tigard Covenant Church 11321 SW Naeve St. Tigard OR 503-639-3084 6:00p.m. Transit: 12 Free hot dinner on the last Sunday of the month. Emergency food boxes for low income residents of Tigard or Tualatin, zip codes 97223, 97224, 97062. No ID required.",
+            "city": "Tigard"
+        },
+        {
+            "zip": "97209-1901",
+            "phone": "503-872-0756",
+            "address": "147 NW 19th Ave. at Everett St.",
+            "hours": "3:00 p.m. Last Sunday of each month. Housing assistance for seniors 11:30 a.m. - 2:30 p.m. Wed.",
+            "name": "Trinity Episcopal Cathedral Community Dinner",
+            "notes": "Trinity Episcopal Cathedral Community Dinner 147 NW 19th Ave. at Everett St. Portland OR 97209-1901 503-872-0756 3:00 p.m. Last Sunday of each month. Housing assistance for seniors 11:30 a.m. - 2:30 p.m. Wed. Transit: 17, 20. Community dinner for Seniors 55 years of age or older. Wheelchair access: NW Everett & NW Trinity Place.",
+            "city": "Portland"
+        },
+        {
+            "zip": "97209-3906",
+            "phone": "503-224-3958",
+            "address": "15 NW Third Ave.",
+            "hours": "Snacks, beverages, clothing, referral services and spiritual support. Hours: Sat. 2p.m.-4:30; Mon.-Fri., 10a.m.-12p.m & 2p.m.-4:30 hot lunch; 7:15p.m. Chapel & hot dinner. Fri. 6:30a.m. ONLY hot breakfast and sack lunches available. Peoples Bible Church with hot meal. Hours: Sat. 8:30a.m.-12p.m.",
+            "name": "Union Gospel Mission",
+            "notes": "Union Gospel Mission 15 NW Third Ave. Portland OR 97209-3906 503-224-3958 http://www.ugmportland.org Snacks, beverages, clothing, referral services and spiritual support. Hours: Sat. 2p.m.-4:30; Mon.-Fri., 10a.m.-12p.m & 2p.m.-4:30 hot lunch; 7:15p.m. Chapel & hot dinner. Fri. 6:30a.m. ONLY hot breakfast and sack lunches available. Peoples Bible Church with hot meal. Hours: Sat. 8:30a.m.-12p.m. Transit: MAX Meals; sack lunches.",
+            "url": "http://www.ugmportland.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97030",
+            "address": "59 NW Ava Ave",
+            "hours": "11-a.m.-1 p.m., and 2 p.m. Sundays. Mon.-Fri.",
+            "name": "Zarephath Pantry",
+            "notes": "Zarephath Pantry 59 NW Ava Ave Gresham OR 97030 http://www.zmgresham.org 11-a.m.-1 p.m., and 2 p.m. Sundays. Mon.-Fri. Hot meals served daily,",
+            "url": "http://www.zmgresham.org",
+            "city": "Gresham"
+        }
+    ],
+    "pageUrl": "http://www.rosecityresource.org/resources/meals"
+}

@@ -14,6 +14,7 @@ var radiusInKm = 1;
 // Get a reference to the Firebase public transit open data set
 var sheltersFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/shelters")
 var eventsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/events")
+var mealsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/meals")
 
 
 sheltersFirebaseRef.on("child_changed", function(snapshot) {
@@ -31,6 +32,7 @@ sheltersFirebaseRef.on("child_added", function(snapshot) {
 var geoFire = new GeoFire(sheltersFirebaseRef);
 var shelterMarkerObjects = {};
 var eventMarkerObjects = {};
+var mealMarkerObjects = {};
 var openWindow;
 
 function openSoloWindow(infowindow, marker){
@@ -89,6 +91,25 @@ function loadEventMarker(evnt){
   google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
 }
 
+function loadMealMarker(meal){
+  var coords = meal.coords.l
+  var mealLatLong = new google.maps.LatLng(coords[0], coords[1]);
+  var marker = new google.maps.Marker({
+      position: mealLatLong,
+      map: map,
+      icon:'/img/mealMarker.png'
+  });
+
+  mealMarkerObjects[meal.name] = marker
+
+  var contentString = eventDetails(meal);
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  })
+
+  google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
+}
+
 function shelterDetails(shelter){
   //console.log(shelter)
   var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name', style='font-size: 24px; font-weight:bold' >"+ shelter.name + "</div><div id='phone'>" + shelter.phone + "</div>" + "<div id='hours'> Open: " + shelter.hours.open + "   Close: " + shelter.hours.close + "</div>" + "<a href=" + shelter.url + ">"+ shelter.url+ "</a><br/><div style='font-size:12px'>Last updated: 11-16-1014 18:28</div>"
@@ -129,6 +150,12 @@ eventsFirebaseRef.on('value', function(dataSnapshot){
   })
 })
 
+mealsFirebaseRef.on('value', function(dataSnapshot){
+  dataSnapshot.forEach(function(child){
+    loadMealMarker(child.val())
+  })
+})
+
 /*  GEOLOCATE  */
 
 // Get the location of the user, re-intialize map to that location
@@ -161,6 +188,7 @@ function initializeMap() {
 
 var showShelters = 1
 var showEvents = 1
+var showMeals = 1
 
 function toggleShelters(){
   showShelters = !showShelters
@@ -195,6 +223,27 @@ function toggleEvents(){
       dataSnapshot.forEach(function(child){
         evnt = child.val()
         var marker = eventMarkerObjects[evnt.name];
+        marker.setVisible(false)
+      })})
+  }
+}
+
+function toggleMeals(){
+  showMeals = !showMeals
+  if (showMeals){
+    mealsFirebaseRef.on('value', function(dataSnapshot){
+      dataSnapshot.forEach(function(child){
+        meal = child.val()
+        console.log(meal)
+        var marker = mealMarkerObjects[meal.name];
+        marker.setVisible(true)
+      })})
+  }else{
+    mealsFirebaseRef.on('value', function(dataSnapshot){
+      dataSnapshot.forEach(function(child){
+        meal = child.val()
+        console.log(meal)
+        var marker = mealMarkerObjects[meal.name];
         marker.setVisible(false)
       })})
   }

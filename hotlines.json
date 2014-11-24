@@ -1,0 +1,231 @@
+{
+    "offset": 0,
+    "title": "Resources: Hotlines | rosecityresource.org",
+    "hotlines": [
+        {
+            "phone": "503-222-5555 or 211"
+        },
+        {
+            "phone": "503-244-1312 Teen line: 877-553-TEEN Español: 800-515-7848",
+            "name": "Alcohol Drug Helpline"
+        },
+        {
+            "phone": "503-222-9661",
+            "hours": "8:30 a.m. - 5 p.m. Mon. -Fri.",
+            "name": "Boys and Girls Aid Society",
+            "notes": "Counseling, adoption services, shelter program for women who are pregnant.",
+            "url": "http://www.boysandgirlsaid.org"
+        },
+        {
+            "phone": "503-281-2442",
+            "hours": "24-hour crisis line.",
+            "name": "Bradley-Angle House",
+            "notes": "For women and women with children fleeing domestic violence. 24-hour crisis line. Undisclosed location."
+        },
+        {
+            "phone": "503-731-3100",
+            "name": "Child Abuse/Reporting Hotline"
+        },
+        {
+            "phone": "503-654-2288",
+            "name": "Clackamas Women's Crisis Hotline"
+        },
+        {
+            "phone": "503-654-2288 or 888-654-2288",
+            "hours": "Call for 24-hour phone intake",
+            "name": "Clackamas Women's Services",
+            "notes": "Women and women w/children fleeing domestic violence or recent sexual abuse. No males over 18. 24-Hour phone intake.",
+            "url": "http://www.cwsor.org"
+        },
+        {
+            "phone": "503-256-1666",
+            "name": "Cocaine Anonymous",
+            "notes": "Help line and call center for people struggling with cocaine addiction."
+        },
+        {
+            "zip": "97204-1428",
+            "phone": "503-243-2081; 800-452-1694",
+            "address": "620 SW 5th Ave. Fifth Floor",
+            "name": "Disability Rights Oregon",
+            "notes": "Disability issues",
+            "city": "Portland"
+        },
+        {
+            "phone": "503-243-2081",
+            "name": "Disability Rights Oregon",
+            "notes": "Providing legal aid."
+        },
+        {
+            "phone": "866-469-8600 (toll free) 503-469-8620 (crisis line)",
+            "hours": "9 a.m.– 8 p.m. Mon.-Thurs. (call for intake)",
+            "notes": "Support for children ages 4 - 17 who have witnessed or experienced domestic or dating violence; also encouraging adult victims to participate in their children's treatment. Undisclosed location in Hillsboro.",
+            "url": "http://www.dvrc-or.org"
+        },
+        {
+            "phone": "1-800-669-9777",
+            "name": "Fair Housing Council of Oregon Discrimination Hotline",
+            "notes": "Discrimination hotline. Education and enforcement in the area of housing discrimination. Tests to determine discrimination. Files complaints on your behalf.",
+            "url": "http://www.fhco.org"
+        },
+        {
+            "phone": "800-777-2437",
+            "name": "HIV/AIDS Hotline"
+        },
+        {
+            "phone": "503-802-8300",
+            "name": "Housing Authority of Downtown Portland Public Housing Hotline",
+            "notes": "Public housing rental unit availability and referrals for affordable housing to individuals and families in Multnomah County. All public housing waiting lists are closed because the wait time exceeds a year.",
+            "url": "http://www.hapdx.org"
+        },
+        {
+            "phone": "211",
+            "name": "Housing Connections Internet Search Tool",
+            "notes": "Internet search tool for finding housing in Multnomah, Washington, Clackamas and Clark counties.",
+            "url": "http://www.housingconnections.org"
+        },
+        {
+            "phone": "503-234-1541",
+            "name": "International Refugee Center of Oregon",
+            "notes": "Assistance for refugees in the U.S. for less than 25 years.",
+            "url": "http://www.irco.org"
+        },
+        {
+            "phone": "503-684-3763, 800-452-7636",
+            "name": "Lawyer Referral Service",
+            "notes": "Referrals to attorneys in the area where callers need assistance.",
+            "url": "http://www.osbar.org"
+        },
+        {
+            "phone": "888-645-1666 (toll free) 503-645-9010 (Intake)",
+            "name": "LifeWorks Northwest",
+            "notes": "Adult Counseling Services, multiple sites. Options for individuals, couples, and families who seek counseling services in coping with divorce, parenting, depression, domestic violence, and relationships. Culturally specific services available.",
+            "url": "http://www.lifeworksnw.org"
+        },
+        {
+            "phone": "1-800-923-4357",
+            "name": "Lines for Life",
+            "notes": "Teen line: 1-877-553-TEEN (8336) Espanol: 1-877-515-7848",
+            "url": "http://www.linesforlife.org"
+        },
+        {
+            "phone": "503-988-4888, 800-716-9769",
+            "hours": "24-hour hotline.",
+            "name": "Mental Health Call Center",
+            "notes": "24-hour, mental health resource and information referral, crisis support and mental health emergency assistance throughout Multnomah County. Mental health assistance and referral through Project Respond."
+        },
+        {
+            "phone": "888-457-4838",
+            "name": "Military Helpline",
+            "notes": "Information and referral for military members, veterans and families."
+        },
+        {
+            "phone": "503-988-4888; (24 hrs) 800-716-9769",
+            "name": "Multnomah County Crisis Line",
+            "notes": "Mental health concerns, low-cost counseling referrals"
+        },
+        {
+            "phone": "503-988-3816"
+        },
+        {
+            "phone": "503-727-3733",
+            "name": "Narcotics Anonymous"
+        },
+        {
+            "phone": "800-422-4453",
+            "name": "National Child Abuse Hotline"
+        },
+        {
+            "phone": "800-273-0557",
+            "name": "OHP Client Advocate Services Unit",
+            "notes": "For questions about coverage and billing in the Oregon Health Plan."
+        },
+        {
+            "phone": "800-913-4284",
+            "name": "Oregon Prescription Drug Program",
+            "notes": "Helps Oregonians purchase prescription drugs at discounted prices. Maintains a list of prescription drugs for the best possible price. View prescriptions online.",
+            "url": "http://www.opdp.org"
+        },
+        {
+            "phone": "211",
+            "name": "Oregon Safenet",
+            "notes": "Helpline for women, teens and children; statewide referral services for health care, social, and mental health services, pregnancy and reproductive health services."
+        },
+        {
+            "phone": "888-477-2669",
+            "notes": "Connects uninsured and under-insured Oregonians with free or discounted prescriptions through patient assistance programs.",
+            "url": "http://www.pparxor.org"
+        },
+        {
+            "phone": "800-222-1222",
+            "name": "Poison Control Center",
+            "notes": "Emergency assistance for immediate poisonings."
+        },
+        {
+            "phone": "503-535-3901",
+            "name": "Portland Bad Date Line",
+            "notes": "Reporting line for violent or abusive customers in the sex industry. Reports are anonymous and distributed to the industry."
+        },
+        {
+            "phone": "503-235-5333, 888-235-5333",
+            "name": "Portland Women's Crisis Line",
+            "url": "http://www.pwcl.org"
+        },
+        {
+            "phone": "503-988-3222",
+            "name": "Rape Victims Advocate"
+        },
+        {
+            "phone": "503-222-6222",
+            "hours": "9 a.m.-5 p.m.",
+            "name": "Raphael House of Portland",
+            "notes": "24-hour crisis line. Emergency housing for victims fleeing a domestic violence situation. Advocacy includes support groups, children's groups, referrals, and emotional support. 60-day limit.",
+            "url": "http://www.raphaelhouse.com"
+        },
+        {
+            "phone": "503-288-0130",
+            "name": "Renters Rights Hotline"
+        },
+        {
+            "zip": "97005-4649",
+            "phone": "503-640-5311",
+            "address": "4900 SW Griffith Dr. Ste. 100",
+            "name": "Sexual Assault Resource Center",
+            "city": "Beaverton"
+        },
+        {
+            "phone": "800-772-1213",
+            "name": "Social Security Information",
+            "notes": "For questions about Social Security benefits."
+        },
+        {
+            "phone": "800-273-8255",
+            "name": "Suicide Prevention"
+        },
+        {
+            "phone": "(800) 273-8255 Press #1 for Veterans",
+            "hours": "24/7 Hotline",
+            "name": "Veterans Suicide Prevention Hotline",
+            "notes": "National suicide prevention hotline to ensure veterans in emotional crisis have free 24/7 access to trained counselors.",
+            "url": "http://www.suicidepreventionlifeline.org/Veterans/Default.aspx"
+        },
+        {
+            "phone": "503-771-5503",
+            "name": "Volunteers of America Home Free",
+            "notes": "Domestic violence intervention, support groups (children & adults) advocacy and emergency vouchering when available."
+        },
+        {
+            "phone": "503-291-9111 (Crisis Line)",
+            "hours": "24/7",
+            "name": "Washington County Crisis Team",
+            "notes": "Call for crisis intervention, support and appropriate referrals."
+        },
+        {
+            "phone": "Crisis Line: 503-535-3269",
+            "address": "Undisclosed Location",
+            "name": "Yolanda House",
+            "notes": "An emergency shelter and service program for women survivors of domestic or sexual violence and their children.",
+            "url": "http://www.ywca.org"
+        }
+    ],
+    "pageUrl": "http://www.rosecityresource.org/resources/hotlines"
+}

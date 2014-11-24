@@ -1,0 +1,250 @@
+{
+    "offset": 0,
+    "title": "Resources: Clothing | rosecityresource.org",
+    "clothing": [
+        {
+            "phone": "503-591-4176",
+            "address": "16550 SW Merlo Rd, Portable #1",
+            "hours": "8 a.m.-4 p.m. Mon-Fri.",
+            "name": "Beaverton Family Resource Center",
+            "notes": "Children's clothing and diapers provided through Northwest Children's Outreach. Parenting classes and referrals for energy assistance available. Serving Beaverton area primarily, call in advance. Bus service: MAX Blue or Red",
+            "city": "Beaverton"
+        },
+        {
+            "phone": "503-270-0272",
+            "address": "12555 SW 4th St. #206",
+            "hours": "9 a.m.- 3 p.m. Mon, Tues, and Wed.",
+            "name": "Beaverton Hispanic Resource Center",
+
+            "notes": "English and Spanish classes; assistance for food, employment, and emergency needs. Referrals for clothing, immigration, medical car, domestic violence, and counseling. Translation services and help filling out forms.",
+            "url": "http://www.beavertonhrc.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97006-5152",
+            "phone": "503-591-4443",
+            "address": "16550 SW Merlo Rd",
+            "hours": "10 a.m- 4 p.m. Wed. Starting mid-August 2009",
+            "name": "Beaverton School District Clothes Closet",
+            "notes": "Free clothing for low-income students attending Beaverton schools. Must have admittance slip. Admit slips available from school office. (clothing not provided to adults). Call for information. Bus service: MAX Blue line, 67.",
+            "url": "http://www.beaverton.k12.or.us/home/community/clothes-closet/",
+            "city": "Beaverton"
+        },
+        {
+            "zip": "97007-5136",
+            "phone": "503-646-9828",
+            "address": "14645 SW Davis Road",
+            "hours": "9 a.m.-noon and 12:30 -1:30 p.m. Tuesdays.",
+            "name": "Beaverton Seventh-Day Adventist",
+            "notes": "Clients can walk in during open hours to access clothes closet. Bus service: 62, 88.",
+            "url": "http://www.beavertonsda.com",
+            "city": "Beaverton"
+        },
+        {
+            "zip": "97124-3048",
+            "phone": "503-648-6766",
+            "address": "232 NE Lincoln St, Ste. F",
+            "hours": "9:30 a.m.–4 p.m. Mon, Tues, Thurs.",
+            "name": "Birthright of Hillsboro",
+            "notes": "Maternity and baby clothes. Free confidential pregnancy tests; help finding medical care, financial assistance, housing, continuing education and relocation. Bus service: 57, MAX Blue line.",
+            "url": "http://www.birthright.org",
+            "city": "Hillsboro"
+        },
+        {
+            "zip": "97013-3901",
+            "phone": "503-266-2920",
+            "address": "555 SW 2nd Ave",
+            "hours": "Call for hours and service",
+            "name": "Canby Center",
+            "notes": "Outreach to the Canby School District community that meets basic needs: food and clothing. Baby/toddler, children’s, maternity, men’s and women’s clothing Call for hours and services.",
+            "url": "http://www.thecanbycenter.org",
+            "city": "Canby"
+        },
+        {
+            "zip": "97062",
+            "phone": "503-692-2915",
+            "address": "22222 SW Grahams Ferry Road",
+            "hours": "10 a.m.-noon Wed. (other hours by apt.)",
+            "name": "Dorcas Society-Tualatin",
+            "notes": "Provides clothing, bedding and linens for residents of Wilsonville, Tualatin or other nearby towns. Showers available for homeless persons. Bus service: 96",
+            "city": "Tualatin"
+        },
+        {
+            "zip": "97214-3691",
+            "phone": "503-233-5533",
+            "address": "1335 SE Hawthorne Blvd.",
+            "hours": "9:30 a.m. - 2:00 p.m. Mon - Thurs.",
+            "name": "Fish Emergency Services",
+            "notes": "Clothing for families in need. Items provided include emergency food boxes, clothing, personal care products (soap, toothpaste, laundry soap, etc.) and referrals for people most in need.",
+            "url": "http://www.fishemergencyservice.org/",
+            "city": "Portland"
+        },
+        {
+            "zip": "97266-5658",
+            "phone": "503-775-6784",
+            "address": "6535 SE 82nd Ave.",
+            "hours": "10 a.m.-2 p.m. Mon.- Thurs., Clothing 10a.m.-1p.m.",
+            "name": "Francis Center",
+            "notes": "Free clothing and emergency assistance within boundary area. Boundary area is Clatsop to Powell, 39th-136th; Powell to Glisan, 60th-82nd.",
+            "city": "Portland"
+        },
+        {
+            "zip": "97117-9386",
+            "phone": "503-357-8873",
+            "address": "9170 NW Sargent Rd",
+            "hours": "Tue. & Fri., 9:00a.m.-12:00p.m.",
+            "name": "God’s Clothing Central (Gales Creek Church)",
+            "notes": "Clothing for all ages and sizes; shoes, coats, and some blankets. On-call appointments only. Leave a message and your call will be returned. Bus service: none",
+            "city": "Gales Creek"
+        },
+        {
+            "zip": "97229",
+            "phone": "503-292-9293",
+            "address": "14986 NW Cornell",
+            "hours": "9:30 a.m.–12 p.m. Wed. Thursday 4:30 p.m.-6:30 p.m.",
+            "name": "Helping Hands (Sunset Presbyterian Church)",
+            "notes": "Adult and children’s clothing and shoes are limited to one bag a month. Bus service: 89 .",
+            "url": "http://www.sunsetpres.org",
+            "city": "Portland"
+        },
+        {
+            "phone": "503-844-1688",
+            "address": "451 SE Walnut St. (Use Walnut entrance) David Hill Elementary School",
+            "hours": "9:30 a.m.-6:30 p.m. Mon, Wed, and Thur; 9:30 a.m.-1:30 p.m. Tues.",
+            "name": "Hillsboro Family Resource Center",
+            "notes": "Food pantry, food boxes, clothing closet, other services.",
+            "url": "http://www.youthcontact.org",
+            "city": "Hillsboro"
+        },
+        {
+            "phone": "503-336-5946",
+            "address": "Call for locations.",
+            "hours": "9 a.m.-12 p.m., Mon. and Wed.",
+            "name": "Love in the Name of Christ of Greater Beaverton",
+            "notes": "Basic services and referrals: household goods, linens, baby items; food and clothing referrals provided by local churches. Call for locations. Limited to Beaverton School District boundries.",
+            "url": "http://www.loveincbeaverton.org",
+            "city": "Beaverton"
+        },
+        {
+            "zip": "97124-5102",
+            "phone": "503-726-0773 Ext. 101",
+            "address": "1400 NE 48th Ave.",
+            "hours": "6- 7:30 p.m. Wed.",
+            "name": "Our Place Clothes Closet",
+            "notes": "Provides quality new and used clothing to persons and families in need in the Hillsboro community; clothing available when church has supplies on hand. A meal is also served during these times. Bus service: MAX Blue line",
+            "url": "http://www.ourplacechurch.com",
+            "city": "Hillsboro"
+        },
+        {
+            "zip": "97227-1820",
+            "phone": "503-823-2102",
+            "address": "687 N. Thompson St.",
+            "name": "Portland Police Sunshine Division",
+            "notes": "Provides clothing to individuals and families with children under 18 and seniors over 70 and single adults on SSI, SD, or VA pension. Must have Portland address. Please call beforehand.",
+            "url": "http://www.sunshinedivision.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97209-4007",
+            "phone": "503-906-7690",
+            "address": "111 W. Burnside St",
+            "hours": "24-hours a day.",
+            "name": "Portland Rescue Mission",
+            "notes": "Clean clothing provided as needed to overnight guests and in emergency situations.",
+            "url": "http://www.portlandrescuemission.org/",
+            "city": "Portland"
+        },
+        {
+            "zip": "97015-9798",
+            "phone": "503-659-3336",
+            "address": "13053 SE 84th Ave",
+            "hours": "10 a.m.-4:15 p.m. Mon., Wed., Thur., and Fri.; 1:30-6:15 p.m. Tues.",
+            "name": "Pregnancy Resource Center",
+            "notes": "Baby and maternity clothes, baby toys and furnishings. Additional services include pregnancy tests, ultra-sounds, ongoing peer-counseling, pregnancy and fetal development information, information on abortion risks, procedures and alternatives, adoption information and referrals, parenting classes, referrals for medical care, housing, legal aid, others.",
+            "url": "http://www.prcofportland.com",
+            "city": "Clackamas"
+        },
+        {
+            "zip": "97209",
+            "phone": "503-248-6364 (Calls accepted from 8a.m.-4:30p.m.)",
+            "address": "627 NW 18th Ave",
+            "hours": "Hospitality hours 8:30 - 3:00pm",
+            "name": "Rose Haven",
+            "notes": "Women and children only: Access center for clothing, hygiene, mailing address and voice mail. Advocacy and referral for health care, nutrition, housing, employment and other social services. Groups and classes include Rent Well.",
+            "url": "http://www.rosehaven.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97233-4823",
+            "phone": "503-674-8785",
+            "address": "17805 SE Stark St.",
+            "hours": "10 a.m.-2 p.m. Mon, Wed, Thurs, Fri. 10am-4pm Tues.",
+            "notes": "Clothing for adulst and chilrden. Six times a yaer only. Energy assistance with proof of address. Serves only east of 82nd Ave.",
+            "url": "http://www.snowcap.org/",
+            "city": "Portland"
+        },
+        {
+            "phone": "503-895-6102",
+            "address": "5535 SE Rhone St.",
+            "hours": "10 a.m.-2 p.m. Mon and Thurs, 2-6 p.m.",
+            "name": "Southeast Community Church of the Nazarene",
+            "notes": "Clothes closet, one bag. Dependent upon availability.",
+            "url": "http://www.southeastcommunity.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97209-3614",
+            "phone": "503-228-0746",
+            "address": "601 W. Burnside St.",
+            "hours": "9:30 a.m.- 11:30 a.m",
+            "notes": "Clothing once every 30 days. Sleeping bags and backpacks depending on availability (Fri.). Other services include sleeping blankets, phone calls, hair care & foot care (Wed), prescription assistance (non-narcotic), travel assistance and help procuring birth certificates. Mon.-Fri.",
+            "url": "http://www.downtownchapel.org",
+            "city": "Portland"
+        },
+        {
+            "phone": "503-603-1585",
+            "address": "9000 SW Durham Road, Portable 716 Tigard High School",
+            "hours": "9a.m.-12p.m., 1p.m.-3p.m. Mon.-Fri.",
+            "name": "Tigard/Tualatin Family Resource Center",
+            "notes": "Small clothing closet and limited amount of baby diapers and formula. Call for information and appointments. Information and refferal service available via Tigard/Tualaton School. Call for information. Bus service: 76.",
+            "url": "http://www.TTSD.K12.OR.US/TTRC",
+            "city": "Tigard"
+        },
+        {
+            "phone": "503-603-1576",
+            "address": "9000 SW Durham Road- Portable 716 Tigard High School",
+            "hours": "10a.m.-4 p.m., Wed., Thurs.",
+            "name": "Tigard/Tualatin School District-Caring Closet",
+            "notes": "Provides clothing to Tigard/Tualatin School District students with a referral from their child’s school principal, counselor or teacher. Thurs. Bus service: 76",
+            "city": "Portland"
+        },
+        {
+            "zip": "97214",
+            "phone": "503-349-4699",
+            "address": "2727 SE Alder St.",
+            "name": "Tod’s Corner",
+            "notes": "Clothing, household goods, cleaning supplies, personal care items & pet food and other services as requested. Clients must have HIV/AIDS and have a referral from a case manager.",
+            "url": "http://www.ourhouseofportland.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97209",
+            "phone": "503-280-4700",
+            "address": "650 NW Irving St.",
+            "notes": "Clothing room open 10a-11 & 6p-7, Mon.-Fri.; 8a-12p, weekends/holidays. Once outfit per day. Showers available for men and women; 7a-11. Call for info about ID assistance, Mailing address, food boxes, day lockers and phone access.",
+            "url": "http://www.tprojects.org",
+            "city": "Portland"
+        },
+        {
+            "zip": "97209-3906",
+            "phone": "503-274-4483",
+            "address": "15 NW Third Ave.",
+            "hours": "10:00 a.m.-12 p.m. & 2:00 p.m.-4:30 p.m., Monday-Friday.",
+            "name": "Union Gospel Mission",
+            "notes": "Provides clothing to people in need.",
+            "url": "http://www.ugmportland.org",
+            "city": "Portland"
+        }
+    ],
+    "pageUrl": "http://www.rosecityresource.org/resources/clothing"
+}
