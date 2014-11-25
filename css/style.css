@@ -469,12 +469,14 @@ header, .social{
 
 	header .carousel-iphone, .detail .app-screenshot{
 		width: 17.5em;
+		padding-left:0;
 	}
 
 	header .carousel, .detail .app-screenshot img{
-		padding-top: 5.313em;
-		width: 15.313em;
-	}
+		padding-top: 4.313em;
+		margin-left:3.25rem;
+		width: 14.313em;
+		}
 
 	.detail .app-screenshot img{
 		margin-top: -0.75em;
