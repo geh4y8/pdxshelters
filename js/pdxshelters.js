@@ -1,4 +1,11 @@
-
+$(document).ready(function () {
+    setTimeout(function () {
+        swal({title: 'Hold On!',
+        text: 'Please dial 2-1-1 for assistance before using this resource!',
+        type: 'warning',
+        confirmButtonText: 'Got it.'});
+    }, 1000);
+});
 
 var map;
 
@@ -226,8 +233,6 @@ function initializeMap() {
     zoom: 14,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
-
-
  }
 
 var showShelters = 1;
@@ -313,6 +318,5 @@ function toggleClothing(){
 
 function overlay() {
   el = document.getElementById("overlay");
-  console.log("Setting visibility to: ", (el.style.visibility == "visible") ? "hidden" : "visible")
   el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
 }
