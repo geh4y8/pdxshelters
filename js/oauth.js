@@ -23,6 +23,7 @@ $(document).ready(function(){
       }
     });
     $('#googleOauth').html("logged in").addClass("disabled").removeClass('btn-danger');
-    $('#guestForm').removeClass("disabled");
+    $('#guestForm').removeClass("hidden");
+    $('#bedCountBtn').removeClass("hidden");
   });
 })

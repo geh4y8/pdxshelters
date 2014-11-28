@@ -316,6 +316,17 @@ function toggleClothing(){
   }
 }
 
+
+$("#bedCountSubmit").click(function(){
+  event.preventDefault();
+  var updatedBedCountInput = $("#inputBedCount").val();
+  var beds = sheltersFirebaseRef.child("shelterInfo00");
+  beds.update({
+    "beds": updatedBedCountInput
+  });
+})
+
+
 function overlay() {
   el = document.getElementById("overlay");
   el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
