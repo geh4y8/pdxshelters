@@ -18,11 +18,12 @@ var center = locations["PDXSheltersHQ"];
 // Query radius
 var radiusInKm = 1;
 
-// Get a reference to the Firebase public transit open data set
+// Get a reference to the Firebase data set
 var sheltersFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/shelters");
 var eventsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/events");
 var mealsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/meals");
 var clothFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/clothing");
+var firebaseRef = new Firebase("https://pdxshelters.firebaseio.com/")
 
 sheltersFirebaseRef.on("child_changed", function(snapshot) {
   var changedShelter = snapshot.val();
@@ -321,9 +322,13 @@ $("#bedCountSubmit").click(function(){
   event.preventDefault();
   var updatedBedCountInput = $("#inputBedCount").val();
   var beds = sheltersFirebaseRef.child("shelterInfo00");
+
   beds.update({
-    "beds": updatedBedCountInput
+    "beds": updatedBedCountInput,
+    "updatedAt": Firebase.ServerValue.TIMESTAMP
   });
+  var t = beds.child("updatedAt").val();
+  console.log(t)
 })
 
 
