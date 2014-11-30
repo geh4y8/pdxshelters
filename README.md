@@ -3,11 +3,11 @@
 What is PDXShelter?
 ===================
 
-PDXShelter is a resource for both providers and tenants of homeless shelters. Research shows that 70% of homeless youth have access to smartphones. This app allows users to view shelter bed openings near them in real time, and shelters can update their count on the fly. Built to be used on both web and mobile platforms, we hope to help keep a roof over heads to those in need.
+PDXShelter is a resource for both providers and guests of homeless shelters. Research shows that 70% of homeless youth have access to smartphones. This app allows users to view shelter bed openings near them in real time, and shelters can update their count on the fly. Built to be used on both web and mobile platforms, we hope to help keep a roof over heads to those in need.
 
 See the current demo at [pdxshelter.org](https://www.pdxshelter.org/)
 
-Practically, we are making a web app that uses the [Google maps API](https://developers.google.com/maps/web/), [Firebase](https://www.firebase.com/), and [Ruby on Rails](http://rubyonrails.org/) to allow shelters, or other organizations that provide services, to log in and update their bed availability numbers or information related to hosted events. We are also working on allowing shelters to enter and track information about their guests. The pubic side of the app will allow homeless people, and those assisting them, to see up-to-date information about shelters, events and other available resources entered into the system.
+Practically, we are making a web app that uses the [Google maps API](https://developers.google.com/maps/web/), [Firebase](https://www.firebase.com/), and [Ruby on Rails](http://rubyonrails.org/) to allow shelters, or other organizations that provide services, to log in and update their bed availability numbers or information related to hosted events. We are also working on allowing shelters to enter and track information about their guests. The public side of the app will allow homeless people, and those assisting them, to see up-to-date information about shelters, events and other available resources entered into the system.
 
 **The project is still very much in it's early stages of development**, and the current technologies used and our processes are liable to change.
 
@@ -15,6 +15,8 @@ We are currently developing this with the support of the community here in Portl
 
 Features
 ----------
+
+Here is a list of general things we have and would like the app to achieve, see <a href="#Contributing">Contributing</a> and [issues](https://github.com/geh4y8/pdxshelters/issues) if you want to submit a patch.
 
 A list of the current features we have (at least partly implemented):
 
@@ -37,9 +39,10 @@ Features to be implemented:
 * A better way to filter map results?
 * API documentation (Yard?)
 
-Future directions:
+(Possible) Future directions:
 
 * Allow guest users to create profiles and make reservations
+* Functionality to allow non-shelter homeless users to request assistance, and people to respond with said assistance
 
 Contributing
 ------------

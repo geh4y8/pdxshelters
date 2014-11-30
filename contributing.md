@@ -58,13 +58,15 @@ Guildlines
 
 After you have forked, the flow of contributing to this project will look like this:
 
-1. Pick an issue
+1. Pick an [issue](https://github.com/geh4y8/pdxshelters/issues)
 3. Create your feature branch (`git checkout -b my-new-feature`)
 4. Commit your changes (`git commit -am 'Add some feature'`)
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create a new [Pull Request](https://github.com/geh4y8/pdxshelters/compare) (select compare across forks)
 
-If you want to add a feature that is not on the issues list, please discuss this with the other project contributers (where?). It would be a totall bummer for you to do a bunch of work on something we don't end up using!
+Mention the Issue in the title of the PR e.g. "Fixes Issue #8 all dogs can now go to heaven". If you want to add a feature that is not on the issues list, please discuss this with the other project contributers by creating an issue, we will talk about it in the comments there. It would be a total bummer for you to do a bunch of work on something we don't end up using!
+
+When assigning yourself to an issue, please intend to be actively working on it. Beginners may find the tasks tagged "easier" to be less time intensive for those with less coding experience. That is not to that that they will be easy for everyone, so be patient with yourself.
 
 **In order for a pull request to be accepted, it must be reviewed by a contributor with push permissions (this goes for core devs too). Also, any changes to the code must be accompanied with tests and docs, when applicable.**
 
