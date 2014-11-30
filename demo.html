@@ -19,21 +19,92 @@
 </head>
 
 <body>
+
+  <div class="navbar navbar-inverse">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)"><img height="100%" width="70%" src="/img/pdxsheltericonwhite.png"></a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav" style="color:white;">
+            <li>
+              <div class="form-group checkbox">
+                <label>
+                  <input type="checkbox" onclick="toggleShelters()" checked="true"> Shelters
+                </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-group checkbox">
+                <label>
+                  <input type="checkbox" onclick="toggleMeals()" checked="true"> Meals
+                </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-group checkbox">
+                <label>
+                  <input type="checkbox" onclick="toggleEvents()" checked="true"> Events
+                </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-group checkbox">
+                <label>
+                  <input type="checkbox" onclick="toggleClothing()" checked="true"> Clothing
+                </label>
+              </div>
+            </li>
+            <li><a data-toggle="modal" data-target="#shelterLogin">Shelter Login</a></li>
+
+            </div>
+            <!-- <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Providers <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)">Action</a></li>
+                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li><a href="javascript:void(0)">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Dropdown header</li>
+                    <li><a href="javascript:void(0)">Separated link</a></li>
+                    <li><a href="javascript:void(0)">One more separated link</a></li>
+                </ul>
+            </li> -->
+        </ul>
+        <!-- <ul class="nav navbar-nav navbar-right">
+            <li><a href="javascript:void(0)">Link</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="javascript:void(0)">Action</a></li>
+                    <li><a href="javascript:void(0)">Another action</a></li>
+                    <li><a href="javascript:void(0)">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="javascript:void(0)">Separated link</a></li>
+                </ul>
+            </li>
+        </ul> -->
+    </div>
+  </div>
   <!-- MAP -->
 
   <div id="map-canvas"></div>
 
   <div class="background-image"></div>
-  <nav id="sidebar" class="visible-xs" style="width: 100%; height:50px">
+  <!-- <nav id="sidebar" class="visible-xs" style="width: 100%; height:50px"> -->
     <!-- <article id="sidebar" class="visible-xs-*"> -->
       <header>
         <h1 style="margin-bottom:30px"><img src="/img/pdxsheltericon.png"></h1>
       </header>
     <!-- </article> -->
   </nav>
-  <div id="sidebar-wrapper" class="hidden-xs"></div>
+  <!-- <div id="sidebar-wrapper" class="hidden-xs"></div> -->
 
-  <article id="sidebar" class="animated bounceInUp hidden-xs">
+  <!-- <article id="sidebar" class="animated bounceInUp hidden-xs">
     <header>
       <h1 style="margin-bottom:30px"><img src="/img/pdxsheltericon.png"></h1>
     </header>
@@ -78,7 +149,7 @@
       <div class="col-lg-6">
 
     </section>
-  </article>
+  </article> -->
   <div id="pdxsw2014" style="position: fixed; display: block; height: 40px; width: 100%; z-index: 99998; bottom: 0px; left: 0px; padding: 10px 0px; text-align: center; margin: 0px; color: white; background-color: #585555;"><a href='#' onMouseOver='overlay()' onMouseOut='overlay()'><img style="float:left; padding: 0px; margin-left: 1%" src="/img/cc_small.png"></a>
     <span>made in 54 hours with  <span style="color:red; font-size:20px">&#10084;</span>  at <a style="text-decoration: none; font-weight: bold" href="http://www.up.co/communities/usa/portland/startup-weekend/4806">PDXSW2014</a></span><a href="http://www.github.com/geh4y8/pdxshelters"><img style="float:right; padding: 0px; margin-right: 1%" src="/img/github2.png"></a></div>
   </div>
