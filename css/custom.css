@@ -1,5 +1,11 @@
+.nav-checkboxes {
+  margin-left: 25%;
+  color:white;
+}
+
 .navbar-nav>li {
   display: inline-block;
+  padding-right: 1.7em;
 }
 
 #overlay-video {
