@@ -1,13 +1,11 @@
-#icons {
+.btn-link>span, .btn-link>img {
   position: absolute;
   top: 0px;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 33px;
   margin: 0px;
   padding: 0px;
-}
-#icons:hover {
-  text-decoration: none;
+  height: 33px;
 }
 
 .navbar-nav {
