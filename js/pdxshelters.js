@@ -251,8 +251,9 @@ function toggleClothing(){
 }
 
 
-$("#bedCountSubmit").click(function(){
+$("#bedCountSubmit").click(function(event){
   event.preventDefault();
+
   var updatedBedCountInput = $("#inputBedCount").val();
   var beds = sheltersFirebaseRef.child("shelterInfo00");
 
@@ -260,9 +261,10 @@ $("#bedCountSubmit").click(function(){
     "beds": updatedBedCountInput,
     "updatedAt": Firebase.ServerValue.TIMESTAMP
   });
-  var t = beds.child("updatedAt").val();
-  console.log(t)
-})
+
+  $('#bedCountForm').modal('hide');
+  $('#shelterLogin').modal('hide');
+});
 
 
 function overlay() {
