@@ -25,11 +25,11 @@ sheltersFirebaseRef.on("child_changed", function(snapshot) {
   var changedShelter = snapshot.val();
   var marker = shelterMarkerObjects[changedShelter.name];
   marker.setIcon(shelterIconName(changedShelter));
-})
+});
 
 sheltersFirebaseRef.on("child_added", function(snapshot) {
   var newShelter = snapshot.val();
-})
+});
 
 //Create a new GeoFire instance
 var geoFire = new GeoFire(sheltersFirebaseRef);
@@ -51,8 +51,8 @@ function openSoloWindow(infowindow, marker){
 function shelterIconName(shelter){
   if(shelter.beds > 10){
     var iconName = "/img/red10+.png"
-  }else{
-    iconName = "/img/"+"red"+shelter.beds + ".png"
+  } else {
+    iconName = "/img/" + "red" + shelter.beds + ".png"
   }
   return iconName
 }
@@ -155,27 +155,27 @@ function clothDetails(cloth){
 
 sheltersFirebaseRef.once('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
-    loadShelterMarker(child.val())
-  })
-})
+    loadShelterMarker(child.val());
+  });
+});
 
 eventsFirebaseRef.once('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
-    loadEventMarker(child.val())
-  })
-})
+    loadEventMarker(child.val());
+  });
+});
 
 mealsFirebaseRef.once('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
-    loadMealMarker(child.val())
-  })
-})
+    loadMealMarker(child.val());
+  });
+});
 
 clothFirebaseRef.once('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
-    loadClothMarker(child.val())
-  })
-})
+    loadClothMarker(child.val());
+  });
+});
 
 /*  GEOLOCATE  */
 
@@ -211,43 +211,47 @@ var showMeals = true;
 var showCloth = true;
 
 function toggleShelters(){
-  showShelters = !showShelters
+  showShelters = !showShelters;
   sheltersFirebaseRef.once('value', function(dataSnapshot){
     dataSnapshot.forEach(function(child){
-      shelter = child.val()
+      shelter = child.val();
       var marker = shelterMarkerObjects[shelter.name];
-      marker.setVisible(showShelters)
-    })})
+      marker.setVisible(showShelters);
+    });
+  });
 }
 
 function toggleEvents(){
-  showEvents = !showEvents
+  showEvents = !showEvents;
   eventsFirebaseRef.once('value', function(dataSnapshot){
     dataSnapshot.forEach(function(child){
-      evnt = child.val()
+      evnt = child.val();
       var marker = eventMarkerObjects[evnt.name];
-      marker.setVisible(showEvents)
-    })})
+      marker.setVisible(showEvents);
+    });
+  });
 }
 
 function toggleMeals(){
-  showMeals = !showMeals
+  showMeals = !showMeals;
   mealsFirebaseRef.once('value', function(dataSnapshot){
     dataSnapshot.forEach(function(child){
-      meal = child.val()
+      meal = child.val();
       var marker = mealMarkerObjects[meal.name];
-      marker.setVisible(showMeals)
-    })})
+      marker.setVisible(showMeals);
+    });
+  });
 }
 
 function toggleClothing(){
-  showCloth = !showCloth
+  showCloth = !showCloth;
   clothFirebaseRef.once('value', function(dataSnapshot){
     dataSnapshot.forEach(function(child){
       cloth = child.val();
       var marker = clothMarkerObjects[cloth.name];
       marker.setVisible(showCloth);
-    })});
+    });
+  });
 }
 
 
