@@ -17,7 +17,6 @@ var center = locations["PDXSheltersHQ"];
 
 // Get a reference to the Firebase data set
 var sheltersFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/shelters");
-var eventsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/events");
 var mealsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/meals");
 var clothFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/clothing");
 
@@ -34,7 +33,6 @@ sheltersFirebaseRef.on("child_added", function(snapshot) {
 //Create a new GeoFire instance
 var geoFire = new GeoFire(sheltersFirebaseRef);
 var shelterMarkerObjects = {};
-var eventMarkerObjects = {};
 var mealMarkerObjects = {};
 var clothMarkerObjects = {};
 var openWindow;
@@ -84,14 +82,6 @@ function loadShelterMarker(shelter){
   addInfoWindow(contentString, marker);
 }
 
-function loadEventMarker(evnt){
-  marker = makeMarker(evnt, '/img/blue.png');
-  eventMarkerObjects[evnt.name] = marker;
-
-  var contentString = eventDetails(evnt);
-  addInfoWindow(contentString, marker);
-}
-
 function loadMealMarker(meal){
   marker = makeMarker(meal, '/img/mealMarker.png');
   mealMarkerObjects[meal.name] = marker;
@@ -126,15 +116,6 @@ function shelterDetails(shelter){
   return contentString + "</div>";
 }
 
-function eventDetails(evnt){
-  var contentString = "<div id='wrapper'><div id='event-name', style='font-size: 24px; font-weight:bold'>"+ evnt.name + "</div><div id='event-desc'>" + evnt.description + "</div><div id='event-location', style='font-size:18px;'>" + evnt.location + "</div></div id='event-date'>" + evnt.date + "</div><div id='event-time'>" + evnt.time;
-  if (evnt.url){
-    contentString+= '<br/><a href=' + evnt.url + ">" + evnt.url + "</a>";
-  }
-
-  return contentString;
-}
-
 function mealDetails(meal){
   var contentString = "<div id='wrapper'><div id='meal-name', style='font-size: 24px; font-weight:bold'>"+ meal.name + "</div><div id='meal-phone'>" + meal.phone + "</div><div id='meal-address', style='font-size:18px;'>" + meal.address + "</div></div id='meal-hours'>" + meal.hours //+ "</div><div id='event-time'>" + meal.time;
   if (meal.url){
@@ -156,12 +137,6 @@ function clothDetails(cloth){
 sheltersFirebaseRef.once('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
     loadShelterMarker(child.val());
-  });
-});
-
-eventsFirebaseRef.once('value', function(dataSnapshot){
-  dataSnapshot.forEach(function(child){
-    loadEventMarker(child.val());
   });
 });
 
@@ -206,7 +181,7 @@ function initializeMap() {
  }
 
 var showShelters = true;
-var showEvents = true;
+// var showEvents = true;
 var showMeals = true;
 var showCloth = true;
 
@@ -217,17 +192,6 @@ function toggleShelters(){
       shelter = child.val();
       var marker = shelterMarkerObjects[shelter.name];
       marker.setVisible(showShelters);
-    });
-  });
-}
-
-function toggleEvents(){
-  showEvents = !showEvents;
-  eventsFirebaseRef.once('value', function(dataSnapshot){
-    dataSnapshot.forEach(function(child){
-      evnt = child.val();
-      var marker = eventMarkerObjects[evnt.name];
-      marker.setVisible(showEvents);
     });
   });
 }
