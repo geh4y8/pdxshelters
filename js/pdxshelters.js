@@ -15,15 +15,11 @@ var locations = {
 };
 var center = locations["PDXSheltersHQ"];
 
-// Query radius
-var radiusInKm = 1;
-
 // Get a reference to the Firebase data set
 var sheltersFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/shelters");
 var eventsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/events");
 var mealsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/meals");
 var clothFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/clothing");
-var firebaseRef = new Firebase("https://pdxshelters.firebaseio.com/")
 
 sheltersFirebaseRef.on("child_changed", function(snapshot) {
   var changedShelter = snapshot.val();
@@ -34,7 +30,6 @@ sheltersFirebaseRef.on("child_changed", function(snapshot) {
 sheltersFirebaseRef.on("child_added", function(snapshot) {
   var newShelter = snapshot.val();
 })
-
 
 //Create a new GeoFire instance
 var geoFire = new GeoFire(sheltersFirebaseRef);
@@ -62,80 +57,55 @@ function shelterIconName(shelter){
   return iconName
 }
 
-function loadShelterMarker(shelter){
+function makeMarker(item, iconpath){
   // To add the marker to the map, use the 'map' property
-  var coords = shelter.coords.l
-  var shelterLatLong = new google.maps.LatLng(coords[0], coords[1]);
+  var coords = item.coords.l
+  var latLong = new google.maps.LatLng(coords[0], coords[1]);
   var marker = new google.maps.Marker({
-      position: shelterLatLong,
+      position: latLong,
       map: map,
-      icon: shelterIconName(shelter)
+      icon: iconpath
   });
+  return marker
+}
 
+function addInfoWindow(contentString, marker){
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  })
+  google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
+}
+
+function loadShelterMarker(shelter){
+  marker = makeMarker(shelter, shelterIconName(shelter))
   shelterMarkerObjects[shelter.name] = marker
 
   var contentString = shelterDetails(shelter);
-  var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  })
-  google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
+  addInfoWindow(contentString, marker)
 }
 
 function loadEventMarker(evnt){
-  var coords = evnt.coords.l
-  var eventLatLong = new google.maps.LatLng(coords[0], coords[1]);
-  var marker = new google.maps.Marker({
-      position: eventLatLong,
-      map: map,
-      icon:'/img/blue.png'
-  });
-
+  marker = makeMarker(evnt, '/img/blue.png')
   eventMarkerObjects[evnt.name] = marker
 
   var contentString = eventDetails(evnt);
-  var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  })
-
-  google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
+  addInfoWindow(contentString, marker)
 }
 
 function loadMealMarker(meal){
-  var coords = meal.coords.l
-  var mealLatLong = new google.maps.LatLng(coords[0], coords[1]);
-  var marker = new google.maps.Marker({
-      position: mealLatLong,
-      map: map,
-      icon:'/img/mealMarker.png'
-  });
-
+  marker = makeMarker(meal, '/img/mealMarker.png')
   mealMarkerObjects[meal.name] = marker
 
   var contentString = mealDetails(meal);
-  var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  })
-
-  google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
+  addInfoWindow(contentString, marker)
 }
 
 function loadClothMarker(cloth){
-  var coords = cloth.coords.l
-  var clothLatLong = new google.maps.LatLng(coords[0], coords[1]);
-  var marker = new google.maps.Marker({
-      position: clothLatLong,
-      map: map,
-      icon:'/img/clothMarker.png'
-  });
-
+  marker = makeMarker(cloth, '/img/clothMarker.png')
   clothMarkerObjects[cloth.name] = marker
 
   var contentString = clothDetails(cloth);
-  var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  })
-
-  google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
+  addInfoWindow(contentString, marker)
 }
 
 function shelterDetails(shelter){
@@ -183,25 +153,25 @@ function clothDetails(cloth){
   return contentString
 }
 
-sheltersFirebaseRef.on('value', function(dataSnapshot){
+sheltersFirebaseRef.once('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
     loadShelterMarker(child.val())
   })
 })
 
-eventsFirebaseRef.on('value', function(dataSnapshot){
+eventsFirebaseRef.once('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
     loadEventMarker(child.val())
   })
 })
 
-mealsFirebaseRef.on('value', function(dataSnapshot){
+mealsFirebaseRef.once('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
     loadMealMarker(child.val())
   })
 })
 
-clothFirebaseRef.on('value', function(dataSnapshot){
+clothFirebaseRef.once('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
     loadClothMarker(child.val())
   })
@@ -235,85 +205,49 @@ function initializeMap() {
   });
  }
 
-var showShelters = 1;
-var showEvents = 1;
-var showMeals = 1;
-var showCloth = 1;
+var showShelters = true;
+var showEvents = true;
+var showMeals = true;
+var showCloth = true;
 
 function toggleShelters(){
   showShelters = !showShelters
-  if (showShelters){
-    sheltersFirebaseRef.on('value', function(dataSnapshot){
-      dataSnapshot.forEach(function(child){
-        shelter = child.val()
-        var marker = shelterMarkerObjects[shelter.name];
-        marker.setVisible(true)
-      })})
-  }else{
-    sheltersFirebaseRef.on('value', function(dataSnapshot){
-      dataSnapshot.forEach(function(child){
-        shelter = child.val()
-        var marker = shelterMarkerObjects[shelter.name];
-        marker.setVisible(false)
-      })})
-  }
+  sheltersFirebaseRef.once('value', function(dataSnapshot){
+    dataSnapshot.forEach(function(child){
+      shelter = child.val()
+      var marker = shelterMarkerObjects[shelter.name];
+      marker.setVisible(showShelters)
+    })})
 }
 
 function toggleEvents(){
   showEvents = !showEvents
-  if (showEvents){
-    eventsFirebaseRef.on('value', function(dataSnapshot){
-      dataSnapshot.forEach(function(child){
-        evnt = child.val()
-        var marker = eventMarkerObjects[evnt.name];
-        marker.setVisible(true)
-      })})
-  }else{
-    eventsFirebaseRef.on('value', function(dataSnapshot){
-      dataSnapshot.forEach(function(child){
-        evnt = child.val()
-        var marker = eventMarkerObjects[evnt.name];
-        marker.setVisible(false)
-      })})
-  }
+  eventsFirebaseRef.once('value', function(dataSnapshot){
+    dataSnapshot.forEach(function(child){
+      evnt = child.val()
+      var marker = eventMarkerObjects[evnt.name];
+      marker.setVisible(showEvents)
+    })})
 }
 
 function toggleMeals(){
   showMeals = !showMeals
-  if (showMeals){
-    mealsFirebaseRef.on('value', function(dataSnapshot){
-      dataSnapshot.forEach(function(child){
-        meal = child.val()
-        var marker = mealMarkerObjects[meal.name];
-        marker.setVisible(true)
-      })})
-  }else{
-    mealsFirebaseRef.on('value', function(dataSnapshot){
-      dataSnapshot.forEach(function(child){
-        meal = child.val()
-        var marker = mealMarkerObjects[meal.name];
-        marker.setVisible(false)
-      })})
-  }
+  mealsFirebaseRef.once('value', function(dataSnapshot){
+    dataSnapshot.forEach(function(child){
+      meal = child.val()
+      var marker = mealMarkerObjects[meal.name];
+      marker.setVisible(showMeals)
+    })})
 }
 
 function toggleClothing(){
   showCloth = !showCloth
-  if (showCloth){
-    clothFirebaseRef.on('value', function(dataSnapshot){
-      dataSnapshot.forEach(function(child){
-        cloth = child.val();
-        var marker = clothMarkerObjects[cloth.name];
-        marker.setVisible(true);
-      })});
-  }else{
-    clothFirebaseRef.on('value', function(dataSnapshot){
-      dataSnapshot.forEach(function(child){
-        cloth = child.val();
-        var marker = clothMarkerObjects[cloth.name];
-        marker.setVisible(false);
-      })});
-  }
+  clothFirebaseRef.once('value', function(dataSnapshot){
+    dataSnapshot.forEach(function(child){
+      cloth = child.val();
+      var marker = clothMarkerObjects[cloth.name];
+      marker.setVisible(showCloth);
+    })});
 }
 
 
