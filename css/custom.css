@@ -1,8 +1,21 @@
+#icons {
+  position: absolute;
+  top: 0px;
+  text-decoration: none;
+  font-size: 30px;
+  margin: 0px;
+  padding: 0px;
+}
+#icons:hover {
+  text-decoration: none;
+}
+
 .navbar-nav {
   color:white;
 }
 
 .navbar-nav>li {
+  height:100%;
   display: inline-block;
   padding-right: 1.7em;
 }
