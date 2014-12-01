@@ -12,6 +12,8 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'devise'
 gem 'autoprefixer-rails'
+gem 'dashing-rails'
+gem 'puma'
 
 group :development do
   gem 'better_errors'
