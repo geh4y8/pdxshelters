@@ -25,11 +25,11 @@ sheltersFirebaseRef.on("child_changed", function(snapshot) {
   var changedShelter = snapshot.val();
   var marker = shelterMarkerObjects[changedShelter.name];
   marker.setIcon(shelterIconName(changedShelter));
-})
+});
 
 sheltersFirebaseRef.on("child_added", function(snapshot) {
   var newShelter = snapshot.val();
-})
+});
 
 //Create a new GeoFire instance
 var geoFire = new GeoFire(sheltersFirebaseRef);
@@ -51,8 +51,8 @@ function openSoloWindow(infowindow, marker){
 function shelterIconName(shelter){
   if(shelter.beds > 10){
     var iconName = "/img/red10+.png"
-  }else{
-    iconName = "/img/"+"red"+shelter.beds + ".png"
+  } else {
+    iconName = "/img/" + "red" + shelter.beds + ".png"
   }
   return iconName
 }
@@ -72,110 +72,110 @@ function makeMarker(item, iconpath){
 function addInfoWindow(contentString, marker){
   var infowindow = new google.maps.InfoWindow({
     content: contentString
-  })
+  });
   google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
 }
 
 function loadShelterMarker(shelter){
-  marker = makeMarker(shelter, shelterIconName(shelter))
-  shelterMarkerObjects[shelter.name] = marker
+  marker = makeMarker(shelter, shelterIconName(shelter));
+  shelterMarkerObjects[shelter.name] = marker;
 
   var contentString = shelterDetails(shelter);
-  addInfoWindow(contentString, marker)
+  addInfoWindow(contentString, marker);
 }
 
 function loadEventMarker(evnt){
-  marker = makeMarker(evnt, '/img/blue.png')
-  eventMarkerObjects[evnt.name] = marker
+  marker = makeMarker(evnt, '/img/blue.png');
+  eventMarkerObjects[evnt.name] = marker;
 
   var contentString = eventDetails(evnt);
-  addInfoWindow(contentString, marker)
+  addInfoWindow(contentString, marker);
 }
 
 function loadMealMarker(meal){
-  marker = makeMarker(meal, '/img/mealMarker.png')
-  mealMarkerObjects[meal.name] = marker
+  marker = makeMarker(meal, '/img/mealMarker.png');
+  mealMarkerObjects[meal.name] = marker;
 
   var contentString = mealDetails(meal);
-  addInfoWindow(contentString, marker)
+  addInfoWindow(contentString, marker);
 }
 
 function loadClothMarker(cloth){
-  marker = makeMarker(cloth, '/img/clothMarker.png')
-  clothMarkerObjects[cloth.name] = marker
+  marker = makeMarker(cloth, '/img/clothMarker.png');
+  clothMarkerObjects[cloth.name] = marker;
 
   var contentString = clothDetails(cloth);
-  addInfoWindow(contentString, marker)
+  addInfoWindow(contentString, marker);
 }
 
 function shelterDetails(shelter){
-  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name', style='font-size: 24px; font-weight:bold' >"+ shelter.name + "</div><div id='phone'>" + shelter.phone + "</div>" + "<div id='hours'> Open: " + shelter.hours.open + "   Close: " + shelter.hours.close + "</div>" + "<a href=" + shelter.url + ">"+ shelter.url+ "</a><br/><div style='font-size:12px'>Last updated:" + new Date(shelter.updatedAt).toString() +"</div>"
+  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name', style='font-size: 24px; font-weight:bold' >"+ shelter.name + "</div><div id='phone'>" + shelter.phone + "</div>" + "<div id='hours'> Open: " + shelter.hours.open + "   Close: " + shelter.hours.close + "</div>" + "<a href=" + shelter.url + ">"+ shelter.url+ "</a><br/><div style='font-size:12px'>Last updated:" + new Date(shelter.updatedAt).toString() + "</div>";
 
   if(shelter.facilities.shower == true){
-    contentString += ("<img style='margin:5px' src='/img/shower.png'>")
+    contentString += ("<img style='margin:5px' src='/img/shower.png'>");
   }
   if(shelter.facilities.wifi == true){
-    contentString += ("<img style='margin:5px' src='/img/wifi.png'>")
+    contentString += ("<img style='margin:5px' src='/img/wifi.png'>");
   }
   if(shelter.facilities.pets == true){
-    contentString += ("<img style='margin:5px' src='/img/pets.png'>")
+    contentString += ("<img style='margin:5px' src='/img/pets.png'>");
   }
   if(shelter.facilities.food == true){
-    contentString += ("<img style='margin:5px' src='/img/food.png'>")
+    contentString += ("<img style='margin:5px' src='/img/food.png'>");
   }
-  return contentString + "</div>"
+  return contentString + "</div>";
 }
 
 function eventDetails(evnt){
-  var contentString = "<div id='wrapper'><div id='event-name', style='font-size: 24px; font-weight:bold'>"+ evnt.name + "</div><div id='event-desc'>" + evnt.description + "</div><div id='event-location', style='font-size:18px;'>" + evnt.location + "</div></div id='event-date'>" + evnt.date + "</div><div id='event-time'>" + evnt.time
+  var contentString = "<div id='wrapper'><div id='event-name', style='font-size: 24px; font-weight:bold'>"+ evnt.name + "</div><div id='event-desc'>" + evnt.description + "</div><div id='event-location', style='font-size:18px;'>" + evnt.location + "</div></div id='event-date'>" + evnt.date + "</div><div id='event-time'>" + evnt.time;
   if (evnt.url){
-    contentString+= '<br/><a href=' + evnt.url + ">" + evnt.url + "</a>"
+    contentString+= '<br/><a href=' + evnt.url + ">" + evnt.url + "</a>";
   }
 
-  return contentString
+  return contentString;
 }
 
 function mealDetails(meal){
-  var contentString = "<div id='wrapper'><div id='meal-name', style='font-size: 24px; font-weight:bold'>"+ meal.name + "</div><div id='meal-phone'>" + meal.phone + "</div><div id='meal-address', style='font-size:18px;'>" + meal.address + "</div></div id='meal-hours'>" + meal.hours //+ "</div><div id='event-time'>" + meal.time
+  var contentString = "<div id='wrapper'><div id='meal-name', style='font-size: 24px; font-weight:bold'>"+ meal.name + "</div><div id='meal-phone'>" + meal.phone + "</div><div id='meal-address', style='font-size:18px;'>" + meal.address + "</div></div id='meal-hours'>" + meal.hours //+ "</div><div id='event-time'>" + meal.time;
   if (meal.url){
-    contentString+= '<br/><a href=' + meal.url + ">" + meal.url + "</a>"
+    contentString+= '<br/><a href=' + meal.url + ">" + meal.url + "</a>";
   }
 
-  return contentString
+  return contentString;
 }
 
 function clothDetails(cloth){
-  var contentString = "<div id='wrapper'><div id='cloth-name', style='font-size: 24px; font-weight:bold'>"+ cloth.name + "</div><div id='cloth-phone'>" + cloth.phone + "</div><div id='cloth-address', style='font-size:18px;'>" + cloth.address + "</div></div id='cloth-hours'>" + cloth.hours //+ "</div><div id='event-time'>" + cloth.time
+  var contentString = "<div id='wrapper'><div id='cloth-name', style='font-size: 24px; font-weight:bold'>"+ cloth.name + "</div><div id='cloth-phone'>" + cloth.phone + "</div><div id='cloth-address', style='font-size:18px;'>" + cloth.address + "</div></div id='cloth-hours'>" + cloth.hours //+ "</div><div id='event-time'>" + cloth.time;
   if (cloth.url){
-    contentString+= '<br/><a href=' + cloth.url + ">" + cloth.url + "</a>"
+    contentString+= '<br/><a href=' + cloth.url + ">" + cloth.url + "</a>";
   }
 
-  return contentString
+  return contentString;
 }
 
 sheltersFirebaseRef.once('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
-    loadShelterMarker(child.val())
-  })
-})
+    loadShelterMarker(child.val());
+  });
+});
 
 eventsFirebaseRef.once('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
-    loadEventMarker(child.val())
-  })
-})
+    loadEventMarker(child.val());
+  });
+});
 
 mealsFirebaseRef.once('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
-    loadMealMarker(child.val())
-  })
-})
+    loadMealMarker(child.val());
+  });
+});
 
 clothFirebaseRef.once('value', function(dataSnapshot){
   dataSnapshot.forEach(function(child){
-    loadClothMarker(child.val())
-  })
-})
+    loadClothMarker(child.val());
+  });
+});
 
 /*  GEOLOCATE  */
 
@@ -211,48 +211,53 @@ var showMeals = true;
 var showCloth = true;
 
 function toggleShelters(){
-  showShelters = !showShelters
+  showShelters = !showShelters;
   sheltersFirebaseRef.once('value', function(dataSnapshot){
     dataSnapshot.forEach(function(child){
-      shelter = child.val()
+      shelter = child.val();
       var marker = shelterMarkerObjects[shelter.name];
-      marker.setVisible(showShelters)
-    })})
+      marker.setVisible(showShelters);
+    });
+  });
 }
 
 function toggleEvents(){
-  showEvents = !showEvents
+  showEvents = !showEvents;
   eventsFirebaseRef.once('value', function(dataSnapshot){
     dataSnapshot.forEach(function(child){
-      evnt = child.val()
+      evnt = child.val();
       var marker = eventMarkerObjects[evnt.name];
-      marker.setVisible(showEvents)
-    })})
+      marker.setVisible(showEvents);
+    });
+  });
 }
 
 function toggleMeals(){
-  showMeals = !showMeals
+  showMeals = !showMeals;
   mealsFirebaseRef.once('value', function(dataSnapshot){
     dataSnapshot.forEach(function(child){
-      meal = child.val()
+      meal = child.val();
       var marker = mealMarkerObjects[meal.name];
-      marker.setVisible(showMeals)
-    })})
+      marker.setVisible(showMeals);
+    });
+  });
 }
 
 function toggleClothing(){
-  showCloth = !showCloth
+  showCloth = !showCloth;
   clothFirebaseRef.once('value', function(dataSnapshot){
     dataSnapshot.forEach(function(child){
       cloth = child.val();
       var marker = clothMarkerObjects[cloth.name];
       marker.setVisible(showCloth);
-    })});
+    });
+  });
 }
 
 
-$("#bedCountSubmit").click(function(){
+$("#bedCountSubmit").click(function(event){
   event.preventDefault();
+
   var updatedBedCountInput = $("#inputBedCount").val();
   var beds = sheltersFirebaseRef.child("shelterInfo00");
 
@@ -260,9 +265,10 @@ $("#bedCountSubmit").click(function(){
     "beds": updatedBedCountInput,
     "updatedAt": Firebase.ServerValue.TIMESTAMP
   });
-  var t = beds.child("updatedAt").val();
-  console.log(t)
-})
+
+  $('#bedCountForm').modal('hide');
+  $('#shelterLogin').modal('hide');
+});
 
 
 function overlay() {

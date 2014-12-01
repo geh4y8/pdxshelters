@@ -14,7 +14,7 @@
   <link href="css/ripples.min.css" rel="stylesheet">
   <link href="css/material.min.css" rel="stylesheet">
   <link href="css/material-wfont.min.css" rel="stylesheet">
-  <link href="css/custom.css" rel="stylesheet">
+  <link href="css/demo.css" rel="stylesheet">
   <link href="css/sweet-alert.css" rel="stylesheet">
 </head>
 
@@ -30,37 +30,21 @@
         <a class="navbar-brand" href="javascript:void(0)"><img height="100%" width="70%" src="/img/pdxsheltericonwhite.png"></a>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-              <div class="form-group checkbox">
-                <label>
-                  <input type="checkbox" onclick="toggleShelters()" checked="true"> Shelters
-                </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-group checkbox">
-                <label>
-                  <input type="checkbox" onclick="toggleMeals()" checked="true"> Meals
-                </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-group checkbox">
-                <label>
-                  <input type="checkbox" onclick="toggleEvents()" checked="true"> Events
-                </label>
-              </div>
-            </li>
-            <li>
-              <div class="form-group checkbox">
-                <label>
-                  <input type="checkbox" onclick="toggleClothing()" checked="true"> Clothing
-                </label>
-              </div>
-            </li>
-            <li><a data-toggle="modal" data-target="#shelterLogin">Provider Login</a></li>
-          </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><button class="btn btn-lg btn-link" onclick="toggleShelters()" checked="true">
+          <span id="icons" aria-hidden="true" class="mdi-maps-local-hotel"></span>
+          </button>
+        </li>
+        <li><button class="btn btn-lg btn-link" onclick="toggleMeals()" checked="true">
+          <span id="icons" aria-hidden="true" class="mdi-maps-local-restaurant"></span>
+          </button>
+        </li>
+        <li><button class="btn btn-lg btn-link" onclick="toggleClothing()" checked="true">
+          <img id="icons" src="/img/hanger.png">
+          </button>
+        </li>
+        <li><a data-toggle="modal" data-target="#shelterLogin">Provider Login</a></li>
+      </ul>
     </div>
   </div>
   <!-- MAP -->
@@ -265,7 +249,7 @@
   <!-- Custom JavaScript -->
   <script src="js/oauth.js"></script>
 
-  <script src="js/pdxshelters.js"></script>
+  <script src="js/demo.js"></script>
 
   <script type="text/javascript">
     google.maps.event.addDomListener(window, "load", initializeMap);

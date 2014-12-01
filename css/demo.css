@@ -1,8 +1,17 @@
+.btn-link>span, .btn-link>img {
+  position: absolute;
+  top: 0px;
+  text-decoration: none;
+  font-size: 33px;
+  height: 33px;
+}
+
 .navbar-nav {
   color:white;
 }
 
 .navbar-nav>li {
+  height:100%;
   display: inline-block;
   padding-right: 1.7em;
 }
