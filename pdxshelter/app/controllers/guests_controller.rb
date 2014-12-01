@@ -11,7 +11,7 @@ class GuestsController < ApplicationController
   end
 
   def create
-    @guest = Guest.new(params[:guest])
+    @guest = Guest.new(guest_params)
     if @guest.save
       flash[:notice] = "Guest created."
       redirect_to guests_path
@@ -30,7 +30,7 @@ class GuestsController < ApplicationController
 
   def update
     @guest = Guest.find(params[:id])
-    if @guest.update(params[:guest])
+    if @guest.update(guest_params)
       flash[:notice] = "Guest information updated"
       redirect_to guest_path(@guest)
     else
@@ -43,5 +43,11 @@ class GuestsController < ApplicationController
     @guest.destroy
     flash[:notice] = "Guest deleted from system"
     redirect_to guests_path
+  end
+
+private
+
+  def guest_params
+    params.require(:guest).permit(:first_name, :last_name)
   end
 end
