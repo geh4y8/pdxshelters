@@ -15,32 +15,3 @@
   display: inline-block;
   padding-right: 1.7em;
 }
-
-#overlay-video {
-  background-image: url('http://666a658c624a3c03a6b2-25cda059d975d2f318c03e90bcf17c40.r92.cf1.rackcdn.com/unsplash_527bf56961712_1.JPG');
-  background-size: cover;
-  display: block;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  height: 800px;
-  left: 0;
-  position: fixed;
-  right: 0;
-  z-index: 99999;
-}
-
-#overlay {
-   visibility: hidden;
-}
-
-#overlay div {
-   position: fixed;
-   left: 10px;
-   bottom: 0px;
-   width:300px;
-   margin: 60px auto;
-   background-color: #fff;
-   border:1px solid #000;
-   padding:15px;
-   text-align:center;
-}
