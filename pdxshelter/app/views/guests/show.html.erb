@@ -1,6 +1,6 @@
-<%= content_for(:title, "#{@guest.first_name @guest.last_name} | PDXShelters") %>
+<%= content_for(:title, "#{@guest.first_name} #{@guest.last_name} | PDXShelters") %>
 
-<h1><%= @guest.first_name @guest.last_name %></h1>
+<h1><%= @guest.first_name%> <%= @guest.last_name %></h1>
 
 <p><%= link_to "Edit", edit_guest_path(@guest), class: "btn btn-default" %></p>
 
