@@ -72,85 +72,85 @@ function makeMarker(item, iconpath){
 function addInfoWindow(contentString, marker){
   var infowindow = new google.maps.InfoWindow({
     content: contentString
-  })
+  });
   google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
 }
 
 function loadShelterMarker(shelter){
-  marker = makeMarker(shelter, shelterIconName(shelter))
-  shelterMarkerObjects[shelter.name] = marker
+  marker = makeMarker(shelter, shelterIconName(shelter));
+  shelterMarkerObjects[shelter.name] = marker;
 
   var contentString = shelterDetails(shelter);
-  addInfoWindow(contentString, marker)
+  addInfoWindow(contentString, marker);
 }
 
 function loadEventMarker(evnt){
-  marker = makeMarker(evnt, '/img/blue.png')
-  eventMarkerObjects[evnt.name] = marker
+  marker = makeMarker(evnt, '/img/blue.png');
+  eventMarkerObjects[evnt.name] = marker;
 
   var contentString = eventDetails(evnt);
-  addInfoWindow(contentString, marker)
+  addInfoWindow(contentString, marker);
 }
 
 function loadMealMarker(meal){
-  marker = makeMarker(meal, '/img/mealMarker.png')
-  mealMarkerObjects[meal.name] = marker
+  marker = makeMarker(meal, '/img/mealMarker.png');
+  mealMarkerObjects[meal.name] = marker;
 
   var contentString = mealDetails(meal);
-  addInfoWindow(contentString, marker)
+  addInfoWindow(contentString, marker);
 }
 
 function loadClothMarker(cloth){
-  marker = makeMarker(cloth, '/img/clothMarker.png')
-  clothMarkerObjects[cloth.name] = marker
+  marker = makeMarker(cloth, '/img/clothMarker.png');
+  clothMarkerObjects[cloth.name] = marker;
 
   var contentString = clothDetails(cloth);
-  addInfoWindow(contentString, marker)
+  addInfoWindow(contentString, marker);
 }
 
 function shelterDetails(shelter){
-  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name', style='font-size: 24px; font-weight:bold' >"+ shelter.name + "</div><div id='phone'>" + shelter.phone + "</div>" + "<div id='hours'> Open: " + shelter.hours.open + "   Close: " + shelter.hours.close + "</div>" + "<a href=" + shelter.url + ">"+ shelter.url+ "</a><br/><div style='font-size:12px'>Last updated:" + new Date(shelter.updatedAt).toString() +"</div>"
+  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name', style='font-size: 24px; font-weight:bold' >"+ shelter.name + "</div><div id='phone'>" + shelter.phone + "</div>" + "<div id='hours'> Open: " + shelter.hours.open + "   Close: " + shelter.hours.close + "</div>" + "<a href=" + shelter.url + ">"+ shelter.url+ "</a><br/><div style='font-size:12px'>Last updated:" + new Date(shelter.updatedAt).toString() + "</div>";
 
   if(shelter.facilities.shower == true){
-    contentString += ("<img style='margin:5px' src='/img/shower.png'>")
+    contentString += ("<img style='margin:5px' src='/img/shower.png'>");
   }
   if(shelter.facilities.wifi == true){
-    contentString += ("<img style='margin:5px' src='/img/wifi.png'>")
+    contentString += ("<img style='margin:5px' src='/img/wifi.png'>");
   }
   if(shelter.facilities.pets == true){
-    contentString += ("<img style='margin:5px' src='/img/pets.png'>")
+    contentString += ("<img style='margin:5px' src='/img/pets.png'>");
   }
   if(shelter.facilities.food == true){
-    contentString += ("<img style='margin:5px' src='/img/food.png'>")
+    contentString += ("<img style='margin:5px' src='/img/food.png'>");
   }
-  return contentString + "</div>"
+  return contentString + "</div>";
 }
 
 function eventDetails(evnt){
-  var contentString = "<div id='wrapper'><div id='event-name', style='font-size: 24px; font-weight:bold'>"+ evnt.name + "</div><div id='event-desc'>" + evnt.description + "</div><div id='event-location', style='font-size:18px;'>" + evnt.location + "</div></div id='event-date'>" + evnt.date + "</div><div id='event-time'>" + evnt.time
+  var contentString = "<div id='wrapper'><div id='event-name', style='font-size: 24px; font-weight:bold'>"+ evnt.name + "</div><div id='event-desc'>" + evnt.description + "</div><div id='event-location', style='font-size:18px;'>" + evnt.location + "</div></div id='event-date'>" + evnt.date + "</div><div id='event-time'>" + evnt.time;
   if (evnt.url){
-    contentString+= '<br/><a href=' + evnt.url + ">" + evnt.url + "</a>"
+    contentString+= '<br/><a href=' + evnt.url + ">" + evnt.url + "</a>";
   }
 
-  return contentString
+  return contentString;
 }
 
 function mealDetails(meal){
-  var contentString = "<div id='wrapper'><div id='meal-name', style='font-size: 24px; font-weight:bold'>"+ meal.name + "</div><div id='meal-phone'>" + meal.phone + "</div><div id='meal-address', style='font-size:18px;'>" + meal.address + "</div></div id='meal-hours'>" + meal.hours //+ "</div><div id='event-time'>" + meal.time
+  var contentString = "<div id='wrapper'><div id='meal-name', style='font-size: 24px; font-weight:bold'>"+ meal.name + "</div><div id='meal-phone'>" + meal.phone + "</div><div id='meal-address', style='font-size:18px;'>" + meal.address + "</div></div id='meal-hours'>" + meal.hours //+ "</div><div id='event-time'>" + meal.time;
   if (meal.url){
-    contentString+= '<br/><a href=' + meal.url + ">" + meal.url + "</a>"
+    contentString+= '<br/><a href=' + meal.url + ">" + meal.url + "</a>";
   }
 
-  return contentString
+  return contentString;
 }
 
 function clothDetails(cloth){
-  var contentString = "<div id='wrapper'><div id='cloth-name', style='font-size: 24px; font-weight:bold'>"+ cloth.name + "</div><div id='cloth-phone'>" + cloth.phone + "</div><div id='cloth-address', style='font-size:18px;'>" + cloth.address + "</div></div id='cloth-hours'>" + cloth.hours //+ "</div><div id='event-time'>" + cloth.time
+  var contentString = "<div id='wrapper'><div id='cloth-name', style='font-size: 24px; font-weight:bold'>"+ cloth.name + "</div><div id='cloth-phone'>" + cloth.phone + "</div><div id='cloth-address', style='font-size:18px;'>" + cloth.address + "</div></div id='cloth-hours'>" + cloth.hours //+ "</div><div id='event-time'>" + cloth.time;
   if (cloth.url){
-    contentString+= '<br/><a href=' + cloth.url + ">" + cloth.url + "</a>"
+    contentString+= '<br/><a href=' + cloth.url + ">" + cloth.url + "</a>";
   }
 
-  return contentString
+  return contentString;
 }
 
 sheltersFirebaseRef.once('value', function(dataSnapshot){
