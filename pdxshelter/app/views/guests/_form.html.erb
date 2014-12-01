@@ -1,0 +1,11 @@
+<%= form_for(@guest) do |f| %>
+  <div class="form-group">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="form-group">
+    <%= f.label :last_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <%= f.submit(class: "btn btn-primary") %>
+<% end %>

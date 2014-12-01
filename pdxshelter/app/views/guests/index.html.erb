@@ -1,0 +1,11 @@
+<%= content_for(:title, "Guests") %>
+
+<h1> Guests </h1>
+
+<ul>
+  <% @guests.each do |guest| %>
+    <li><a href="/guests/<%= guest.id %>" %><%= guest.name %></a></li>
+  <% end %>
+</ul>
+
+<%= link_to "Register New Guest", new_guest_path, class: "btn btn-default" %>
