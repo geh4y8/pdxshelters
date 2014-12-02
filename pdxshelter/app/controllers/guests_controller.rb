@@ -48,6 +48,6 @@ class GuestsController < ApplicationController
 private
 
   def guest_params
-    params.require(:guest).permit(:first_name, :last_name)
+    params.require(:guest).permit(:first_name, :last_name, :tb_card)
   end
 end

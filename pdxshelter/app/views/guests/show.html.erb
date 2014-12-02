@@ -2,6 +2,8 @@
 
 <h1><%= @guest.first_name%> <%= @guest.last_name %></h1>
 
+<%= image_tag @guest.tb_card.url(:medium) %>
+
 <p><%= link_to "Edit", edit_guest_path(@guest), class: "btn btn-default" %></p>
 
 <p><%= link_to "Delete", guest_path(@guest),
