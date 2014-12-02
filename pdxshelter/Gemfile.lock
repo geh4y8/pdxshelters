@@ -44,6 +44,10 @@ GEM
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.2.2)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -84,6 +88,11 @@ GEM
     minitest (5.4.3)
     multi_json (1.10.1)
     orm_adapter (0.5.0)
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     pg (0.17.1)
     puma (2.10.2)
       rack (>= 1.1, < 2.0)
@@ -177,6 +186,7 @@ DEPENDENCIES
   dashing-rails
   devise
   jquery-rails
+  paperclip
   pg
   puma
   quiet_assets
