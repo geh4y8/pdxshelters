@@ -2,7 +2,9 @@
 
 <h1><%= @guest.first_name%> <%= @guest.last_name %></h1>
 
-<%= image_tag @guest.tb_card.url(:medium) %>
+<% if !@guest.tb_card.blank? %>
+  <%= image_tag @guest.tb_card.url(:medium) %>
+<% end%>
 
 <p><%= link_to "Edit", edit_guest_path(@guest), class: "btn btn-default" %></p>
 
