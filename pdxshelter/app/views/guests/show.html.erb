@@ -1,0 +1,17 @@
+<%= content_for(:title, "#{@guest.first_name} #{@guest.last_name} | PDXShelters") %>
+
+<h1><%= @guest.first_name%> <%= @guest.last_name %></h1>
+
+<% if !@guest.tb_card.blank? %>
+  <%= image_tag @guest.tb_card.url(:medium) %>
+<% end%>
+
+<p><%= link_to "Edit", edit_guest_path(@guest), class: "btn btn-default" %></p>
+
+<p><%= link_to "Delete", guest_path(@guest),
+                         confirm: "Are you sure?",
+                         method: "delete",
+                         class: "btn btn-danger"
+%></p>
+
+<p><%= link_to "Return to the guest listing", guests_path %></p>
