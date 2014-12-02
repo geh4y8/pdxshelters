@@ -7,5 +7,9 @@
     <%= f.label :last_name %>
     <%= f.text_field :last_name %>
   </div>
+  <div class="form-group">
+    <%= f.label :tb_card %>
+    <%= f.file_field :tb_card %>
+  </div>
   <%= f.submit(class: "btn btn-primary") %>
 <% end %>
