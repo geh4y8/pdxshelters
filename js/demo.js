@@ -3,7 +3,8 @@ $(document).ready(function () {
         swal({title: 'Hold On!',
         text: 'Please dial 2-1-1 for assistance before using this resource!',
         type: 'warning',
-        confirmButtonText: 'Got it.'});
+        confirmButtonText: 'Got it.',
+        confirmButtonColor: '#196CBF'});
     }, 1000);
 });
 
