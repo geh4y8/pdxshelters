@@ -25,16 +25,16 @@ A list of the current features we have (at least partly implemented):
 * Shelter login and bed-update (demo only)
 * Other events offered by non-shelter groups
 * Map filtering by shelters, events, meals, and clothing
+* Add a new provider
+* Provider can CRUD guests
+* TB card image upload for guests
+
 
 Features to be implemented:
 
-* Ability to add a new provider
 * Ability for providers to login/create user roles (i.e. admin vs employee)
-* Ability for providers to create guests
-* View for providers to view guest list/profiles
 * Ability for providers to create events
 * Ability for providers to update public details (e.g. hours amenities)
-* Ability for providers to upload TB card detail/image for guests
 * An events feed that shows newly added (or soonest occuring?) events
 * A better way to filter map results?
 * API documentation (Yard?)
