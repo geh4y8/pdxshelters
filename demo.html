@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
@@ -27,20 +27,20 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand"><img height="100%" width="70%" src="/img/pdxsheltericonwhite.png"></a>
+      <div class="navbar-brand"><img height="100%" width="70%" src="/img/pdxsheltericonwhite.png" alt="PDX Shelter logo"></div>
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><button class="btn btn-lg btn-link" onclick="toggleShelters()" checked="true">
+        <li><button class="btn btn-lg btn-link" onclick="toggleShelters()" checked="true" alt="toggle shelters">
           <span id="icons" aria-hidden="true" class="mdi-maps-local-hotel"></span>
           </button>
         </li>
-        <li><button class="btn btn-lg btn-link" onclick="toggleMeals()" checked="true">
+        <li><button class="btn btn-lg btn-link" onclick="toggleMeals()" checked="true" alt="toggle meals">
           <span id="icons" aria-hidden="true" class="mdi-maps-local-restaurant"></span>
           </button>
         </li>
-        <li><button class="btn btn-lg btn-link" onclick="toggleClothing()" checked="true">
-          <img id="icons" src="/img/hanger.png">
+        <li><button class="btn btn-lg btn-link" onclick="toggleClothing()" checked="true" alt="toggle clothing">
+          <img id="icons" src="/img/hanger.png" alt="">
           </button>
         </li>
         <li><a data-toggle="modal" data-target="#shelterLogin">Provider Login</a></li>
@@ -50,9 +50,7 @@
   <!-- MAP -->
 
   <div id="map-canvas"></div>
-  <div id="pdxsw2014" style="position: fixed; display: block; height: 40px; width: 100%; z-index: 99998; bottom: 0px; left: 0px; padding: 10px 0px; text-align: center; margin: 0px; color: white; background-color: #585555;"><a href='#' onMouseOver='overlay()' onMouseOut='overlay()'><img style="position:fixed; left: 1%; bottom: 5px" src="/img/cc_small.png"></a>
-    <span>made in 54 hours with  <span style="color:red; font-size:20px">&#10084;</span>  at <a style="text-decoration: none; font-weight: bold" href="http://www.up.co/communities/usa/portland/startup-weekend/4806">PDXSW2014</a></span><a href="http://www.github.com/geh4y8/pdxshelters"><img style="position:fixed; padding: 0px; right:1%; bottom:5px" src="/img/github2.png"></a></div>
-  </div>
+
   <div class="modal fade" id="shelterLogin" tabindex="-1" role="dialog" aria-labelledby="shelterLoginModal" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -95,10 +93,15 @@
     </div>
   </div>
 </div>
+</div>
+
+<div id="pdxsw2014" style="position: fixed; display: block; height: 40px; width: 100%; z-index: 99998; bottom: 0px; left: 0px; padding: 10px 0px; text-align: center; margin: 0px; color: white; background-color: #585555;"><a href='#' onMouseOver='overlay()' onMouseOut='overlay()'><img style="position:fixed; left: 1%; bottom: 5px" src="/img/cc_small.png" alt="creative commons"></a>
+  <span>made in 54 hours with  <span style="color:red; font-size:20px">&#10084;</span>  at <a style="text-decoration: none; font-weight: bold" href="http://www.up.co/communities/usa/portland/startup-weekend/4806">PDXSW2014</a></span><a href="http://www.github.com/geh4y8/pdxshelters"><img style="position:fixed; padding: 0px; right:1%; bottom:5px" src="/img/github2.png" alt="github"></a>
+</div>
 
 <div id="overlay">
    <div>
-        <p>Thanks to <a href="http://thenounproject.com/athanagore/">athanagore</a> and <a href="http://thenounproject.com/thisisjaclyne/">thisisjaclyne</a> for icons used in this app under the creative commons lincense <a href="http://creativecommons.org/licenses/by/3.0/">(CC BY 3.0)</a>.</p>
+        <p>Thanks to <a href="http://thenounproject.com/athanagore/">athanagore</a> and <a href="http://thenounproject.com/thisisjaclyne/">thisisjaclyne</a> for icons used in this app under the creative commons license <a href="http://creativecommons.org/licenses/by/3.0/">(CC BY 3.0)</a>.</p>
    </div>
 </div>
 
