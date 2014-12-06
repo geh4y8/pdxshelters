@@ -21,7 +21,7 @@ Here is a list of general things we have and would like the app to achieve, see 
 A list of the current features we have (at least partly implemented):
 
 * Shelter map points, with basic info
-* Real-time shelter bed availablities
+* Real-time shelter bed availabilities
 * Shelter login and bed-update (demo only)
 * Other events offered by non-shelter groups
 * Map filtering by shelters, events, meals, and clothing
@@ -35,7 +35,7 @@ Features to be implemented:
 * Ability for providers to login/create user roles (i.e. admin vs employee)
 * Ability for providers to create events
 * Ability for providers to update public details (e.g. hours amenities)
-* An events feed that shows newly added (or soonest occuring?) events
+* An events feed that shows newly added (or soonest occurring?) events
 * A better way to filter map results?
 * API documentation (Yard?)
 
@@ -47,7 +47,7 @@ Features to be implemented:
 Contributing
 ------------
 
-We want to change the way techology is used to help those in need, come be part of the revolution!
+We want to change the way technology is used to help those in need, come be part of the revolution!
 
 If you want to talk to us directly about collaborating or supporting our work, technically or otherwise, see contacts below.
 
@@ -62,7 +62,7 @@ You can follow us on [twitter](http://twitter.com/pdxshelter)!
 
 For general (non-tech) related inquires about our organization -- Our Director, Matthew Fountain : matthew@pdxshelter.org
 
-To talk to the someone related to the code/developement side of things -- Guy Halperin: guy@pdxshelter.org or Amy Boyle: amy@pdxshelter.org
+To talk to the someone related to the code/development side of things -- Guy Halperin: guy@pdxshelter.org or Amy Boyle: amy@pdxshelter.org
 
 License
 -------

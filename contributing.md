@@ -6,7 +6,7 @@ Thank you for your interest in helping our project, you will be helping not just
 Getting setup
 --------------
 
-This is a step-by-step guide to get you set-up, this section is intended for those new to open source. If you already have the technologies listed in the sub-section titles here, go ahead and skip to <a href="#Running Locally">Running Locally</a> or <a href="#Guildlines">Guildlines</a>. Assumed here is some familiarity with the command line, and a system running a flavor of Unix (Linux or OSX). [Windows instructions](windows.md).
+This is a step-by-step guide to get you set-up, this section is intended for those new to open source. If you already have the technologies listed in the sub-section titles here, go ahead and skip to <a href="#Running Locally">Running Locally</a> or <a href="#Guidelines">Guidelines</a>. Assumed here is some familiarity with the command line, and a system running a flavor of Unix (Linux or OSX). [Windows instructions](windows.md).
 
 ### Git
 The code for the project is hosted on Github. Git is revision control software. You will need to have git installed on your computer, and a Github account. You can attain both these requirements from the instructions on the [Github](https://github.com) website.
@@ -53,7 +53,7 @@ Before the first time you run the Rails app locally, you will install the necess
 
 If you want to see the backend (Rails), navigate to the pdxshelters/pdxshelter directory and run `rails s` and navigate to [http://localhost:3000/](http://localhost:3000/) in your browser to see the app.
 
-Guidlines
+Guidelines
 -----------
 
 After you have forked, the flow of contributing to this project will look like this:
@@ -64,7 +64,7 @@ After you have forked, the flow of contributing to this project will look like t
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create a new [Pull Request](https://github.com/geh4y8/pdxshelters/compare) (select compare across forks)
 
-Mention the Issue in the title of the PR e.g. "Fixes Issue #8 all dogs can now go to heaven". If you want to add a feature that is not on the issues list, please discuss this with the other project contributers by creating an issue, we will talk about it in the comments there. It would be a total bummer for you to do a bunch of work on something we don't end up using!
+Mention the Issue in the title of the PR e.g. "Fixes Issue #8 all dogs can now go to heaven". If you want to add a feature that is not on the issues list, please discuss this with the other project contributors by creating an issue, we will talk about it in the comments there. It would be a total bummer for you to do a bunch of work on something we don't end up using!
 
 When assigning yourself to an issue, please intend to be actively working on it. Beginners may find the tasks tagged "easier" to be less time intensive for those with less coding experience. That is not to that that they will be easy for everyone, so be patient with yourself.
 
