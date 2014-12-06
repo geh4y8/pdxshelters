@@ -6,7 +6,7 @@ Thank you for your interest in helping our project, you will be helping not just
 Getting setup
 --------------
 
-This is a step-by-step guide to get you set-up, this section is intended for those new to open source. If you already have the technologies listed in the sub-section titles here, go ahead and skip to <a href="#Running Locally">Running Locally</a> or <a href="#Guildlines">Guildlines</a>. Assumed here is some familiarity with the command line, and a system running a flavor of Unix (Linux or OSX). See [here](windows.md) for Windows instructions.
+This is a step-by-step guide to get you set-up, this section is intended for those new to open source. If you already have the technologies listed in the sub-section titles here, go ahead and skip to <a href="#Running Locally">Running Locally</a> or <a href="#Guidelines">Guidelines</a>. Assumed here is some familiarity with the command line, and a system running a flavor of Unix (Linux or OSX). [Windows instructions](windows.md).
 
 ### Git
 The code for the project is hosted on Github. Git is revision control software. You will need to have git installed on your computer, and a Github account. You can attain both these requirements from the instructions on the [Github](https://github.com) website.
@@ -23,8 +23,8 @@ Our backend employs PostgreSQL, which you will need installed and intialized on 
 * exit the postgres user using `exit`
 
 ### Forking/Cloning
-Now that you are set-up, you need to fork the repo and get the code on your computer. Github has good instructions on how to do this generally [here](https://help.github.com/articles/fork-a-repo/), but here is the short version specific to our project:
-* Create your own fork of the main repo [here](https://github.com/geh4y8/pdxshelters/fork).
+Now that you are set-up, you need to fork the repo and get the code on your computer. Github has [good instructions](https://help.github.com/articles/fork-a-repo/) on how to do this generally, but here is the short version specific to our project:
+* Create your own fork of the [main repo](https://github.com/geh4y8/pdxshelters/fork).
 * Go to the terminal on your computer and clone your newly created fork: `git clone https://github.com/your-user-name/pdxshelters.git`, where your-user-name is your Github username. This will create a new directory with all the project files.
 * cd into that directory
 * Setup the upstream connection to the main repo by: `git remote add upstream https://github.com/geh4y8/pdxshelters.git`
@@ -53,7 +53,7 @@ Before the first time you run the Rails app locally, you will install the necess
 
 If you want to see the backend (Rails), navigate to the pdxshelters/pdxshelter directory and run `rails s` and navigate to [http://localhost:3000/](http://localhost:3000/) in your browser to see the app.
 
-Guildlines
+Guidelines
 -----------
 
 After you have forked, the flow of contributing to this project will look like this:
@@ -64,7 +64,7 @@ After you have forked, the flow of contributing to this project will look like t
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create a new [Pull Request](https://github.com/geh4y8/pdxshelters/compare) (select compare across forks)
 
-Mention the Issue in the title of the PR e.g. "Fixes Issue #8 all dogs can now go to heaven". If you want to add a feature that is not on the issues list, please discuss this with the other project contributers by creating an issue, we will talk about it in the comments there. It would be a total bummer for you to do a bunch of work on something we don't end up using!
+Mention the Issue in the title of the PR e.g. "Fixes Issue #8 all dogs can now go to heaven". If you want to add a feature that is not on the issues list, please discuss this with the other project contributors by creating an issue, we will talk about it in the comments there. It would be a total bummer for you to do a bunch of work on something we don't end up using!
 
 When assigning yourself to an issue, please intend to be actively working on it. Beginners may find the tasks tagged "easier" to be less time intensive for those with less coding experience. That is not to that that they will be easy for everyone, so be patient with yourself.
 
