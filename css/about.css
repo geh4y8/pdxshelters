@@ -1,12 +1,28 @@
 #quote-container {
+  color: white;
+  font-size: 30px;
   float: left;
   width: 50%;
   height: 100vh;
   background-color: #FF530D;
 }
 
-#about-content {
+#quote-container p {
+  margin-top: 50%;
+  padding: 30px;
+}
+
+#about-content li {
+  font-size: 14px;
+}
+
+#about-container {
+  font-size: 15px;
   float: right;
   width: 50%;
   height: 100%;
+}
+
+#about-content {
+  padding: 25px;
 }
