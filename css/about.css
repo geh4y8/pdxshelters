@@ -1,0 +1,12 @@
+#quote-container {
+  float: left;
+  width: 50%;
+  height: 100vh;
+  background-color: #FF530D;
+}
+
+#about-content {
+  float: right;
+  width: 50%;
+  height: 100%;
+}
