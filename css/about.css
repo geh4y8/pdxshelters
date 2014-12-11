@@ -1,28 +1,88 @@
-#quote-container {
-  color: white;
-  font-size: 30px;
+
+body{
+  background-image: url('../img/dark_wood.jpg');
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+.logo-pdxs{
   float: left;
-  width: 50%;
-  height: 100vh;
-  background-color: #FF530D;
+  margin: 10px;
 }
 
-#quote-container p {
-  margin-top: 50%;
-  padding: 30px;
+.logo-container{
+  float:left;
 }
 
-#about-content li {
-  font-size: 14px;
+.about-container{
+  margin-left:20%;
+  margin-right:20%;
 }
 
-#about-container {
-  font-size: 15px;
-  float: right;
-  width: 50%;
-  height: 100%;
+.about-content {
+  padding: 1em;
+  background-image: url('../img/extra_clean_paper.png');
+  padding-left: 5%;  
+  padding-right: 5%;
 }
 
-#about-content {
-  padding: 25px;
+.about-content p{
+  font-size: 18px;
+  padding: 0.5em;
+}
+
+.about-content li{
+  padding: 0.5em;
+  font-size: 16px;
+}
+
+.quote{
+  background-color: lightgray;
+  font-size: 2em;
+  text-align: center;
+  padding: 1% 5% 1% 5%;
+}
+
+#help {
+  font-weight: bold;
+  text-align: center;
+}
+
+
+/* TEAM */
+
+.team-member {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.team-member img {
+    height: 14rem;
+    margin: 0 auto;
+    border: 7px solid #fff;
+}
+
+.team-member h4 {
+    margin-top: 25px;
+    margin-bottom: 0;
+    text-transform: none;
+}
+
+.team-member p {
+    margin-top: 0;
+}
+
+#team {
+  background-color:white;
+}
+
+@media (max-width:720px){
+
+  .about-container{
+    margin-left:0%;
+    margin-right:0%;
+  }
 }
