@@ -4,8 +4,8 @@ body{
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-h1 {
-  text-align: center;
+h1{
+  font-weight: bold;
 }
 
 .logo-pdxs{
@@ -18,71 +18,84 @@ h1 {
 }
 
 .about-container{
-  margin-left:20%;
-  margin-right:20%;
+  border-top: 7px solid #da6810;
+  margin-left: 22%;
+  margin-right: 22%;
 }
 
-.about-content {
-  padding: 1em;
+.about-content{
   background-image: url('../img/extra_clean_paper.png');
+  padding-top: 1em;
+  padding-bottom: 1em;
   padding-left: 5%;  
   padding-right: 5%;
 }
+  
+  .about-content p{
+    font-size: 18px;
+    padding: 0.5em;
+  }
 
-.about-content p{
-  font-size: 18px;
-  padding: 0.5em;
-}
-
-.about-content li{
-  padding: 0.5em;
-  font-size: 16px;
-}
+  .about-content li{
+    padding: 0.5em;
+    font-size: 16px;
+  }
 
 .quote{
-  background-color: lightgray;
+  background-color: #d3d3d3;
   font-size: 2em;
   text-align: center;
   padding: 1% 5% 1% 5%;
 }
 
-#help {
+#help{
+  font-size: 1.5em;
+  background-color: #da6810;
   font-weight: bold;
   text-align: center;
+  padding: 1em;
 }
 
+#help a{
+  color: #0d20af;
+}
 
 /* TEAM */
 
-.team-member {
+.team-member{
     margin-bottom: 50px;
     text-align: center;
 }
 
-.team-member img {
+.team-member img{
     height: 14rem;
     margin: 0 auto;
     border: 7px solid #fff;
 }
 
-.team-member h4 {
+.team-member h4{
     margin-top: 25px;
     margin-bottom: 0;
     text-transform: none;
 }
 
-.team-member p {
+.team-member p{
     margin-top: 0;
 }
 
-#team {
+#team{
   background-color:white;
 }
 
-@media (max-width:720px){
+@media (max-width:1024px){
 
+  h1{
+    text-align: center;
+  }
+  
   .about-container{
     margin-left:0%;
     margin-right:0%;
   }
+
 }
