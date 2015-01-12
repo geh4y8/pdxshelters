@@ -8,97 +8,9 @@ $(document).ready(function () {
     }, 1000);
 });
 
-var map;
+/*  DETAILS FOR DATABASE ITEMS */
 
-// Set the center as Firebase HQ
-var locations = {
-  "PDXSheltersHQ": [45.531436, -122.655222]
-};
-var center = locations["PDXSheltersHQ"];
-
-// Get a reference to the Firebase data set
-var sheltersFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/shelters");
-var mealsFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/meals");
-var clothFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com/clothing");
-
-sheltersFirebaseRef.on("child_changed", function(snapshot) {
-  var changedShelter = snapshot.val();
-  var marker = shelterMarkerObjects[changedShelter.name];
-  marker.setIcon(shelterIconName(changedShelter));
-});
-
-sheltersFirebaseRef.on("child_added", function(snapshot) {
-  var newShelter = snapshot.val();
-});
-
-//Create a new GeoFire instance
-var geoFire = new GeoFire(sheltersFirebaseRef);
-var shelterMarkerObjects = {};
-var mealMarkerObjects = {};
-var clothMarkerObjects = {};
-var openWindow;
-
-function openSoloWindow(infowindow, marker){
-  //close the last opened window first
-  if (typeof openWindow != "undefined"){
-    openWindow.close();
-  }
-  infowindow.open(map, marker);
-  openWindow = infowindow
-}
-
-function shelterIconName(shelter){
-  if(shelter.beds > 10){
-    var iconName = "/img/red10+.png"
-  } else {
-    iconName = "/img/" + "red" + shelter.beds + ".png"
-  }
-  return iconName
-}
-
-function makeMarker(item, iconpath){
-  // To add the marker to the map, use the 'map' property
-  var coords = item.coords.l
-  var latLong = new google.maps.LatLng(coords[0], coords[1]);
-  var marker = new google.maps.Marker({
-      position: latLong,
-      map: map,
-      icon: iconpath
-  });
-  return marker
-}
-
-function addInfoWindow(contentString, marker){
-  var infowindow = new google.maps.InfoWindow({
-    content: contentString
-  });
-  google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
-}
-
-function loadShelterMarker(shelter){
-  marker = makeMarker(shelter, shelterIconName(shelter));
-  shelterMarkerObjects[shelter.name] = marker;
-
-  var contentString = shelterDetails(shelter);
-  addInfoWindow(contentString, marker);
-}
-
-function loadMealMarker(meal){
-  marker = makeMarker(meal, '/img/mealMarker.png');
-  mealMarkerObjects[meal.name] = marker;
-
-  var contentString = mealDetails(meal);
-  addInfoWindow(contentString, marker);
-}
-
-function loadClothMarker(cloth){
-  marker = makeMarker(cloth, '/img/clothMarker.png');
-  clothMarkerObjects[cloth.name] = marker;
-
-  var contentString = clothDetails(cloth);
-  addInfoWindow(contentString, marker);
-}
-
+// Each filter must have a function for assembling the info window HTML
 function shelterDetails(shelter){
   var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name', style='font-size: 24px; font-weight:bold' >"+ shelter.name + "</div><div id='phone'>" + shelter.phone + "</div>" + "<div id='hours'> Open: " + shelter.hours.open + "   Close: " + shelter.hours.close + "</div>" + "<a href=" + shelter.url + ">"+ shelter.url+ "</a><br/><div style='font-size:12px'>Last updated:" + new Date(shelter.updatedAt).toString() + "</div>";
 
@@ -135,23 +47,51 @@ function clothDetails(cloth){
   return contentString;
 }
 
-sheltersFirebaseRef.once('value', function(dataSnapshot){
-  dataSnapshot.forEach(function(child){
-    loadShelterMarker(child.val());
-  });
-});
+function openSoloWindow(infowindow, marker){
+  //close the last opened window first
+  if (typeof openWindow != "undefined"){
+    openWindow.close();
+  }
+  infowindow.open(map, marker);
+  openWindow = infowindow
+}
 
-mealsFirebaseRef.once('value', function(dataSnapshot){
-  dataSnapshot.forEach(function(child){
-    loadMealMarker(child.val());
-  });
-});
 
-clothFirebaseRef.once('value', function(dataSnapshot){
-  dataSnapshot.forEach(function(child){
-    loadClothMarker(child.val());
+function makeMarker(item, iconpath){
+  // To add the marker to the map, use the 'map' property
+  var coords = item.coords.l
+  var latLong = new google.maps.LatLng(coords[0], coords[1]);
+  var marker = new google.maps.Marker({
+      position: latLong,
+      map: map,
+      icon: iconpath
   });
-});
+  return marker
+}
+
+function loadMarker(name, thing){
+  var marker = makeMarker(thing, filters[name]);
+
+  markerObjects[name][thing.name] = marker;
+  
+  switch(name){
+    case 'shelters':
+      var contentString = shelterDetails(thing);
+      break;
+    case 'clothing':
+      var contentString = clothDetails(thing);
+      break;
+    case 'meals':
+      var contentString = mealDetails(thing);
+      break;
+  }
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  google.maps.event.addListener(marker, 'click', function(){openSoloWindow(infowindow, marker)});
+
+}
 
 /*  GEOLOCATE  */
 
@@ -181,62 +121,51 @@ function initializeMap() {
   });
  }
 
-var showShelters = true;
-// var showEvents = true;
-var showMeals = true;
-var showCloth = true;
 
-function toggleShelters(){
-  showShelters = !showShelters;
-  sheltersFirebaseRef.once('value', function(dataSnapshot){
-    dataSnapshot.forEach(function(child){
-      shelter = child.val();
-      var marker = shelterMarkerObjects[shelter.name];
-      marker.setVisible(showShelters);
-    });
-  });
+function toggleFilter(filterKey){
+  showFilters[filterKey] = !showFilters[filterKey];
+  markers = markerObjects[filterKey];
+  for (name in markers){
+    markers[name].setVisible(showFilters[filterKey]);
+  }
 }
-
-function toggleMeals(){
-  showMeals = !showMeals;
-  mealsFirebaseRef.once('value', function(dataSnapshot){
-    dataSnapshot.forEach(function(child){
-      meal = child.val();
-      var marker = mealMarkerObjects[meal.name];
-      marker.setVisible(showMeals);
-    });
-  });
-}
-
-function toggleClothing(){
-  showCloth = !showCloth;
-  clothFirebaseRef.once('value', function(dataSnapshot){
-    dataSnapshot.forEach(function(child){
-      cloth = child.val();
-      var marker = clothMarkerObjects[cloth.name];
-      marker.setVisible(showCloth);
-    });
-  });
-}
-
-
-$("#bedCountSubmit").click(function(event){
-  event.preventDefault();
-
-  var updatedBedCountInput = $("#inputBedCount").val();
-  var beds = sheltersFirebaseRef.child("shelterInfo00");
-
-  beds.update({
-    "beds": updatedBedCountInput,
-    "updatedAt": Firebase.ServerValue.TIMESTAMP
-  });
-
-  $('#bedCountForm').modal('hide');
-  $('#shelterLogin').modal('hide');
-});
-
 
 function overlay() {
   el = document.getElementById("overlay");
   el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
 }
+
+/* Initialize Map with markers */
+
+var map;
+
+// Set the center as Firebase HQ
+var locations = {
+  "PDXSheltersHQ": [45.531436, -122.655222]
+};
+var center = locations["PDXSheltersHQ"];
+
+var filters = {'shelters': '/img/shelterMarker.png', 
+               'meals': '/img/mealMarker.png', 
+               'clothing': '/img/clothMarker.png'};
+
+// Get references to the Firebase data sets
+var firebaseRefs = {};
+var showFilters = {};
+var markerObjects = {};
+for (var filter in filters) {
+  firebaseRefs[filter]= new Firebase("https://pdxshelters.firebaseio.com/" + filter);
+  showFilters[filter] = true;
+  markerObjects[filter] = {};
+}
+
+// Add a marker to the map for each item in the DB
+for (var ref in firebaseRefs){
+  firebaseRefs[ref].once('value', function(dataSnapshot){
+    dataSnapshot.forEach(function(child){
+      loadMarker(dataSnapshot.key(), child.val());
+    });
+  });
+}
+
+var openWindow;
