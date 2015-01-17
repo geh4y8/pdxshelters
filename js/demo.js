@@ -11,53 +11,74 @@ $(document).ready(function () {
 /*  DETAILS FOR DATABASE ITEMS */
 
 // Each filter must have a function for assembling the info window HTML
-function shelterDetails(shelter){
-  var contentString = "<div id='wrapper' style='width: 100%; height: 110%; font-size: 20px'><div id='name', style='font-size: 24px; font-weight:bold' >"+ shelter.name + "</div><div id='phone'>" + shelter.phone + "</div>" + "<div id='hours'> Open: " + shelter.hours.open + "   Close: " + shelter.hours.close + "</div>" + "<a href=" + shelter.url + ">"+ shelter.url+ "</a><br/><div style='font-size:12px'>Last updated:" + new Date(shelter.updatedAt).toString() + "</div>";
+function shelterDetails(shelter) {
 
-  if(shelter.facilities.shower == true){
+  var contentString = defaultDetails(shelter);
+
+  if(shelter.facilities.shower == true) {
     contentString += ("<img style='margin:5px' src='/img/shower.png'>");
   }
-  if(shelter.facilities.wifi == true){
+  if(shelter.facilities.wifi == true) {
     contentString += ("<img style='margin:5px' src='/img/wifi.png'>");
   }
-  if(shelter.facilities.pets == true){
+  if(shelter.facilities.pets == true) {
     contentString += ("<img style='margin:5px' src='/img/pets.png'>");
   }
-  if(shelter.facilities.food == true){
+  if(shelter.facilities.food == true) {
     contentString += ("<img style='margin:5px' src='/img/food.png'>");
   }
-  return contentString + "</div>";
-}
-
-function mealDetails(meal){
-  var contentString = "<div id='wrapper'><div id='meal-name', style='font-size: 24px; font-weight:bold'>"+ meal.name + "</div><div id='meal-phone'>" + meal.phone + "</div><div id='meal-address', style='font-size:18px;'>" + meal.address + "</div></div id='meal-hours'>" + meal.hours //+ "</div><div id='event-time'>" + meal.time;
-  if (meal.url){
-    contentString+= '<br/><a href=' + meal.url + ">" + meal.url + "</a>";
-  }
-
   return contentString;
 }
 
-function clothDetails(cloth){
-  var contentString = "<div id='wrapper'><div id='cloth-name', style='font-size: 24px; font-weight:bold'>"+ cloth.name + "</div><div id='cloth-phone'>" + cloth.phone + "</div><div id='cloth-address', style='font-size:18px;'>" + cloth.address + "</div></div id='cloth-hours'>" + cloth.hours //+ "</div><div id='event-time'>" + cloth.time;
-  if (cloth.url){
-    contentString+= '<br/><a href=' + cloth.url + ">" + cloth.url + "</a>";
-  }
+function contains(array, item) {
+  return array.indexOf(item) >= 0;
+}
 
+function defaultDetails(dbitem) {
+  var item_keys = Object.keys(dbitem);
+  var contentString = "<div id='wrapper'>";
+  if (contains(item_keys, 'name')) {
+    contentString += "<div id=dbitem-name>" + dbitem['name'] + "</div>";
+  }
+  if (contains(item_keys, 'phone')) {
+    contentString += "<div id=dbitem-phone>" + dbitem['phone'] + "</div>";
+  }
+  if (contains(item_keys, 'location')) {
+    contentString += "<div id=dbitem-address>" + dbitem['location'] + "</div>";
+  }
+  if (contains(item_keys, 'address')) {
+    contentString += "<div id=dbitem-address>" + dbitem['address'] + "</div>";
+  }
+  if (contains(item_keys, 'hours')) {
+    // non-uniform hours format in database
+    if (typeof(dbitem.hours) === "object") {
+      var hours = "Open: " + dbitem.hours.open + "   Close: " + dbitem.hours.close;
+    } else {
+      var hours = dbitem.hours;
+    }
+    contentString += "<div id=dbitem-hours>" + hours + "</div>";
+  }
+  if (contains(item_keys, 'url')) {
+    contentString += "<div id=dbitem-url><a href=" + dbitem['url'] + ">" + dbitem['url'] + "</a></div>";
+  }
+  if (contains(item_keys, 'updatedAt')) {
+    contentString += "<div id=dbitem-updated>Last updated: " + new Date(dbitem.updatedAt).toString() + "</div>";
+  }
+  contentString += "</div>";
   return contentString;
 }
 
-function openSoloWindow(infowindow, marker){
+function openSoloWindow(infowindow, marker) {
   //close the last opened window first
-  if (typeof openWindow != "undefined"){
+  if (typeof openWindow != "undefined") {
     openWindow.close();
   }
   infowindow.open(map, marker);
-  openWindow = infowindow
+  openWindow = infowindow;
 }
 
 
-function makeMarker(item, iconpath){
+function makeMarker(item, iconpath) {
   // To add the marker to the map, use the 'map' property
   var coords = item.coords.l
   var latLong = new google.maps.LatLng(coords[0], coords[1]);
@@ -69,21 +90,16 @@ function makeMarker(item, iconpath){
   return marker
 }
 
-function loadMarker(name, thing){
-  var marker = makeMarker(thing, filters[name]);
-
-  markerObjects[name][thing.name] = marker;
+function loadMarker(name, mapitem) {
+  var marker = makeMarker(mapitem, filters[name]);
+  markerObjects[name][mapitem.name] = marker;
   
   switch(name){
     case 'shelters':
-      var contentString = shelterDetails(thing);
+      var contentString = shelterDetails(mapitem);
       break;
-    case 'clothing':
-      var contentString = clothDetails(thing);
-      break;
-    case 'meals':
-      var contentString = mealDetails(thing);
-      break;
+    default:
+      var contentString = defaultDetails(mapitem);
   }
 
   var infowindow = new google.maps.InfoWindow({
@@ -122,7 +138,7 @@ function initializeMap() {
  }
 
 
-function toggleFilter(filterKey){
+function toggleFilter(filterKey) {
   showFilters[filterKey] = !showFilters[filterKey];
   markers = markerObjects[filterKey];
   for (name in markers){
