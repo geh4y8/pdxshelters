@@ -91,7 +91,16 @@ function makeMarker(item, iconpath) {
 }
 
 function loadMarker(name, mapitem) {
-  var marker = makeMarker(mapitem, filters[name]);
+  if (!mapitem.hasOwnProperty('coords')) {
+    console.log("no location for", mapitem.name);
+    return
+  }
+  if (name in primary_filters) {
+    var iconpath = primary_filters[name];
+   } else {
+    var iconpath = other_icon;
+  }
+  var marker = makeMarker(mapitem, iconpath);
   markerObjects[name][mapitem.name] = marker;
   
   switch(name){
@@ -161,15 +170,21 @@ var locations = {
 };
 var center = locations["PDXSheltersHQ"];
 
-var filters = {'shelters': '/img/shelterMarker.png', 
-               'meals': '/img/mealMarker.png', 
-               'clothing': '/img/clothMarker.png'};
+var primary_filters = {'shelters': '/img/shelterMarker.png', 
+                       'meals': '/img/mealMarker.png', 
+                       'clothing': '/img/clothMarker.png'};
+                       
+var other_filters = ['healthcare', 'legal'];
+var other_icon = '/img/otherMarker.png';
+
+var filters = Object.keys(primary_filters).concat(other_filters);
 
 // Get references to the Firebase data sets
 var firebaseRefs = {};
 var showFilters = {};
 var markerObjects = {};
-for (var filter in filters) {
+for (var ifilter in filters) {
+  filter = filters[ifilter];
   firebaseRefs[filter]= new Firebase("https://pdxshelters.firebaseio.com/" + filter);
   showFilters[filter] = true;
   markerObjects[filter] = {};
