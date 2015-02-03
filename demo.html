@@ -31,17 +31,26 @@
     </div>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><button class="btn btn-lg btn-link" onclick="toggleShelters()" checked="true">
+        <li><button class="btn btn-lg btn-link" id="shelters" onclick="toggleFilter(this.id)" checked="true">
           <span id="icons" aria-hidden="true" class="mdi-maps-local-hotel"></span>
           </button>
         </li>
-        <li><button class="btn btn-lg btn-link" onclick="toggleMeals()" checked="true">
+        <li><button class="btn btn-lg btn-link" id="meals" onclick="toggleFilter(this.id)" checked="true">
           <span id="icons" aria-hidden="true" class="mdi-maps-local-restaurant"></span>
           </button>
         </li>
-        <li><button class="btn btn-lg btn-link" onclick="toggleClothing()" checked="true">
+        <li><button class="btn btn-lg btn-link" id="clothing" onclick="toggleFilter(this.id)" checked="true">
           <img id="icons" src="/img/hanger.png">
           </button>
+        </li>
+        <li>
+          <button class="btn btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="true">
+              More Filters
+            <span class="caret"></span>
+          </button>
+            <ul class="dropdown-menu" role="menu"  id="extra-filter-menu">
+              <!-- here gets inserted the extra filters-->
+            </ul>
         </li>
         <li><a data-toggle="modal" data-target="#shelterLogin">Provider Login</a></li>
       </ul>
