@@ -27,10 +27,19 @@
   font-weight: bold;
 }
 
-#dbitem-phone{
+#dbitem-phone {
   font-size: 18px;
 }
 
-#dbitem-updated{
+#dbitem-updated {
   font-size: 12px;
+}
+
+#extra-filter-menu {
+  color: white;
+  background: #3f51b5;
+}
+
+#extra-filter-menu>li {
+  padding: 0.5em;
 }

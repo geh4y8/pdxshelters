@@ -101,6 +101,7 @@ function loadMarker(name, mapitem) {
     var iconpath = other_icon;
   }
   var marker = makeMarker(mapitem, iconpath);
+  marker.setVisible(showFilters[name]);
   markerObjects[name][mapitem.name] = marker;
   
   switch(name){
@@ -179,6 +180,14 @@ var other_icon = '/img/otherMarker.png';
 
 var filters = Object.keys(primary_filters).concat(other_filters);
 
+// add other filters to nav menu
+for (var ifilter in other_filters) {
+  $('#extra-filter-menu').append('<li><input type="checkbox" role="menuitem" id="' + 
+                                 other_filters[ifilter] + 
+                                 '" onclick="toggleFilter(this.id)">' + other_filters[ifilter] + 
+                                 '</li>');
+}
+
 // Get references to the Firebase data sets
 var firebaseRefs = {};
 var showFilters = {};
@@ -188,6 +197,11 @@ for (var ifilter in filters) {
   firebaseRefs[filter]= new Firebase("https://pdxshelters.firebaseio.com/" + filter);
   showFilters[filter] = true;
   markerObjects[filter] = {};
+}
+
+// do not show additional filters on load
+for (var ifilter in other_filters) {
+  showFilters[other_filters[ifilter]] = false;
 }
 
 // Add a marker to the map for each item in the DB
