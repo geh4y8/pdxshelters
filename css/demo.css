@@ -43,3 +43,11 @@
 #extra-filter-menu>li {
   padding: 0.5em;
 }
+
+#login-warn {
+  color: red;
+}
+
+#logoutLink, #loginLink, #addLink {
+  display: none;
+}

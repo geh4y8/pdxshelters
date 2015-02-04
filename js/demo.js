@@ -1,4 +1,15 @@
 $(document).ready(function () {
+    var authData = baseFirebaseRef.getAuth();  
+    if (authData) {
+      console.log("User " + authData.password.Email + " is logged in with " + authData.provider);
+      $("#logoutLink").css('display', 'inline-block');
+      $("#addLink").css('display', 'inline-block');
+    
+    } else {
+      console.log("User not logged in")
+      $("#loginLink").css('display', 'inline-block');
+    }
+    
     setTimeout(function () {
         swal({title: 'Hold On!',
         text: 'Please dial 2-1-1 for assistance before using this resource!',
@@ -6,6 +17,7 @@ $(document).ready(function () {
         confirmButtonText: 'Got it.',
         confirmButtonColor: '#196CBF'});
     }, 1000);
+
 });
 
 /*  DETAILS FOR DATABASE ITEMS */
@@ -161,8 +173,67 @@ function overlay() {
   el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
 }
 
-/* Initialize Map with markers */
+$("#loginSubmit").click(function(event){
+  event.preventDefault();
 
+  baseFirebaseRef.authWithPassword({
+    email: $("#loginEmail").val(),
+    password: $("#loginPassword").val()
+  }, function(error, authData) {
+    $("#login-warn").remove()
+    if (error) {
+      console.log("Login Failed!", error);
+      var loginPane = $("#login");
+      loginPane.append('<p id="login-warn">Email address and/or password incorrect</p>');
+    } else {
+      console.log("Authenticated successfully with payload:", authData);
+      // $("#login").removeClass("active");
+      // $("#addMapItem").addClass("active").fadeIn("slow");
+      $("#shelterLogin").modal('hide');
+      $("#loginLink").hide();
+      $("#logoutLink").css('display', 'inline-block');
+      $("#addLink").css('display', 'inline-block');
+
+    }
+  });
+});
+
+$("#forgotPasswordSubmit").click(function(event){
+  event.preventDefault();
+
+  baseFirebaseRef.resetPassword({
+      email : $("#forgotEmail").val()
+    }, function(error) {
+    if (error === null) {
+      console.log("Password reset email sent successfully");
+    } else {
+      console.log("Error sending password reset email:", error);
+    }
+  });
+});
+
+$("#mapItemSubmit").click(function(event){
+  event.preventDefault();
+
+  var authData = baseFirebaseRef.getAuth();  
+  if (authData) {
+    console.log("Save stuff here");
+  } else {
+    console.log("User is logged out");
+  }
+
+});
+
+$("#logoutLink").click(function(event){
+  event.preventDefault();
+
+  baseFirebaseRef.unauth();
+  $("#loginLink").css('display', 'inline-block');
+  $("#logoutLink").hide();
+  $("#addLink").hide()
+});
+
+/* Initialize Map with markers */
 var map;
 
 // Set the center as Firebase HQ
@@ -203,6 +274,8 @@ for (var ifilter in filters) {
 for (var ifilter in other_filters) {
   showFilters[other_filters[ifilter]] = false;
 }
+
+var baseFirebaseRef = new Firebase("https://pdxshelters.firebaseio.com");
 
 // Add a marker to the map for each item in the DB
 for (var ref in firebaseRefs){
