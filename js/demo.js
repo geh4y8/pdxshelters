@@ -2,8 +2,8 @@ $(document).ready(function () {
     var authData = baseFirebaseRef.getAuth();  
     if (authData) {
       console.log("User " + authData.password.Email + " is logged in with " + authData.provider);
-      $("#logoutLink").css('display', 'inline-block');
       $("#addLink").css('display', 'inline-block');
+      $("#settings").css('display', 'inline-block');
     
     } else {
       console.log("User not logged in")
@@ -131,6 +131,19 @@ function loadMarker(name, mapitem) {
 
 }
 
+function verifyPassword(password, confirm_password) {
+  if (password === confirm_password) {
+    // check password strength
+    if (password.length > 5) {
+      return '';
+    } else {
+      return 'Password must be at least 6 characters';
+    }
+  } else {
+    return 'Passwords do not match';
+  }
+}
+
 /*  GEOLOCATE  */
 
 // Get the location of the user, re-intialize map to that location
@@ -184,14 +197,14 @@ $("#loginSubmit").click(function(event){
     if (error) {
       console.log("Login Failed!", error);
       var loginPane = $("#login");
-      loginPane.append('<p id="login-warn">Email address and/or password incorrect</p>');
+      loginPane.append('<p class="msg-warn">Email address and/or password incorrect</p>');
     } else {
       console.log("Authenticated successfully with payload:", authData);
       // $("#login").removeClass("active");
       // $("#addMapItem").addClass("active").fadeIn("slow");
       $("#shelterLogin").modal('hide');
       $("#loginLink").hide();
-      $("#logoutLink").css('display', 'inline-block');
+      $("#settings").css('display', 'inline-block');
       $("#addLink").css('display', 'inline-block');
 
     }
@@ -212,6 +225,40 @@ $("#forgotPasswordSubmit").click(function(event){
   });
 });
 
+$("#changePasswordSubmit").click(function(event){
+  event.preventDefault();
+  $('#changePasswordMessage').text("");
+  $("#changePasswordSubmit").text("Checking...");
+  var errmsg = verifyPassword($('#newpasswd').val(), $('#newconfirmpasswd').val())
+  if (errmsg.length === 0) {
+    var authData = baseFirebaseRef.getAuth();
+    baseFirebaseRef.changePassword({
+      email: authData.password.email,
+      oldPassword: $('#oldpasswd').val(),
+      newPassword: $('#newpasswd').val(),
+    }, function(error) {
+      if (error === null) {
+        $('#changePasswordMessage').removeClass();
+        $('#changePasswordMessage').text('Password changed successfully');
+        setTimeout(function(){
+          $('#changePassword').modal('hide');
+          $('#changePasswordMessage').text('');
+        }, 1000);
+      } else {
+        $('#changePasswordMessage').addClass("msg-warn");
+        $('#changePasswordMessage').text(error.message);
+      }
+      $("#changePasswordSubmit").text("Change Password");
+      $('#change-password-form')[0].reset();
+    });
+  } else {
+    $('#changePasswordMessage').addClass("msg-warn");
+    $('#changePasswordMessage').text(errmsg);
+    $("#changePasswordSubmit").text("Change Password");
+    $('#change-password-form')[0].reset();
+  }
+});
+
 $("#mapItemSubmit").click(function(event){
   event.preventDefault();
 
@@ -229,9 +276,10 @@ $("#logoutLink").click(function(event){
 
   baseFirebaseRef.unauth();
   $("#loginLink").css('display', 'inline-block');
-  $("#logoutLink").hide();
+  $("#settings").hide();
   $("#addLink").hide()
 });
+
 
 /* Initialize Map with markers */
 var map;

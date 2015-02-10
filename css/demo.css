@@ -6,6 +6,10 @@
   height: 33px;
 }
 
+.msg-warn {
+  color: red;
+}
+
 .navbar-nav {
   color:white;
 }
@@ -13,7 +17,7 @@
 .navbar-nav>li {
   height:100%;
   display: inline-block;
-  padding-right: 1.7em;
+  padding-right: 0.25em;
 }
 
 #wrapper {
@@ -44,10 +48,6 @@
   padding: 0.5em;
 }
 
-#login-warn {
-  color: red;
-}
-
-#logoutLink, #loginLink, #addLink {
+#loginLink, #addLink, #settings {
   display: none;
 }
