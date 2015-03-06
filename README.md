@@ -60,9 +60,8 @@ Contact
 
 You can follow us on [twitter](http://twitter.com/pdxshelter)!
 
-For general (non-tech) related inquires about our organization -- Our Director, Matthew Fountain : matthew@pdxshelter.org
 
-To talk to the someone related to the code/developement side of things -- Guy Halperin: guy@pdxshelter.org or Amy Boyle: amy@pdxshelter.org
+Get in touch with us directly! -- Guy Halperin: guy.halperin88@gmail.com or Amy Boyle: amylou.boyle@gmail.com
 
 License
 -------
